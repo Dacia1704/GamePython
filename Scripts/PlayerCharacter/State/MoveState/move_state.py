@@ -19,6 +19,9 @@ class MoveState(CharacterState):
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.MOVE_SPEED_MODIFIER)
 
+    #animation
+    self.update_sprite_animation(self.state_machine.character.idle_spritesheet,GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[2],True)
+
   # check change state
   def on_idle(self):
     if not GameInput.get_instance().left1  and not GameInput.get_instance().right1 and not GameInput.get_instance().up1 and not GameInput.get_instance().down1:

@@ -9,10 +9,12 @@ screen = pygame.display.set_mode((GameConstants.SCREEN_WIDTH, GameConstants.SCRE
 pygame.display.set_caption("Infinity Fighter")
 
 #load bg images
-HOKAGE_STATE_BG_IMAGE = pygame.image.load(GameConstants.hokage_state_bg_image_source).convert_alpha()
-RIVER_BG_IMAGE = pygame.image.load(GameConstants.river_bg_image_source).convert_alpha()
-SUMMER_VILLAGE_BG_IMAGE = pygame.image.load(GameConstants.summer_village_bg_image_source).convert_alpha()
-WINTER_VILLAGE_BG_IMAGE = pygame.image.load(GameConstants.winter_village_bg_image_source).convert_alpha()
+HOKAGE_STATE_BG_IMAGE = pygame.image.load(GameConstants.HOKAGE_STATE_BG_IMAGE_SOURCE).convert_alpha()
+RIVER_BG_IMAGE = pygame.image.load(GameConstants.RIVER_BG_IMAGE_SOURCE).convert_alpha()
+SUMMER_VILLAGE_BG_IMAGE = pygame.image.load(GameConstants.SUMMER_VILLAGE_BG_IMAGE_SOURCE).convert_alpha()
+WINTER_VILLAGE_BG_IMAGE = pygame.image.load(GameConstants.WINTER_VILLAGE_BG_IMAGE_SOURCE).convert_alpha()
+
+
 
 #clock
 clock = pygame.time.Clock()

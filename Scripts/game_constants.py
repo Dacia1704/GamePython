@@ -13,10 +13,16 @@ class GameConstants:
   WHITE = (255, 255, 255)
 
   # background image source
-  hokage_state_bg_image_source = "Assets/Background/hokage_state.jpg"
-  river_bg_image_source = "Assets/Background/river.jpg"
-  summer_village_bg_image_source = "Assets/Background/summer_village.jpg"
-  winter_village_bg_image_source = "Assets/Background/winter_village.jpg"
+  HOKAGE_STATE_BG_IMAGE_SOURCE = "Assets/Background/hokage_state.jpg"
+  RIVER_BG_IMAGE_SOURCE = "Assets/Background/river.jpg"
+  SUMMER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/summer_village.jpg"
+  WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
+
+  # naruto character image source
+  NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,50]  # source, scale, animation cooldown
+  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50]
+  NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50]
+
 
   # keyboard player1
   LEFT1 = pygame.K_a
