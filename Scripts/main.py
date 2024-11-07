@@ -1,6 +1,7 @@
 import pygame
-from game_constants import GameConstants
-from Character.character import Character
+from Scripts.game_constants import GameConstants
+from Scripts.PlayerCharacter.character import Character
+from Scripts.Input.game_input import GameInput
 
 pygame.init()
 
@@ -21,11 +22,12 @@ def draw_bg():
   scaled_bg = pygame.transform.scale(SUMMER_VILLAGE_BG_IMAGE, (GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
   screen.blit(scaled_bg, (0, 0))
 
-# #player
+#player
 player1 = Character(200,310,screen)
 player2 = Character(1000,310,screen)
 player1.start()
 player2.start()
+
 
 run = True
 while run:
@@ -35,6 +37,9 @@ while run:
   #draw_bg
   draw_bg()
 
+  #input update
+  GameInput.get_instance().update()
+  
   #player
   player1.update()
   player2.update()

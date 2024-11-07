@@ -1,13 +1,13 @@
 import pygame
-from .State.state_machine import  StateMachine
+from Scripts.PlayerCharacter.State.state_machine import StateMachine
 class Character:
   def __init__(self,x,y,screen_surface):
-    self.state_machine = StateMachine()
+    self.state_machine = StateMachine(self)
     self.rect = pygame.Rect((x,y,80,180))
     self.screen_surface = screen_surface
 
   def update(self):
-    #self.state_machine.update()
+    self.state_machine.update()
     self.draw(self.screen_surface)
 
   def start(self):
