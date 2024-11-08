@@ -5,7 +5,10 @@ class GameConstants:
   SCREEN_HEIGHT = 720
 
   #FPS default
-  FPS = 90
+  FPS = 60
+
+  #Ground
+  GROUND_Y = 150
 
   #define colours
   RED = (255, 0, 0)
@@ -22,6 +25,8 @@ class GameConstants:
   NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,50]  # source, scale, animation cooldown
   NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50]
   NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50]
+  NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50]
+  NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50]
 
 
   # keyboard player1
@@ -45,10 +50,13 @@ class GameConstants:
   SKILL3_2 = pygame.K_KP3
 
   #base attribute
+  GRAVITY = 2
   BASE_SPEED = 10
-  BASE_JUMP_FORCE = 5
+  BASE_JUMP_FORCE = 30
   IDLE_SPEED_MODIFIER = 0
   MOVE_SPEED_MODIFIER = 1
+  JUMP_FORCE_MODIFIER = 1
+  ZERO_FORCE_MODIFIER = 0
 
 
 

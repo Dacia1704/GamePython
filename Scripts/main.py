@@ -1,8 +1,7 @@
 import pygame
 from Scripts.game_constants import GameConstants
-from Scripts.PlayerCharacter.character import Character
 from Scripts.Input.game_input import GameInput
-
+from Scripts.PlayerCharacter.Naruto.naruto_character import NarutoCharacter
 pygame.init()
 
 screen = pygame.display.set_mode((GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
@@ -25,8 +24,8 @@ def draw_bg():
   screen.blit(scaled_bg, (0, 0))
 
 #player
-player1 = Character(200,310,screen)
-player2 = Character(1000,310,screen)
+player1 = NarutoCharacter(200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
+player2 = NarutoCharacter(1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
 player1.start()
 player2.start()
 
@@ -44,7 +43,7 @@ while run:
   
   #player
   player1.update()
-  player2.update()
+  #player2.update()
 
   #event handler
   for event in pygame.event.get():
