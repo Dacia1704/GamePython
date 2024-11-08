@@ -10,11 +10,12 @@ class MoveState(CharacterState):
 
   def exit(self):
     super().exit()
-    print("Exit Move")
+    #print("Exit Move")
 
   def update(self):
     super().update()
     #check state
+    self.on_attack()
     self.on_fall()
     self.on_jump()
     self.on_idle()
@@ -24,12 +25,14 @@ class MoveState(CharacterState):
     self.move_vertical(GameConstants.BASE_JUMP_FORCE,GameConstants.ZERO_FORCE_MODIFIER)
 
     #animation
-    self.update_sprite_animation(self.state_machine.character.move_spritesheet,GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[2],True)
+    self.update_sprite_animation(self.state_machine.character.move_spritesheet[0],self.state_machine.character.move_spritesheet[2],True)
 
   # check change state
 
   
   # animation
   def draw(self, surface):
-    img = pygame.transform.flip(self.state_machine.character.move_spritesheet[self.current_sprite_index], self.state_machine.character.flip, False)
-    surface.blit(img, (self.state_machine.character.rect.x, self.state_machine.character.rect.y))
+    offsetx = self.state_machine.character.move_spritesheet[3] * self.state_machine.character.move_spritesheet[1]
+    offsety = self.state_machine.character.move_spritesheet[4] * self.state_machine.character.move_spritesheet[1]
+    img = pygame.transform.flip(self.state_machine.character.move_spritesheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
+    surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))

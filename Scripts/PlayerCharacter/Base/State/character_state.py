@@ -3,12 +3,14 @@ from Scripts.Input.game_input import GameInput
 from Scripts.game_constants import GameConstants
 import pygame
 class CharacterState(State):
-  def __init__(self, state_machine):
+  def __init__(self, state_machine ):
     self.state_machine = state_machine
 
     #animation
     self.update_animation_time = pygame.time.get_ticks()
     self.current_sprite_index = 0
+
+    self.is_show_last_frame = False
 
   #update state function
   def enter(self):
@@ -22,6 +24,7 @@ class CharacterState(State):
        self.state_machine.character.need_reset_jumpkey = False
 
     self.update_ground_check()
+    self.draw_back_to_fix_bug(self.state_machine.screen_surface)
     self.draw(self.state_machine.screen_surface)
 
   #check condition function
@@ -76,6 +79,8 @@ class CharacterState(State):
       self.state_machine.character.is_grounded = False
   
   #draw animation
+  def draw_back_to_fix_bug(self,surface):
+    pygame.draw.rect(surface,(255,0,0),self.state_machine.character.rect) # draw rectangle
   def draw(self,surface):
     pygame.draw.rect(surface,(255,0,0),self.state_machine.character.rect) # draw rectangle
 
@@ -104,5 +109,8 @@ class CharacterState(State):
   def on_fall(self):
     if self.state_machine.character.is_falling and not self.state_machine.character.is_grounded :
       self.state_machine.change_state(self.state_machine.fall_state)
+  def on_attack(self):
+    if GameInput.get_instance().nomal_attack1 and self.state_machine.character.is_grounded:
+      self.state_machine.change_state(self.state_machine.nomal_attack)
 
 

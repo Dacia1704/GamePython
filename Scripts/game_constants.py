@@ -8,7 +8,7 @@ class GameConstants:
   FPS = 60
 
   #Ground
-  GROUND_Y = 150
+  GROUND_Y = 250
 
   #define colours
   RED = (255, 0, 0)
@@ -22,11 +22,13 @@ class GameConstants:
   WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
 
   # naruto character image source
-  NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,50]  # source, scale, animation cooldown
-  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50]
-  NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50]
-  NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50]
-  NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50]
+  NARUTO_WIDTH_RECT = 60
+  NARUTO_HEIGHT_RECT = 110
+  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx, 4:offsety
+  NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50,15,5]
+  NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50,5,5]
+  NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50,5,5]
+  NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,70,5,5]  
 
 
   # keyboard player1
@@ -52,12 +54,12 @@ class GameConstants:
   #base attribute
   GRAVITY = 2
   BASE_SPEED = 10
-  BASE_JUMP_FORCE = 30
+  BASE_JUMP_FORCE = 35
   IDLE_SPEED_MODIFIER = 0
   MOVE_SPEED_MODIFIER = 1
   JUMP_FORCE_MODIFIER = 1
   ZERO_FORCE_MODIFIER = 0
-
+  BASE_HEALTH = 10
 
 
 

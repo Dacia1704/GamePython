@@ -11,7 +11,7 @@ class JumpState(CharacterState):
 
   def exit(self):
     super().exit()
-    print("Exit Jump")
+    #print("Exit Jump")
 
   def update(self):
     super().update()
@@ -26,11 +26,13 @@ class JumpState(CharacterState):
 
 
     #animation
-    self.update_sprite_animation(self.state_machine.character.jump_spritesheet,GameConstants.NARUTO_JUMP_SPRITESHEET_SOURCE[2],False)
+    self.update_sprite_animation(self.state_machine.character.jump_spritesheet[0],self.state_machine.character.jump_spritesheet[2],False)
 
 
   
   # animation
   def draw(self, surface):
-    img = pygame.transform.flip(self.state_machine.character.jump_spritesheet[self.current_sprite_index], self.state_machine.character.flip, False)
-    surface.blit(img, (self.state_machine.character.rect.x, self.state_machine.character.rect.y))
+    offsetx = self.state_machine.character.jump_spritesheet[3] * self.state_machine.character.jump_spritesheet[1]
+    offsety = self.state_machine.character.jump_spritesheet[4] * self.state_machine.character.jump_spritesheet[1]
+    img = pygame.transform.flip(self.state_machine.character.jump_spritesheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
+    surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))

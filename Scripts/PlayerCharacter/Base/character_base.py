@@ -4,12 +4,18 @@ from Scripts.game_constants import GameConstants
 from Scripts.Input.game_input import GameInput
 class Character:
   def __init__(self,x,y,screen_surface):
-    self.state_machine = StateMachine(self,screen_surface)
-    self.rect = pygame.Rect((x,y,80,180))
-    self.idle_spritesheet = None
-    self.move_spritesheet = None
-    self.jump_spritesheet = None
-    self.fall_spritesheet = None
+    self.state_machine = StateMachine(self,screen_surface) #for override
+    self.rect = None   #for override
+    self.health = GameConstants.BASE_HEALTH
+    
+
+    # 0: sprite_sheet, 1: image_scale, 2: animation_cooldown, 3: offset_x, 4: offset_y
+    self.idle_spritesheet_data = None #for override
+    self.move_spritesheet_data = None #for override
+    self.jump_spritesheet_data = None #for override
+    self.fall_spritesheet_data = None #for override
+    self.nomal_attack_spritesheet_data = [] #for override
+
 
     self.is_grounded = True
 
@@ -18,6 +24,8 @@ class Character:
     self.vel_y = 0
     self.is_jumping = False
     self.need_reset_jumpkey = False
+
+    self.is_nomal_attacking = False
 
     self.is_falling = False
   def update(self):
