@@ -12,6 +12,7 @@ class CharacterState(State):
     self.current_sprite_index = 0
 
     self.is_show_last_frame = False
+    self.is_last_frame_animation_cooldown_finished = False
 
 
 
@@ -20,6 +21,7 @@ class CharacterState(State):
   def enter(self):
     self.update_animation_time = pygame.time.get_ticks()
     self.current_sprite_index = 0
+    self.is_last_frame_animation_cooldown_finished = False
   def exit(self):
     pass
   def update(self):
@@ -94,6 +96,8 @@ class CharacterState(State):
     if pygame.time.get_ticks() - self.update_animation_time > animation_cooldown: 
       self.current_sprite_index +=1
       self.update_animation_time = pygame.time.get_ticks()
+      if self.is_show_last_frame:
+        self.is_last_frame_animation_cooldown_finished = True
     
     if self.current_sprite_index >= max:
       if loop:
@@ -116,6 +120,7 @@ class CharacterState(State):
       self.state_machine.change_state(self.state_machine.fall_state)
   def on_nomal_attack(self):
     random_attack =  random.randint(1, 3)
+    random_attack = 3   # test
     if GameInput.get_instance().nomal_attack_p1 and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)

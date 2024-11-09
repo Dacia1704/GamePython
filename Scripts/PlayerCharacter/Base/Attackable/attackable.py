@@ -5,5 +5,5 @@ class Attackable(ABC):
         self.damage = damage
 
     @abstractmethod
-    def draw_attack_area_collider(self):
+    def draw_attack_area_collider(self,pos_relate_centerxy,size):
         pass

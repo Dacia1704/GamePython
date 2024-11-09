@@ -6,7 +6,7 @@ class JumpState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("Enter Jump")
+    #print("Enter Jump")
     self.state_machine.character.need_reset_jumpkey = True
 
   def exit(self):

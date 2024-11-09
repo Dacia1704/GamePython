@@ -8,7 +8,7 @@ class IdleState(CharacterState):
 
   def enter(self):
     super().enter()
-    print("Enter Idle")
+    #print("Enter Idle")
 
   def exit(self):
     super().exit()

@@ -6,7 +6,7 @@ class FallState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("Enter Fall")
+    #print("Enter Fall")
 
   def exit(self):
     super().exit()

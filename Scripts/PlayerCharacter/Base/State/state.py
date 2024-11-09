@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class State():
+class State(ABC):
   #update state
   @abstractmethod
   def enter(self):

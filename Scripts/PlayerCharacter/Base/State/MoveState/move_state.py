@@ -6,7 +6,7 @@ class MoveState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("Enter Move")
+    #print("Enter Move")
 
   def exit(self):
     super().exit()

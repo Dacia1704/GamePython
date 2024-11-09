@@ -8,6 +8,8 @@ class NomalAttackState(CharacterState,Attackable):
   def __init__(self, state_machine):
     super().__init__(state_machine)
 
+    self.attack_collider_animations = []
+
 
   #base function
   def enter(self):
@@ -33,5 +35,39 @@ class NomalAttackState(CharacterState,Attackable):
     pass
 
   #attackable
+  def draw_attack_area_collider(self, pos_relate_centerxy, size):
+    attacking_rect = None
+    if not self.state_machine.character.flip:
+      attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx + pos_relate_centerxy[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    else:
+      attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    pygame.draw.rect(self.state_machine.screen_surface, (0,255,0),attacking_rect)
+
+  #draw
+  def draw_attack_animation(self, surface,sprite_sheet_data,animation_collider_dictionary):
+    nomal_attack_sprite_sheet = sprite_sheet_data
+
+    if self.current_sprite_index == len(nomal_attack_sprite_sheet[0])-1:
+      if self.is_show_last_frame and self.is_last_frame_animation_cooldown_finished:
+        self.state_machine.character.is_nomal_attacking = False
+        self.is_show_last_frame = False
+      else:
+        self.is_show_last_frame = True
+    
+    offsetx = nomal_attack_sprite_sheet[3] * nomal_attack_sprite_sheet[1] 
+    if self.state_machine.character.flip:
+      offsetx = nomal_attack_sprite_sheet[4] * nomal_attack_sprite_sheet[1]
+    offsety = nomal_attack_sprite_sheet[5] * nomal_attack_sprite_sheet[1]
+
+    img = pygame.transform.flip(nomal_attack_sprite_sheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
+    surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))
+
+    if self.current_sprite_index in self.attack_collider_animations:
+      collider_rect_props = animation_collider_dictionary.get(self.current_sprite_index)
+      self.draw_attack_area_collider(collider_rect_props[0], collider_rect_props[1])
+
+    
+
+    
 
 
