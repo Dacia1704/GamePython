@@ -1,0 +1,16 @@
+GamePlay:
+-	Đối kháng: làm cạn hp
+-	Có thanh hp và thanh mana
+-	State: nomal state(hit,death,move,run,jump,dash), 2-3 nomal attack, 3 chiêu dùng mana
+-	Chỉ số: health, mana, attack base, crit rate, crit dam
+
+Giao diện chính:
+-	Setting: audio
+-	Xem hướng dẫn keyboad
+-	Nút Play
+Giao diện chọn nhân vật
+-	Dùng di chuyển đẻ chọn nhân vật
+
+
+Class Diagram
+https://drive.google.com/file/d/1ifd4H0HPyySSWIyVSH5X1BVgU3fnik1C/view?usp=sharing
