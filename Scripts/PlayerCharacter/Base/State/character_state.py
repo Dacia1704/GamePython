@@ -120,7 +120,7 @@ class CharacterState(State):
       self.state_machine.change_state(self.state_machine.fall_state)
   def on_nomal_attack(self):
     random_attack =  random.randint(1, 3)
-    random_attack = 3   # test
+    #random_attack = 3   # test
     if GameInput.get_instance().nomal_attack_p1 and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)
