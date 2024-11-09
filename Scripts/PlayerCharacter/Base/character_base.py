@@ -10,12 +10,13 @@ class Character:
     
 
     # 0: sprite_sheet, 1: image_scale, 2: animation_cooldown, 3: offset_x, 4: offset_y
-    self.idle_spritesheet_data = None #for override
-    self.move_spritesheet_data = None #for override
-    self.jump_spritesheet_data = None #for override
-    self.fall_spritesheet_data = None #for override
-    self.nomal_attack_spritesheet_data = [] #for override
-
+    self.idle_spritesheet = None #for override
+    self.move_spritesheet = None #for override
+    self.jump_spritesheet = None #for override
+    self.fall_spritesheet = None #for override
+    self.nomal_attack1_spritesheet = None #for override
+    self.nomal_attack2_spritesheet = None #for override
+    self.nomal_attack3_spritesheet = None #for override
 
     self.is_grounded = True
 
@@ -43,9 +44,9 @@ class Character:
     return animation_list
   
   def update_flip(self):
-    if GameInput.get_instance().left1:
+    if GameInput.get_instance().left_p1:
       self.flip = True
-    if GameInput.get_instance().right1:
+    if GameInput.get_instance().right_p1:
       self.flip = False
     
   

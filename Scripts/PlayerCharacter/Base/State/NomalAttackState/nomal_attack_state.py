@@ -2,7 +2,13 @@ from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
 from Scripts.Input.game_input import GameInput
 from Scripts.game_constants import GameConstants
 import pygame
-class NomalAttackState(CharacterState):
+import random
+from Scripts.PlayerCharacter.Base.Attackable.attackable import Attackable
+class NomalAttackState(CharacterState,Attackable):
+  def __init__(self, state_machine):
+    super().__init__(state_machine)
+
+
   #base function
   def enter(self):
     super().enter()
@@ -23,11 +29,9 @@ class NomalAttackState(CharacterState):
     #logic
     self.nomal_attack()
 
-    #animation
-    self.update_sprite_animation(self.state_machine.character.nomal_attack_spritesheet[0],GameConstants.NARUTO_ATTACK1_SPRITESHEET_SOURCE[2],False)
-
-  # check change state
-
-
   def nomal_attack(self):
     pass
+
+  #attackable
+
+

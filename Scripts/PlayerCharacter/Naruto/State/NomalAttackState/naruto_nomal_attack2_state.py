@@ -1,6 +1,10 @@
 from Scripts.PlayerCharacter.Base.State.NomalAttackState.nomal_attack_state import NomalAttackState
 import pygame
-class NarutoNomalAttackState(NomalAttackState):
+class NarutoNomalAttack2State(NomalAttackState):
+  def update(self):
+    super().update()
+    self.update_sprite_animation(self.state_machine.character.nomal_attack2_spritesheet[0],self.state_machine.character.nomal_attack2_spritesheet[2],False)
+
   def nomal_attack(self):
     super().nomal_attack()
     if not self.state_machine.character.is_nomal_attacking:
@@ -14,16 +18,17 @@ class NarutoNomalAttackState(NomalAttackState):
 
   # animation
   def draw(self, surface):
-    nomal_attack_sprite_sheet_data = self.state_machine.character.nomal_attack_spritesheet[0]
+    nomal_attack_sprite_sheet = self.state_machine.character.nomal_attack2_spritesheet
 
-    if self.current_sprite_index == len(nomal_attack_sprite_sheet_data[0])-1:
+    if self.current_sprite_index == len(nomal_attack_sprite_sheet[0])-1:
       if self.is_show_last_frame:
         self.state_machine.character.is_nomal_attacking = False
         self.is_show_last_frame = False
       else:
         self.is_show_last_frame = True
     
-    offsetx = nomal_attack_sprite_sheet_data[3] * nomal_attack_sprite_sheet_data[1]
-    offsety = nomal_attack_sprite_sheet_data[4] * nomal_attack_sprite_sheet_data[1]
-    img = pygame.transform.flip(nomal_attack_sprite_sheet_data[0][self.current_sprite_index], self.state_machine.character.flip, False)
+    offsetx = nomal_attack_sprite_sheet[3] * nomal_attack_sprite_sheet[1]
+    offsety = nomal_attack_sprite_sheet[4] * nomal_attack_sprite_sheet[1]
+    img = pygame.transform.flip(nomal_attack_sprite_sheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
     surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))
+

@@ -11,7 +11,9 @@ class StateMachine:
     self.move_state = MoveState(self)
     self.jump_state = JumpState(self)
     self.fall_state = FallState(self)
-    self.nomal_attack = NomalAttackState(self)
+    self.nomal_attack1 = NomalAttackState(self)
+    self.nomal_attack2 = NomalAttackState(self)
+    self.nomal_attack3 = NomalAttackState(self)
     self.current_state = None
     self.screen_surface = screen_surface
     

@@ -15,7 +15,7 @@ class MoveState(CharacterState):
   def update(self):
     super().update()
     #check state
-    self.on_attack()
+    self.on_nomal_attack()
     self.on_fall()
     self.on_jump()
     self.on_idle()
