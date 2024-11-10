@@ -24,8 +24,8 @@ def draw_bg():
   screen.blit(scaled_bg, (0, 0))
 
 #player
-player1 = NarutoCharacter(200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
-player2 = NarutoCharacter(1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
+player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
+player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
 player1.start()
 player2.start()
 
@@ -43,7 +43,7 @@ while run:
   
   #player
   player1.update()
-  #player2.update()
+  player2.update()
 
   #event handler
   for event in pygame.event.get():

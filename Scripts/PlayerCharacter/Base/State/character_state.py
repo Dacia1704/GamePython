@@ -26,7 +26,7 @@ class CharacterState(State):
     pass
   def update(self):
     #need reset jumpkey
-    if self.state_machine.character.need_reset_jumpkey and not GameInput.get_instance().up_p1:
+    if self.state_machine.character.need_reset_jumpkey and not self.state_machine.character.up_input and not self.state_machine.character.is_jumping and not self.state_machine.character.is_falling:
        self.state_machine.character.need_reset_jumpkey = False
 
     self.update_ground_check()
@@ -43,9 +43,9 @@ class CharacterState(State):
   def move_horizontal(self,base_speed,modifier):
     dx = 0 
     speed = base_speed * modifier
-    if GameInput.get_instance().left_p1:
+    if self.state_machine.character.left_input:
       dx -= speed
-    if GameInput.get_instance().right_p1:
+    if self.state_machine.character.right_input:
       dx += speed
 
     #ensure player in screen
@@ -59,7 +59,7 @@ class CharacterState(State):
     dy = 0
     #move up
     jump_force =  base_force * modifier
-    if GameInput.get_instance().up_p1 and not self.state_machine.character.is_jumping and not self.state_machine.character.is_falling:
+    if self.state_machine.character.up_input and not self.state_machine.character.is_jumping and not self.state_machine.character.is_falling:
       self.state_machine.character.vel_y = -jump_force
       self.state_machine.character.is_jumping = True
 
@@ -107,13 +107,13 @@ class CharacterState(State):
 
   #check change state
   def on_idle(self):
-    if not GameInput.get_instance().left_p1  and not GameInput.get_instance().right_p1 and not GameInput.get_instance().up_p1 and not GameInput.get_instance().down1 and self.state_machine.character.is_grounded:
+    if not self.state_machine.character.left_input  and not self.state_machine.character.right_input and not self.state_machine.character.up_input and not self.state_machine.character.down_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.idle_state) 
   def on_jump(self):
-    if GameInput.get_instance().up_p1 and not self.state_machine.character.need_reset_jumpkey:
+    if self.state_machine.character.up_input and not self.state_machine.character.need_reset_jumpkey:
       self.state_machine.change_state(self.state_machine.jump_state) 
   def on_move(self):
-    if (GameInput.get_instance().left_p1 or GameInput.get_instance().right_p1) and self.state_machine.character.is_grounded :
+    if (self.state_machine.character.left_input or self.state_machine.character.right_input) and self.state_machine.character.is_grounded :
       self.state_machine.change_state(self.state_machine.move_state) 
   def on_fall(self):
     if self.state_machine.character.is_falling and not self.state_machine.character.is_grounded :
@@ -121,7 +121,7 @@ class CharacterState(State):
   def on_nomal_attack(self):
     random_attack =  random.randint(1, 3)
     #random_attack = 3   # test
-    if GameInput.get_instance().nomal_attack_p1 and self.state_machine.character.is_grounded:
+    if self.state_machine.character.nomal_attack_input and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)
       elif random_attack ==2:

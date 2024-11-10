@@ -38,5 +38,5 @@ class FallState(CharacterState):
 
   #checkstate
   def on_idle(self):
-    if not GameInput.get_instance().left_p1  and not GameInput.get_instance().right_p1 and (not GameInput.get_instance().up_p1 or (GameInput.get_instance().up_p1 and self.state_machine.character.need_reset_jumpkey)) and not GameInput.get_instance().down1 and self.state_machine.character.is_grounded:
+    if not self.state_machine.character.left_input  and not self.state_machine.character.right_input and (not self.state_machine.character.up_input or (self.state_machine.character.up_input and self.state_machine.character.need_reset_jumpkey)) and not self.state_machine.character.down_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.idle_state) 

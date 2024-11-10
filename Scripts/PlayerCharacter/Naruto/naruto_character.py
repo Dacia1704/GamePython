@@ -3,8 +3,8 @@ import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.PlayerCharacter.Naruto.State.naruto_state_machine import NarutoStateMachine
 class NarutoCharacter(Character):
-  def __init__(self,x,y,screen_surface):
-    super().__init__(x,y,screen_surface)
+  def __init__(self,player_id,x,y,screen_surface):
+    super().__init__(player_id,x,y,screen_surface)
     self.rect = pygame.Rect((x,y,GameConstants.NARUTO_WIDTH_RECT,GameConstants.NARUTO_HEIGHT_RECT))
     self.state_machine = NarutoStateMachine(self,screen_surface)
 

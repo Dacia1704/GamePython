@@ -3,10 +3,22 @@ from Scripts.PlayerCharacter.Base.State.state_machine import StateMachine
 from Scripts.game_constants import GameConstants
 from Scripts.Input.game_input import GameInput
 class Character:
-  def __init__(self,x,y,screen_surface):
+  def __init__(self,player_id,x,y,screen_surface):
     self.state_machine = StateMachine(self,screen_surface) #for override
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
+    self.player_id = player_id
+
+    #input
+    self.right_input = False
+    self.left_input = False
+    self.up_input = False
+    self.down_input = False
+    self.nomal_attack_input = False
+    self.skill_1_input = False
+    self.skill_2_input = False
+    self.skill_3_input = False
+
     
 
     # 0: sprite_sheet, 1: image_scale, 2: animation_cooldown, 3: offset_x, 4: offset_y
@@ -30,6 +42,7 @@ class Character:
 
     self.is_falling = False
   def update(self):
+    self.update_player_input()
     self.update_flip()
     self.state_machine.update()
 
@@ -44,9 +57,27 @@ class Character:
     return animation_list
   
   def update_flip(self):
-    if GameInput.get_instance().left_p1:
+    if self.left_input:
       self.flip = True
-    if GameInput.get_instance().right_p1:
+    if self.right_input:
       self.flip = False
     
-  
+  def update_player_input(self):
+    if self.player_id==1:
+      self.right_input = GameInput.get_instance().right_p1
+      self.left_input = GameInput.get_instance().left_p1
+      self.up_input = GameInput.get_instance().up_p1
+      self.down_input = GameInput.get_instance().down_p1
+      self.nomal_attack_input = GameInput.get_instance().nomal_attack_p1
+      self.skill_1_input = GameInput.get_instance().skill_1_p1
+      self.skill_2_input = GameInput.get_instance().skill_2_p1
+      self.skill_3_input = GameInput.get_instance().skill_3_p1
+    if self.player_id==2:
+      self.right_input = GameInput.get_instance().right_p2
+      self.left_input = GameInput.get_instance().left_p2
+      self.up_input = GameInput.get_instance().up_p2
+      self.down_input = GameInput.get_instance().down_p2
+      self.nomal_attack_input = GameInput.get_instance().nomal_attack_p2
+      self.skill_1_input = GameInput.get_instance().skill_1_p2
+      self.skill_2_input = GameInput.get_instance().skill_2_p2
+      self.skill_3_input = GameInput.get_instance().skill_3_p2
