@@ -30,14 +30,10 @@ class CharacterState(State):
        self.state_machine.character.need_reset_jumpkey = False
 
     self.update_ground_check()
-    self.draw_back_to_fix_bug(self.state_machine.screen_surface)
     self.draw(self.state_machine.screen_surface)
 
-  #check condition function
-  def on_idle(self):
-    pass
-  def on_move(self):
-    pass
+    self.on_hit()
+
 
   # logic state funcion
   def move_horizontal(self,base_speed,modifier):
@@ -86,10 +82,10 @@ class CharacterState(State):
 
   
   #draw animation
-  def draw_back_to_fix_bug(self,surface):
-    pygame.draw.rect(surface,(255,0,0),self.state_machine.character.rect) # draw rectangle
   def draw(self,surface):
-    pygame.draw.rect(surface,(255,0,0),self.state_machine.character.rect) # draw rectangle
+    #pygame.draw.rect(surface,(255,0,0),self.state_machine.character.rect) # draw rectangle
+    self.state_machine.character.draw_get_dam_area_collider([-self.state_machine.character.rect.width/2,-self.state_machine.character.rect.height/2],[self.state_machine.character.rect.width,self.state_machine.character.rect.height])
+
 
   def update_sprite_animation(self,sprite_sheet,animation_cooldown,loop):
     max = len(sprite_sheet)
@@ -120,7 +116,7 @@ class CharacterState(State):
       self.state_machine.change_state(self.state_machine.fall_state)
   def on_nomal_attack(self):
     random_attack =  random.randint(1, 3)
-    #random_attack = 3   # test
+    #random_attack = 1   # test
     if self.state_machine.character.nomal_attack_input and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)
@@ -129,5 +125,6 @@ class CharacterState(State):
       elif random_attack ==3:
         self.state_machine.change_state(self.state_machine.nomal_attack3)
 
-
-
+  def on_hit(self):
+    if self.state_machine.character.is_hitting: 
+      self.state_machine.change_state(self.state_machine.hit_state)

@@ -18,14 +18,15 @@ WINTER_VILLAGE_BG_IMAGE = pygame.image.load(GameConstants.WINTER_VILLAGE_BG_IMAG
 #clock
 clock = pygame.time.Clock()
 
-#function for drawing background
+#function for drawing backgroundj
 def draw_bg():
   scaled_bg = pygame.transform.scale(SUMMER_VILLAGE_BG_IMAGE, (GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
   screen.blit(scaled_bg, (0, 0))
 
 #player
-player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
-player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen)
+player1 = None
+player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player1)
+player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player2)
 player1.start()
 player2.start()
 

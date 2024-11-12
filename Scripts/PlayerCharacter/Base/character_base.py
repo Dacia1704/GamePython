@@ -2,8 +2,12 @@ import pygame
 from Scripts.PlayerCharacter.Base.State.state_machine import StateMachine
 from Scripts.game_constants import GameConstants
 from Scripts.Input.game_input import GameInput
-class Character:
-  def __init__(self,player_id,x,y,screen_surface):
+from Scripts.Attackable.attackable import Attackable
+from Scripts.Damable.damable import Damable
+class Character (Attackable,Damable):
+  def __init__(self,player_id,x,y,screen_surface,target):
+    Attackable.__init__(self)
+    Damable.__init__(self)
     self.state_machine = StateMachine(self,screen_surface) #for override
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
@@ -29,6 +33,7 @@ class Character:
     self.nomal_attack1_spritesheet = None #for override
     self.nomal_attack2_spritesheet = None #for override
     self.nomal_attack3_spritesheet = None #for override
+    self.hit_spritesheet = None # for override
 
     self.is_grounded = True
 
@@ -41,6 +46,13 @@ class Character:
     self.is_nomal_attacking = False
 
     self.is_falling = False
+    self.is_hitting = False
+    self.is_using_skill = False
+
+    #attack
+    self.target = target
+
+
   def update(self):
     self.update_player_input()
     self.update_flip()
@@ -81,3 +93,28 @@ class Character:
       self.skill_1_input = GameInput.get_instance().skill_1_p2
       self.skill_2_input = GameInput.get_instance().skill_2_p2
       self.skill_3_input = GameInput.get_instance().skill_3_p2
+
+  #attackable
+  def draw_attack_area_collider(self, pos_relate_centerxy, size,target):
+    attacking_rect = None
+    if not self.state_machine.character.flip:
+      attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx + pos_relate_centerxy[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    else:
+      attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    pygame.draw.rect(self.state_machine.screen_surface, (0,255,0),attacking_rect)
+
+    if attacking_rect.colliderect(target.damable_rect):
+      target.is_hitting = True
+
+
+
+
+  #damable
+  def draw_get_dam_area_collider(self, pos_relate_centerxy, size):
+    if not self.state_machine.character.flip:
+      self.damable_rect = pygame.Rect(self.state_machine.character.rect.centerx + pos_relate_centerxy[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    else:
+      self.damable_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
+    pygame.draw.rect(self.state_machine.screen_surface, (255,255,255),self.damable_rect)
+
+

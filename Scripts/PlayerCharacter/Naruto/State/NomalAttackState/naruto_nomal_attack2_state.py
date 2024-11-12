@@ -18,6 +18,7 @@ class NarutoNomalAttack2State(NomalAttackState):
 
   # animation
   def draw(self, surface):
+    super().draw(surface)
     self.draw_attack_animation(surface,self.state_machine.character.nomal_attack2_spritesheet,GameConstants.NARUTO_ATTACK2_COLLIDER_DICTIONARY)
 
 

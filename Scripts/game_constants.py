@@ -24,10 +24,10 @@ class GameConstants:
   # naruto character image source and props
   NARUTO_WIDTH_RECT = 60
   NARUTO_HEIGHT_RECT = 110
-  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
-  NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50,15,5]
-  NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50,5,5]
-  NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50,5,5]
+  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50,7,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50,15,15,5]
+  NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50,5,5,5]
+  NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50,5,5,5]
   NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,100,10,25,2]  
   NARUTO_ATTACK1_COLLIDER_ANIMATIONS = [3]
   NARUTO_ATTACK1_COLLIDER_DICTIONARY = {
@@ -43,6 +43,8 @@ class GameConstants:
   NARUTO_ATTACK3_COLLIDER_DICTIONARY = {
     2:[[NARUTO_WIDTH_RECT/2,-NARUTO_HEIGHT_RECT/2- 5],[60,35]]
   }
+  NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,50,5,20,5]  
+
 
 
   # keyboard player1
