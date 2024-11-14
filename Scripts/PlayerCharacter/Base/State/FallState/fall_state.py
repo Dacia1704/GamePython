@@ -17,6 +17,7 @@ class FallState(CharacterState):
     #check state
     self.on_move()
     self.on_idle()
+    self.on_hit()
 
 
     #logic

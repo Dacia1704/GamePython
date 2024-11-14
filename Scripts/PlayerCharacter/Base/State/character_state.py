@@ -32,8 +32,6 @@ class CharacterState(State):
     self.update_ground_check()
     self.draw(self.state_machine.screen_surface)
 
-    self.on_hit()
-
 
   # logic state funcion
   def move_horizontal(self,base_speed,modifier):
@@ -91,6 +89,7 @@ class CharacterState(State):
     max = len(sprite_sheet)
     if pygame.time.get_ticks() - self.update_animation_time > animation_cooldown: 
       self.current_sprite_index +=1
+
       self.update_animation_time = pygame.time.get_ticks()
       if self.is_show_last_frame:
         self.is_last_frame_animation_cooldown_finished = True
@@ -100,6 +99,7 @@ class CharacterState(State):
         self.current_sprite_index = 0
       else:
         self.current_sprite_index = max-1
+    
 
   #check change state
   def on_idle(self):
