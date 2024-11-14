@@ -47,6 +47,7 @@ class GameConstants:
 
 
 
+
   # keyboard player1
   LEFT1 = pygame.K_a
   RIGHT1 = pygame.K_d

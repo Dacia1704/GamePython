@@ -8,7 +8,7 @@ class HitState(CharacterState):
 
   def enter(self):
     super().enter()
-    print("Enter hit")
+    #print("Enter hit")
     self.state_machine.character.health -= self.state_machine.character.dam_take
 
   def exit(self):
@@ -23,6 +23,7 @@ class HitState(CharacterState):
       self.on_fall()
       self.on_jump()
       self.on_move()
+      self.on_idle()
 
     #logic
     
@@ -36,24 +37,22 @@ class HitState(CharacterState):
   #animation
   def draw(self, surface):
     super().draw(surface)
-
     if self.current_sprite_index == len(self.state_machine.character.hit_spritesheet[0])-1:
       if self.is_show_last_frame and self.is_last_frame_animation_cooldown_finished:
-        self.state_machine.character.is_nomal_attacking = False
+        self.state_machine.character.is_hitting = False
         self.is_show_last_frame = False
       else:
         self.is_show_last_frame = True
+    
 
     offsetx = self.state_machine.character.hit_spritesheet[3] * self.state_machine.character.hit_spritesheet[1] 
     if self.state_machine.character.flip:
       offsetx = self.state_machine.character.hit_spritesheet[4] * self.state_machine.character.hit_spritesheet[1]
     offsety = self.state_machine.character.hit_spritesheet[5] * self.state_machine.character.hit_spritesheet[1]
 
-
-    offsetx = self.state_machine.character.hit_spritesheet[3] * self.state_machine.character.hit_spritesheet[1]
-    offsety = self.state_machine.character.hit_spritesheet[5] * self.state_machine.character.hit_spritesheet[1]
     img = pygame.transform.flip(self.state_machine.character.hit_spritesheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
     surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))
+
 
 
 

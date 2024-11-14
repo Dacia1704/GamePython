@@ -25,7 +25,7 @@ class NomalAttackState(CharacterState):
     if not self.state_machine.character.is_nomal_attacking:
       self.on_jump()
       self.on_move()
-      self.on_idle()
+      self.on_idle() 
 
     #logic
     self.nomal_attack()
@@ -36,7 +36,6 @@ class NomalAttackState(CharacterState):
   #draw
   def draw_attack_animation(self, surface,sprite_sheet_data,animation_collider_dictionary):
     nomal_attack_sprite_sheet = sprite_sheet_data
-
     if self.current_sprite_index == len(nomal_attack_sprite_sheet[0])-1:
       if self.is_show_last_frame and self.is_last_frame_animation_cooldown_finished:
         self.state_machine.character.is_nomal_attacking = False

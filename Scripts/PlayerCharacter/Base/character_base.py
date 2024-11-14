@@ -34,6 +34,9 @@ class Character (Attackable,Damable):
     self.nomal_attack2_spritesheet = None #for override
     self.nomal_attack3_spritesheet = None #for override
     self.hit_spritesheet = None # for override
+    self.skill1_spritesheet = None # for override
+    self.skill2_spritesheet = None # for override
+    self.skill3_spritesheet = None # for override
 
     self.is_grounded = True
 
@@ -44,6 +47,8 @@ class Character (Attackable,Damable):
     self.need_reset_jumpkey = False
 
     self.is_nomal_attacking = False
+    self.is_using_skill = False
+
 
     self.is_falling = False
     self.is_hitting = False
