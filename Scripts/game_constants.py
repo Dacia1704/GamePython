@@ -24,7 +24,7 @@ class GameConstants:
   # naruto character image source and props
   NARUTO_WIDTH_RECT = 60
   NARUTO_HEIGHT_RECT = 110
-  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/idle_w34_h50.png",3,50,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  NARUTO_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/idle_sasuke.png",3,50,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
   NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50,15,5]
   NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50,5,5]
   NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50,5,5]
