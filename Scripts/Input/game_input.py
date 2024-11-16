@@ -1,6 +1,7 @@
 import pygame
 from Scripts.game_constants import GameConstants
 
+
 class GameInput:
     _instance = None  # Biến giữ instance duy nhất
 
@@ -15,7 +16,7 @@ class GameInput:
         self.right_p1 = False
         self.left_p1 = False
         self.up_p1 = False
-        self.down1 = False
+        self.down_p1 = False
         self.nomal_attack_p1 = False
         self.skill_1_p1 = False
         self.skill_2_p1 = False
@@ -31,13 +32,14 @@ class GameInput:
         self.skill_2_p2 = False
         self.skill_3_p2 = False
 
+
     def update(self):
         """Cập nhật trạng thái phím bấm"""
         key = pygame.key.get_pressed()
         self.right_p1 = key[GameConstants.RIGHT1]
         self.left_p1 = key[GameConstants.LEFT1]
         self.up_p1 = key[GameConstants.UP1]
-        self.down1 = key[GameConstants.DOWN1]
+        self.down_p1 = key[GameConstants.DOWN1]
         self.nomal_attack_p1 = key[GameConstants.NOMALATTACK1]
         self.skill_1_p1 = key[GameConstants.SKILL1_1]
         self.skill_2_p1 = key[GameConstants.SKILL2_1]
@@ -51,6 +53,8 @@ class GameInput:
         self.skill_1_p2 = key[GameConstants.SKILL1_2]
         self.skill_2_p2 = key[GameConstants.SKILL2_2]
         self.skill_3_p2 = key[GameConstants.SKILL3_2]
+
+
 
     @classmethod
     def get_instance(cls):

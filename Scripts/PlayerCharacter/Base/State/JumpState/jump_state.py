@@ -18,6 +18,7 @@ class JumpState(CharacterState):
     #check state
     self.on_fall()
     self.on_idle()
+    self.on_hit()
 
 
     #logic
@@ -32,7 +33,10 @@ class JumpState(CharacterState):
   
   # animation
   def draw(self, surface):
-    offsetx = self.state_machine.character.jump_spritesheet[3] * self.state_machine.character.jump_spritesheet[1]
-    offsety = self.state_machine.character.jump_spritesheet[4] * self.state_machine.character.jump_spritesheet[1]
+    super().draw(surface)
+    offsetx = self.state_machine.character.jump_spritesheet[3] * self.state_machine.character.jump_spritesheet[1] 
+    if self.state_machine.character.flip:
+      offsetx = self.state_machine.character.jump_spritesheet[4] * self.state_machine.character.jump_spritesheet[1]
+    offsety = self.state_machine.character.jump_spritesheet[5] * self.state_machine.character.jump_spritesheet[1]
     img = pygame.transform.flip(self.state_machine.character.jump_spritesheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
     surface.blit(img, (self.state_machine.character.rect.x - offsetx, self.state_machine.character.rect.y - offsety))

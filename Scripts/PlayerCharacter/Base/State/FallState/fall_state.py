@@ -17,6 +17,7 @@ class FallState(CharacterState):
     #check state
     self.on_move()
     self.on_idle()
+    self.on_hit()
 
 
     #logic
@@ -31,6 +32,7 @@ class FallState(CharacterState):
   
   # animation
   def draw(self, surface):
+    super().draw(surface)
     offsetx = self.state_machine.character.fall_spritesheet[3] * self.state_machine.character.fall_spritesheet[1]
     offsety = self.state_machine.character.fall_spritesheet[4] * self.state_machine.character.fall_spritesheet[1]
     img = pygame.transform.flip(self.state_machine.character.fall_spritesheet[0][self.current_sprite_index], self.state_machine.character.flip, False)
@@ -38,5 +40,6 @@ class FallState(CharacterState):
 
   #checkstate
   def on_idle(self):
-    if not GameInput.get_instance().left_p1  and not GameInput.get_instance().right_p1 and (not GameInput.get_instance().up_p1 or (GameInput.get_instance().up_p1 and self.state_machine.character.need_reset_jumpkey)) and not GameInput.get_instance().down1 and self.state_machine.character.is_grounded:
+    if not self.state_machine.character.left_input  and not self.state_machine.character.right_input and (not self.state_machine.character.up_input or (self.state_machine.character.up_input and self.state_machine.character.need_reset_jumpkey)) and not self.state_machine.character.down_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.idle_state) 
+    
