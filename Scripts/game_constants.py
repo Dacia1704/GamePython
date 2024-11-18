@@ -20,7 +20,6 @@ class GameConstants:
   RIVER_BG_IMAGE_SOURCE = "Assets/Background/river.jpg"
   SUMMER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/summer_village.jpg"
   WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
-
   # naruto character image source and props
   NARUTO_WIDTH_RECT = 60
   NARUTO_HEIGHT_RECT = 110
@@ -44,8 +43,32 @@ class GameConstants:
     2:[[NARUTO_WIDTH_RECT/2,-NARUTO_HEIGHT_RECT/2- 5],[60,35]]
   }
   NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,50,5,20,5]  
+  
 
 
+  # sasuke character image source and props
+  SASUKE_WIDTH_RECT = 60
+  SASUKE_HEIGHT_RECT = 110
+  SASUKE_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/idle.png",3,50,7,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  SASUKE_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/move.png",3,50,15,15,5]
+  SASUKE_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/jump.png",3,50,5,5,5]
+  SASUKE_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/fall.png",3,50,5,5,5]
+  SASUKE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack1.png",3,100,10,25,5]   
+  SASUKE_ATTACK1_COLLIDER_ANIMATIONS = [2]
+  SASUKE_ATTACK1_COLLIDER_DICTIONARY = {
+    2:[[NARUTO_WIDTH_RECT*1.5,-NARUTO_HEIGHT_RECT/2 + 40],[60,35]]
+  }
+  SASUKE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack2.png",3,120,5,23,5]  
+  SASUKE_ATTACK2_COLLIDER_ANIMATIONS = [3]
+  SASUKE_ATTACK2_COLLIDER_DICTIONARY = {
+    3:[[NARUTO_WIDTH_RECT*2,-NARUTO_HEIGHT_RECT/2 + 20],[100,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+  }
+  SASUKE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack3.png",3,120,5,23,5]  
+  SASUKE_ATTACK3_COLLIDER_ANIMATIONS = [3]
+  SASUKE_ATTACK3_COLLIDER_DICTIONARY = {
+    3:[[NARUTO_WIDTH_RECT*2,-NARUTO_HEIGHT_RECT/2],[100,35]]
+  }
+  SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
 
 
   # keyboard player1
