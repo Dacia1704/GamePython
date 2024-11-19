@@ -114,7 +114,9 @@ class CharacterState(State):
         self.state_machine.character.rect.y += dy
       else:
         self.state_machine.character.is_knockbacking = False
-
+  def update_knock_back_force_target(self,direction,time):
+    dir = -1 if self.state_machine.character.rect.x > self.state_machine.character.target.rect.x else 1
+    self.state_machine.character.target.update_knockback([direction[0]*dir,direction[1]],time)
 
   
   #draw animation
@@ -158,13 +160,10 @@ class CharacterState(State):
     if self.state_machine.character.nomal_attack_input and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)   
-        self.state_machine.character.target.update_knockback([15,5],150)
       elif random_attack ==2:
         self.state_machine.change_state(self.state_machine.nomal_attack2)
-        self.state_machine.character.target.update_knockback([15,5],150)
       elif random_attack ==3:
         self.state_machine.change_state(self.state_machine.nomal_attack3)
-        self.state_machine.character.target.update_knockback([15,5],150)
 
   def on_hit(self):
     if self.state_machine.character.is_hitting: 
@@ -173,4 +172,3 @@ class CharacterState(State):
   def on_skill1(self):
     if self.state_machine.character.skill_1_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.skill1_state) 
-      self.state_machine.character.target.update_knockback([5,20],150)

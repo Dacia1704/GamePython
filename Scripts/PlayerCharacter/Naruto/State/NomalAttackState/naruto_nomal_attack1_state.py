@@ -5,6 +5,7 @@ class NarutoNomalAttack1State(NomalAttackState):
 
   def enter(self):
     super().enter()
+    self.update_knock_back_force_target([15,5],150)
     self.attack_collider_animations = GameConstants.NARUTO_ATTACK1_COLLIDER_ANIMATIONS
 
   def update(self):
