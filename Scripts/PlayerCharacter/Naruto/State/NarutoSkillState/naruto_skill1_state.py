@@ -4,6 +4,7 @@ class NarutoSkill1State(SkillState):
   def enter(self):
     super().enter()
     self.skill_collider_animations = GameConstants.NARUTO_SKILL1_COLLIDER_ANIMATIONS
+    self.update_knock_back_force_target([5,20],150)
 
   def update(self):
     super().update()
