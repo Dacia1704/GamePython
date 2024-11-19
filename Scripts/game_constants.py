@@ -43,7 +43,7 @@ class GameConstants:
   NARUTO_ATTACK3_COLLIDER_DICTIONARY = {
     2:[[NARUTO_WIDTH_RECT/2,-NARUTO_HEIGHT_RECT/2- 5],[60,35]]
   }
-  NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,50,5,20,5]  
+  NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,100,5,20,5]  
 
   NARUTO_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/skill1_w48_h64.png",3,50,7,25,25]  
   NARUTO_SKILL1_COLLIDER_ANIMATIONS = [2,3,4]

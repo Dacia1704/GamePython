@@ -13,7 +13,7 @@ class NomalAttackState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("Enter Nomal Attack")
+    #print("Enter Nomal Attack")
 
   def exit(self):
     super().exit()

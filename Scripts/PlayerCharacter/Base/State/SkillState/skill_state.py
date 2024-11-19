@@ -13,11 +13,11 @@ class SkillState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("SKillAttack")
+    #print("SKillAttack")
 
   def exit(self):
     super().exit()
-    print("Exit skill Attack")
+    #print("Exit skill Attack")
 
   def update(self):
     super().update()
