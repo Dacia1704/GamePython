@@ -128,3 +128,7 @@ class CharacterState(State):
   def on_hit(self):
     if self.state_machine.character.is_hitting: 
       self.state_machine.change_state(self.state_machine.hit_state)
+
+  def on_skill1(self):
+    if self.state_machine.character.skill_1_input and self.state_machine.character.is_grounded:
+      self.state_machine.change_state(self.state_machine.skill1_state) 

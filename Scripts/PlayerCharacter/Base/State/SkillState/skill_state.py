@@ -17,7 +17,7 @@ class SkillState(CharacterState):
 
   def exit(self):
     super().exit()
-    #print("Exit Nomal Attack")
+    print("Exit skill Attack")
 
   def update(self):
     super().update()
@@ -28,9 +28,9 @@ class SkillState(CharacterState):
       self.on_idle()
 
     #logic
-    self.nomal_attack()
+    self.skill_attack()
 
-  def nomal_attack(self):
+  def skill_attack(self):
     pass
 
   #draw
@@ -39,7 +39,7 @@ class SkillState(CharacterState):
 
     if self.current_sprite_index == len(skill_sprite_sheet[0])-1:
       if self.is_show_last_frame and self.is_last_frame_animation_cooldown_finished:
-        self.state_machine.character.is_nomal_attacking = False
+        self.state_machine.character.is_using_skill = False
         self.is_show_last_frame = False
       else:
         self.is_show_last_frame = True
