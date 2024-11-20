@@ -20,6 +20,7 @@ class JumpState(CharacterState):
     self.on_idle()
     self.on_hit()
     self.on_skill1()
+    self.on_skill2()
 
 
     #logic

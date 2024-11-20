@@ -27,6 +27,7 @@ class NomalAttackState(CharacterState):
       self.on_move()
       self.on_idle() 
       self.on_skill1()
+      self.on_skill2()
 
     #logic
     self.nomal_attack()
