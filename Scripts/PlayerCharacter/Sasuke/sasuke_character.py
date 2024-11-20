@@ -7,7 +7,7 @@ class SasukeCharacter(Character):
     super().__init__(player_id,x,y,screen_surface,target)
     self.rect = pygame.Rect((x,y,GameConstants.SASUKE_WIDTH_RECT,GameConstants.SASUKE_HEIGHT_RECT))
     self.state_machine = SasukeStateMachine(self,screen_surface)
-
+  
   def start(self):
     self.idle_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[0]).convert_alpha(),34,50,6,GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_IDLE_SPRITESHEET_SOURCE[5]]
     self.move_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[0]).convert_alpha(),48,48,6,GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_MOVE_SPRITESHEET_SOURCE[5]]
@@ -17,4 +17,5 @@ class SasukeCharacter(Character):
     self.nomal_attack2_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[0]).convert_alpha(),56,48,4,GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_ATTACK2_SPRITESHEET_SOURCE[5]]
     self.nomal_attack3_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[0]).convert_alpha(),62,48,4,GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_ATTACK3_SPRITESHEET_SOURCE[5]]
     self.hit_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[0]).convert_alpha(),48,47,2,GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_HIT_SPRITESHEET_SOURCE[5]]
+    self.dash_spritesheet=[self.handle_image(pygame.image.load(GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[0]).convert_alpha(),34,48,4,GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[1]),GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[1],GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[2],GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[3],GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[4],GameConstants.SASUKE_DASH_SPRITESHEET_SOURCE[5]]
     super().start()

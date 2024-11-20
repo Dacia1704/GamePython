@@ -66,10 +66,10 @@ class GameConstants:
   SASUKE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack3.png",3,120,5,23,5]  
   SASUKE_ATTACK3_COLLIDER_ANIMATIONS = [3]
   SASUKE_ATTACK3_COLLIDER_DICTIONARY = {
-    3:[[NARUTO_WIDTH_RECT*2,-NARUTO_HEIGHT_RECT/2],[100,35]]
+    3:[[NARUTO_WIDTH_RECT*1.75,-NARUTO_HEIGHT_RECT/2],[60,60]]
   }
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
-
+  SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,50,10,25,5]  
 
   # keyboard player1
   LEFT1 = pygame.K_a
@@ -80,6 +80,7 @@ class GameConstants:
   SKILL1_1 = pygame.K_u
   SKILL2_1 = pygame.K_i
   SKILL3_1 = pygame.K_o
+  DASH1 = pygame.K_l
 
   # keyboad player2
   LEFT2 = pygame.K_LEFT
@@ -90,6 +91,7 @@ class GameConstants:
   SKILL1_2 = pygame.K_KP1
   SKILL2_2 = pygame.K_KP2
   SKILL3_2 = pygame.K_KP3
+  DASH2 = pygame.K_KP6
 
   #base attribute
   GRAVITY = 2

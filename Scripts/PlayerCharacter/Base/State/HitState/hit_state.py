@@ -24,7 +24,7 @@ class HitState(CharacterState):
       self.on_jump()
       self.on_move()
       self.on_idle()
-
+      
     #logic
     
 

@@ -21,7 +21,7 @@ class GameInput:
         self.skill_1_p1 = False
         self.skill_2_p1 = False
         self.skill_3_p1 = False
-
+        self.dash_p1=False
 
         self.right_p2 = False
         self.left_p2 = False
@@ -31,7 +31,7 @@ class GameInput:
         self.skill_1_p2 = False
         self.skill_2_p2 = False
         self.skill_3_p2 = False
-
+        self.dash_p2=False
 
     def update(self):
         """Cập nhật trạng thái phím bấm"""
@@ -44,6 +44,7 @@ class GameInput:
         self.skill_1_p1 = key[GameConstants.SKILL1_1]
         self.skill_2_p1 = key[GameConstants.SKILL2_1]
         self.skill_3_p1 = key[GameConstants.SKILL3_1]
+        self.dash_p1 = key[GameConstants.DASH1]
 
         self.right_p2 = key[GameConstants.RIGHT2]
         self.left_p2 = key[GameConstants.LEFT2]
@@ -53,7 +54,7 @@ class GameInput:
         self.skill_1_p2 = key[GameConstants.SKILL1_2]
         self.skill_2_p2 = key[GameConstants.SKILL2_2]
         self.skill_3_p2 = key[GameConstants.SKILL3_2]
-
+        self.dash_p2 = key[GameConstants.DASH2]
 
 
     @classmethod

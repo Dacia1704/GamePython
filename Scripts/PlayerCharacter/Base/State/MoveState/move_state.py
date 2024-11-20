@@ -20,7 +20,7 @@ class MoveState(CharacterState):
     self.on_jump()
     self.on_idle()
     self.on_hit()
-
+    self.on_dash()
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.MOVE_SPEED_MODIFIER)
     self.move_vertical(GameConstants.BASE_JUMP_FORCE,GameConstants.ZERO_FORCE_MODIFIER)
