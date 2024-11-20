@@ -13,10 +13,7 @@ class CharacterState(State):
 
     self.is_show_last_frame = False
     self.is_last_frame_animation_cooldown_finished = False
-
-
-
-
+    
   #update state function
   def enter(self):
     self.update_animation_time = pygame.time.get_ticks()

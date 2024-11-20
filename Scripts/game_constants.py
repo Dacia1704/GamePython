@@ -69,7 +69,7 @@ class GameConstants:
     3:[[NARUTO_WIDTH_RECT*1.75,-NARUTO_HEIGHT_RECT/2],[60,60]]
   }
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
-  SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,50,10,25,5]  
+  SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,40,10,25,5]  
 
   # keyboard player1
   LEFT1 = pygame.K_a
@@ -103,7 +103,9 @@ class GameConstants:
   ZERO_FORCE_MODIFIER = 0
   BASE_HEALTH = 10
   TIME_RESET_ATTACK_COMBO = 2
-
+  DASH_DURATION = 350  
+  DASH_SPEED = 20     
+  DASH_COOLDOWN = 750 
 
 
   

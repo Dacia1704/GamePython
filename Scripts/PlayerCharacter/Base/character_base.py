@@ -12,7 +12,9 @@ class Character (Attackable,Damable):
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
     self.player_id = player_id
-
+    self.last_dash_time = 0  # Thời gian Dash lần cuối
+    self.dash_cooldown = 500  # Thời gian delay giữa các lần Dash (ms)
+    
     #input
     self.right_input = False
     self.left_input = False
