@@ -53,6 +53,12 @@ class GameConstants:
     4:[[-NARUTO_WIDTH_RECT/2 + 30,-NARUTO_HEIGHT_RECT/2 - 80],[60,40]]
   }
 
+  NARUTO_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/skill2_w64_h80.png",3,50,20,20,33]  
+  NARUTO_SKILL2_COLLIDER_ANIMATIONS = []
+  NARUTO_SKILL2_COLLIDER_DICTIONARY = {
+  }
+  
+
 
 
 
