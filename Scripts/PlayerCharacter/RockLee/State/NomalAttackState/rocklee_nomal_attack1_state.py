@@ -5,6 +5,7 @@ class RockLeeNomalAttack1State(NomalAttackState):
 
   def enter(self):
     super().enter()
+    self.update_knock_back_force_target([15,5],150)
     self.attack_collider_animations = GameConstants.ROCKLEE_ATTACK1_COLLIDER_ANIMATIONS
 
   def update(self):
@@ -20,5 +21,6 @@ class RockLeeNomalAttack1State(NomalAttackState):
 
   # animation
   def draw(self, surface):
+    super().draw(surface)
     self.draw_attack_animation(surface,self.state_machine.character.nomal_attack1_spritesheet,GameConstants.ROCKLEE_ATTACK1_COLLIDER_DICTIONARY)
 
