@@ -18,7 +18,7 @@ class FallState(CharacterState):
     self.on_move()
     self.on_idle()
     self.on_hit()
-
+    self.on_dash()
 
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.MOVE_SPEED_MODIFIER)
