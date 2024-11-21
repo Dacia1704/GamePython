@@ -22,9 +22,14 @@ def draw_bg():
   screen.blit(scaled_bg, (0, 0))
 
 #player
-player1 = None
-player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player1)
-player1 = SasukeCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player2)
+player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
+player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player2)
+# player1 = SasukeCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,player2)
+
+#update lại target
+player2.target = player1
+
+
 player1.start()
 player2.start()
 
