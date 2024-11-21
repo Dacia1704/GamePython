@@ -5,6 +5,7 @@ from .JumpState.jump_state import JumpState
 from .FallState.fall_state import FallState
 from .NomalAttackState.nomal_attack_state import NomalAttackState
 from .HitState.hit_state import HitState
+from .DashState.dash_state import DashState
 from .SkillState.skill_state import SkillState
 class StateMachine:
   def __init__(self,character,screen_surface):
@@ -17,10 +18,10 @@ class StateMachine:
     self.nomal_attack2 = NomalAttackState(self)
     self.nomal_attack3 = NomalAttackState(self)
     self.hit_state = HitState(self)
+    self.dash_state = DashState(self)
     self.skill1_state = SkillState(self)
     self.skill2_state = SkillState(self)
     self.skill3_state = SkillState(self)
-
     self.current_state = None
     self.screen_surface = screen_surface
     

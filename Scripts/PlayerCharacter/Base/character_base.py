@@ -12,7 +12,9 @@ class Character (Attackable,Damable):
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
     self.player_id = player_id
-
+    self.last_dash_time = 0  # Thời gian Dash lần cuối
+    self.dash_cooldown = 500  # Thời gian delay giữa các lần Dash (ms)
+    
     #input
     self.right_input = False
     self.left_input = False
@@ -22,6 +24,9 @@ class Character (Attackable,Damable):
     self.skill_1_input = False
     self.skill_2_input = False
     self.skill_3_input = False
+    self.dash_input = False
+    
+   
 
     
 
@@ -37,12 +42,13 @@ class Character (Attackable,Damable):
     self.skill1_spritesheet = None # for override
     self.skill2_spritesheet = None # for override
     self.skill3_spritesheet = None # for override
-
+    self.dash_spritesheet = None  # for override
     self.is_grounded = True
 
     self.flip = False
 
     self.vel_y = 0
+    self.vel_x = 0 
     self.is_jumping = False
     self.need_reset_jumpkey = False
 
@@ -53,6 +59,7 @@ class Character (Attackable,Damable):
     self.is_falling = False
     self.is_hitting = False
     self.is_using_skill = False
+    self.is_dashing = False 
 
     #attack
     self.target = target
@@ -95,6 +102,7 @@ class Character (Attackable,Damable):
       self.skill_1_input = GameInput.get_instance().skill_1_p1
       self.skill_2_input = GameInput.get_instance().skill_2_p1
       self.skill_3_input = GameInput.get_instance().skill_3_p1
+      self.dash_input = GameInput.get_instance().dash_p1
     if self.player_id==2:
       self.right_input = GameInput.get_instance().right_p2
       self.left_input = GameInput.get_instance().left_p2
@@ -104,6 +112,7 @@ class Character (Attackable,Damable):
       self.skill_1_input = GameInput.get_instance().skill_1_p2
       self.skill_2_input = GameInput.get_instance().skill_2_p2
       self.skill_3_input = GameInput.get_instance().skill_3_p2
+      self.dash_input = GameInput.get_instance().dash_p2
 
   #attackable
   def draw_attack_area_collider(self, pos_relate_centerxy, size,target):
@@ -116,7 +125,6 @@ class Character (Attackable,Damable):
 
     if attacking_rect.colliderect(target.damable_rect):
       target.is_hitting = True
-
 
 
 
