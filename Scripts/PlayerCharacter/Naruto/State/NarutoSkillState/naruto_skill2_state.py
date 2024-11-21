@@ -1,39 +1,32 @@
-from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
-from Scripts.Input.game_input import GameInput
+from Scripts.PlayerCharacter.Base.State.SkillState.skill_state import SkillState
 from Scripts.game_constants import GameConstants
 import pygame
-import random
-class SkillState(CharacterState):
+class NarutoSkill2State(SkillState):
   def __init__(self, state_machine):
     super().__init__(state_machine)
-
-    self.skill_collider_animations = []
-
-
-  #base function
+    self.isTeleport = False
   def enter(self):
     super().enter()
-    #print("SKillAttack")
-
-  def exit(self):
-    super().exit()
-    #print("Exit skill Attack")
+    self.skill_collider_animations = GameConstants.NARUTO_SKILL2_COLLIDER_ANIMATIONS
+    self.update_knock_back_force_target([5,20],150)
+    self.isTeleport = False
 
   def update(self):
     super().update()
-    #check state
-    if not self.state_machine.character.is_using_skill:
-      self.on_jump()
-      self.on_move()
-      self.on_idle()
+    self.update_sprite_animation(self.state_machine.character.skill2_spritesheet[0],self.state_machine.character.skill2_spritesheet[2],False)
 
-    #logic
-    self.skill_attack()
 
   def skill_attack(self):
-    pass
+    super().skill_attack()
+    if not self.state_machine.character.is_using_skill:
+      #execute attack
+      self.state_machine.character.is_using_skill = True
 
-  #draw
+  # animation
+  def draw(self, surface):
+    super().draw(surface)
+    self.draw_skill_animation(surface,self.state_machine.character.skill2_spritesheet,GameConstants.NARUTO_SKILL2_COLLIDER_DICTIONARY)
+
   def draw_skill_animation(self, surface,sprite_sheet_data,animation_collider_dictionary):
     skill_sprite_sheet = sprite_sheet_data
 
@@ -56,8 +49,7 @@ class SkillState(CharacterState):
       collider_rect_props = animation_collider_dictionary.get(self.current_sprite_index)
       self.state_machine.character.draw_attack_area_collider(collider_rect_props[0], collider_rect_props[1],self.state_machine.character.target)
 
-    
 
-    
-
-
+    if self.current_sprite_index ==6 and not self.isTeleport:
+      self.state_machine.character.rect = pygame.Rect((self.state_machine.character.target.rect.x,self.state_machine.character.target.rect.y,self.state_machine.character.rect.width,self.state_machine.character.rect.height))
+      self.isTeleport = True

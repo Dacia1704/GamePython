@@ -19,7 +19,10 @@ class JumpState(CharacterState):
     self.on_fall()
     self.on_idle()
     self.on_hit()
+
     self.on_dash()
+    self.on_skill1()
+    self.on_skill2()
 
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.MOVE_SPEED_MODIFIER)

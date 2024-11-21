@@ -13,7 +13,7 @@ class NomalAttackState(CharacterState):
   #base function
   def enter(self):
     super().enter()
-    print("Enter Nomal Attack")
+    #print("Enter Nomal Attack")
 
   def exit(self):
     super().exit()
@@ -26,6 +26,8 @@ class NomalAttackState(CharacterState):
       self.on_jump()
       self.on_move()
       self.on_idle() 
+      self.on_skill1()
+      self.on_skill2()
 
     #logic
     self.nomal_attack()
@@ -54,8 +56,6 @@ class NomalAttackState(CharacterState):
     if self.current_sprite_index in self.attack_collider_animations:
       collider_rect_props = animation_collider_dictionary.get(self.current_sprite_index)
       self.state_machine.character.draw_attack_area_collider(collider_rect_props[0], collider_rect_props[1],self.state_machine.character.target)
-
-    
 
     
 

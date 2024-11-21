@@ -64,6 +64,12 @@ class Character (Attackable,Damable):
     #attack
     self.target = target
 
+    #knockback
+    self.is_knockbacking = False
+    self.time_start_knockback = pygame.time.get_ticks()
+    self.knockback_direction = [0,0]
+    self.knockback_time = 100
+
 
   def update(self):
     self.update_player_input()
@@ -129,5 +135,12 @@ class Character (Attackable,Damable):
     else:
       self.damable_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
     pygame.draw.rect(self.state_machine.screen_surface, (255,255,255),self.damable_rect)
+
+  #knockback
+
+
+  def update_knockback(self,direction,time):
+    self.knockback_direction = direction
+    self.knockback_time = time
 
 

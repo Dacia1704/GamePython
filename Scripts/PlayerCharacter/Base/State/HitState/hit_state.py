@@ -10,6 +10,10 @@ class HitState(CharacterState):
     super().enter()
     #print("Enter hit")
     self.state_machine.character.health -= self.state_machine.character.dam_take
+    self.start_knockback()
+
+
+
 
   def exit(self):
     super().exit()
@@ -18,7 +22,8 @@ class HitState(CharacterState):
   def update(self):
     super().update()
     #check state
-    if not self.state_machine.character.is_hitting:
+    # print(self.state_machine.character.is_hitting, self.state_machine.character.is_knockbacking)
+    if not self.state_machine.character.is_hitting and not self.state_machine.character.is_knockbacking:
       self.on_nomal_attack()
       self.on_fall()
       self.on_jump()
@@ -26,7 +31,7 @@ class HitState(CharacterState):
       self.on_idle()
       
     #logic
-    
+    self.knockback()
 
     #animation
     self.update_sprite_animation(self.state_machine.character.hit_spritesheet[0],self.state_machine.character.hit_spritesheet[2],False)

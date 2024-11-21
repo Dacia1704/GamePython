@@ -22,8 +22,12 @@ class IdleState(CharacterState):
     self.on_jump()
     self.on_move()
     self.on_hit()
+
     self.on_dash() 
-    
+    self.on_skill1()
+    self.on_skill2()
+
+
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.IDLE_SPEED_MODIFIER)
     self.move_vertical(GameConstants.BASE_JUMP_FORCE,GameConstants.ZERO_FORCE_MODIFIER)
