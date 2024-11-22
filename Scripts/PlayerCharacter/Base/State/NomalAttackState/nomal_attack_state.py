@@ -28,6 +28,7 @@ class NomalAttackState(CharacterState):
       self.on_idle() 
       self.on_skill1()
       self.on_skill2()
+      self.on_skill3()
 
     #logic
     self.nomal_attack()

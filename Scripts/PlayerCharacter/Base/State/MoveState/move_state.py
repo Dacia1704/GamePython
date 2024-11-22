@@ -24,6 +24,7 @@ class MoveState(CharacterState):
     self.on_dash()
     self.on_skill1()
     self.on_skill2()
+    self.on_skill3()
     #logic
     self.move_horizontal(GameConstants.BASE_SPEED,GameConstants.MOVE_SPEED_MODIFIER)
     self.move_vertical(GameConstants.BASE_JUMP_FORCE,GameConstants.ZERO_FORCE_MODIFIER)

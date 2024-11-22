@@ -174,4 +174,6 @@ class CharacterState(State):
   def on_skill2(self):
     if self.state_machine.character.skill_2_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.skill2_state) 
-
+  def on_skill3(self):
+    if self.state_machine.character.skill_3_input and self.state_machine.character.is_grounded:
+      self.state_machine.change_state(self.state_machine.skill3_state) 

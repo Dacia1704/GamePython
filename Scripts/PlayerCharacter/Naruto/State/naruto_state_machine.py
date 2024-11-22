@@ -4,6 +4,7 @@ from Scripts.PlayerCharacter.Naruto.State.NomalAttackState.naruto_nomal_attack2_
 from Scripts.PlayerCharacter.Naruto.State.NomalAttackState.naruto_nomal_attack3_state import NarutoNomalAttack3State
 from Scripts.PlayerCharacter.Naruto.State.NarutoSkillState.naruto_skill1_state import NarutoSkill1State
 from Scripts.PlayerCharacter.Naruto.State.NarutoSkillState.naruto_skill2_state import NarutoSkill2State
+from Scripts.PlayerCharacter.Naruto.State.NarutoSkillState.naruto_skill3_state import NarutoSkill3State
 class NarutoStateMachine(StateMachine):
   def __init__(self,character,screen_surface):
     super().__init__(character,screen_surface)
@@ -12,3 +13,4 @@ class NarutoStateMachine(StateMachine):
     self.nomal_attack3 = NarutoNomalAttack3State(self)
     self.skill1_state = NarutoSkill1State(self)
     self.skill2_state = NarutoSkill2State(self)
+    self.skill3_state = NarutoSkill3State(self)
