@@ -120,7 +120,60 @@ class GameConstants:
   ROCKLEE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/hit.png",3,100,5,20,5]
   ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5]  
 
+  # sakura character image source and props
+  SAKURA_WIDTH_RECT = 60
+  SAKURA_HEIGHT_RECT = 110
+  SAKURA_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_idle_h49_w34.png", 3, 50, 7, 7,
+                                    6]  # 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  SAKURA_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_move_h48_w50.png", 3, 50, 15, 15, 5]
+  SAKURA_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_jump_h48_w34.png", 3, 50, 8, 6, 5]
+  SAKURA_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_fall_h48_w40.png", 3, 50, 8, 6, 5]
+  SAKURA_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack1_h48_w62.png", 3, 100, 15, 27, 3]
+  SAKURA_ATTACK1_COLLIDER_ANIMATIONS = [3]
+  SAKURA_ATTACK1_COLLIDER_DICTIONARY = {
+    3: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 + 20], [60, 35]]
+  }
+  SAKURA_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack2_h49_w53.png", 3, 100, 15, 18, 9]
+  SAKURA_ATTACK2_COLLIDER_ANIMATIONS = [3]
+  SAKURA_ATTACK2_COLLIDER_DICTIONARY = {
+    3: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 + 20], [62, 35]]
+    # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+  }
+  SAKURA_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack3_h50_w58.png", 3, 100, 10, 29, 8]
+  SAKURA_ATTACK3_COLLIDER_ANIMATIONS = [2]
+  SAKURA_ATTACK3_COLLIDER_DICTIONARY = {
+    2: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 - 5], [60, 35]]
+  }
+  SAKURA_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_hit_h40_w39.png", 3, 50, 5, 20, 5]
+  SAKURA_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_dash_h49_w34.png", 3, 40, 4, 10, 8]
 
+  SAKURA_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill1_new_h64_w226.png", 3, 50, 93, 113, 17]
+  SAKURA_SKILL1_COLLIDER_ANIMATIONS = []
+
+  SAKURA_SKILL1_COLLIDER_DICTIONARY = {
+  }
+
+  SAKURA_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill2_h44_w74.png", 3, 50, 25, 30, 3]
+  SAKURA_SKILL2_COLLIDER_ANIMATIONS = [10, 11, 12, 13, 14, 15]
+
+  SAKURA_SKILL2_COLLIDER_DICTIONARY = {
+      10: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      11: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      12: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      13: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      14: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      15: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]]
+  }
+
+  SAKURA_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill3_h64_w226.png", 3, 50, 95, 110, 20]
+  SAKURA_SKILL3_COLLIDER_ANIMATIONS = [8, 9, 10, 11]
+
+  SAKURA_SKILL3_COLLIDER_DICTIONARY = {
+    8: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    9: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    10: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    11: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]]
+  }
 
   # keyboard player1
   LEFT1 = pygame.K_a
