@@ -3,6 +3,7 @@ from Scripts.game_constants import GameConstants
 from Scripts.Input.game_input import GameInput
 from Scripts.PlayerCharacter.Naruto.naruto_character import NarutoCharacter
 from Scripts.PlayerCharacter.Sasuke.sasuke_character import SasukeCharacter
+from Scripts.FlyObject.energy_ball import EnergyBall
 from Scripts.PlayerCharacter.RockLee.rocklee_character import RockLeeCharacter
 pygame.init()
 screen = pygame.display.set_mode((GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
@@ -49,6 +50,7 @@ while run:
   #player
   player1.update()
   player2.update()
+
 
   #event handler
   for event in pygame.event.get():
