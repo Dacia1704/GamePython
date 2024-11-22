@@ -39,6 +39,11 @@ class NomalAttackState(CharacterState):
   #draw
   def draw_attack_animation(self, surface,sprite_sheet_data,animation_collider_dictionary):
     nomal_attack_sprite_sheet = sprite_sheet_data
+    
+    #kiem tra va cai dat lai chi so khung hinh neu vuot qua list
+    #if self.current_sprite_index >= len(nomal_attack_sprite_sheet[0]):
+    #    self.current_sprite_index = 0
+        
     if self.current_sprite_index == len(nomal_attack_sprite_sheet[0])-1:
       if self.is_show_last_frame and self.is_last_frame_animation_cooldown_finished:
         self.state_machine.character.is_nomal_attacking = False
@@ -57,6 +62,8 @@ class NomalAttackState(CharacterState):
     if self.current_sprite_index in self.attack_collider_animations:
       collider_rect_props = animation_collider_dictionary.get(self.current_sprite_index)
       self.state_machine.character.draw_attack_area_collider(collider_rect_props[0], collider_rect_props[1],self.state_machine.character.target)
+
+
 
     
 
