@@ -1,16 +1,19 @@
 from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
 from Scripts.Input.game_input import GameInput
 from Scripts.game_constants import GameConstants
+from Scripts.Audio.audio_manager import AudioManager
 import pygame
 class MoveState(CharacterState):
   #base function
   def enter(self):
     super().enter()
     #print("Enter Move")
+    AudioManager.get_instance().play_sfx(self.state_machine.character.move_sfx_name,-1)
 
   def exit(self):
     super().exit()
     #print("Exit Move")
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.move_sfx_name)
 
   def update(self):
     super().update()

@@ -1,6 +1,7 @@
 import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.Scene.scenebase import ScreenBase
+from Scripts.Audio.audio_manager import AudioManager
 class MainMenu(ScreenBase):
 	def __init__(self,screen):
 		super().__init__(screen)
@@ -20,6 +21,8 @@ class MainMenu(ScreenBase):
 
 		self.button_pressed = None
 
+		self.main_menu_bgm = self.setup_bgm("main_menu",GameConstants.MAIN_MENU_BGM[0])
+
 	def handle_events(self, events):
 		for event in events:
 				if event.type == pygame.QUIT:
@@ -35,6 +38,7 @@ class MainMenu(ScreenBase):
 				if event.type == pygame.MOUSEBUTTONUP and event.button == 1:  # Nhả chuột
 						if self.button_pressed == "PLAY":
 								self.next_scene = "GAME"
+								AudioManager.get_instance().stop_music("main_menu")
 						elif self.button_pressed == "QUIT":
 								return "QUIT"
 						self.button_pressed = None
@@ -63,3 +67,11 @@ class MainMenu(ScreenBase):
 				self.draw_button_overlay(self.quit_button_rect)
 		self.draw_text_in_center_rect("QUIT",self.font_black_30,(255,255,255),self.quit_button_rect)
 
+	def start(self):
+		super().start()
+		AudioManager.get_instance().play_music(self.main_menu_bgm )
+
+	def exit(self):
+		super().exit()
+		AudioManager.get_instance().stop_music(self.main_menu_bgm )
+		

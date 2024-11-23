@@ -1,5 +1,6 @@
 from Scripts.Scene.game_scene import GameScene
 from Scripts.Scene.main_menu import MainMenu
+from Scripts.Audio.audio_manager import AudioManager
 import pygame
 class SceneManager:
 	def __init__(self,screen):
@@ -9,12 +10,15 @@ class SceneManager:
 				"GAME": GameScene(screen),
 		}
 		self.current_scene = self.scenes["MAIN_MENU"]
+		self.current_scene.start()
 		self.next_scene_name = None  # Tên của cảnh tiếp theo
 		self.transition_time = None  # Thời gian bắt đầu chuyển cảnh
 
 	def change_scene(self, scene_name):
 		if scene_name in self.scenes:
+				self.current_scene.exit()
 				self.current_scene = self.scenes[scene_name]
+				self.current_scene.start()
 
 	def handle_events(self, events):  # return to running result in main
 		result = self.current_scene.handle_events(events)

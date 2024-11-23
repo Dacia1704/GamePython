@@ -4,6 +4,7 @@ from Scripts.game_constants import GameConstants
 from Scripts.Input.game_input import GameInput
 from Scripts.Attackable.attackable import Attackable
 from Scripts.Damable.damable import Damable
+from Scripts.Audio.audio_manager import AudioManager
 class Character (Attackable,Damable):
   def __init__(self,player_id,x,y,screen_surface,target):
     Attackable.__init__(self)
@@ -26,10 +27,6 @@ class Character (Attackable,Damable):
     self.skill_3_input = False
     self.dash_input = False
     
-   
-
-    
-
     # 0: sprite_sheet, 1: image_scale, 2: animation_cooldown, 3: offset_x, 4: offset_y
     self.idle_spritesheet = None #for override
     self.move_spritesheet = None #for override
@@ -45,6 +42,7 @@ class Character (Attackable,Damable):
     self.dash_spritesheet = None  # for override
     self.is_grounded = True
 
+    #logic
     self.flip = False
 
     self.vel_y = 0
@@ -54,7 +52,6 @@ class Character (Attackable,Damable):
 
     self.is_nomal_attacking = False
     self.is_using_skill = False
-
 
     self.is_falling = False
     self.is_hitting = False
@@ -69,6 +66,20 @@ class Character (Attackable,Damable):
     self.time_start_knockback = pygame.time.get_ticks()
     self.knockback_direction = [0,0]
     self.knockback_time = 100
+
+    #sfx
+    self.move_sfx_name = ""
+    self.jump_sfx_name = ""
+    self.hit_sfx_name = ""
+    self.death_sfx_name = ""
+    self.win_sfx_name = ""
+    self.nomal_attack_1_sfx_name = ""
+    self.nomal_attack_2_sfx_name = ""
+    self.nomal_attack_3_sfx_name = ""
+    self.skill_1_sfx_name = ""
+    self.skill_2_sfx_name = ""
+    self.skill_3_sfx_name = ""
+
 
 
   def update(self):
@@ -137,10 +148,13 @@ class Character (Attackable,Damable):
     pygame.draw.rect(self.state_machine.screen_surface, (255,255,255),self.damable_rect)
 
   #knockback
-
-
   def update_knockback(self,direction,time):
     self.knockback_direction = direction
     self.knockback_time = time
+
+  #sfx
+  def setup_sfx(self,name,path):
+    AudioManager.get_instance().load_sfx(name,path)
+    return name # return name về để set name cho sfx trên self
 
 

@@ -1,6 +1,7 @@
 from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
 from Scripts.Input.game_input import GameInput
 from Scripts.game_constants import GameConstants
+from Scripts.Audio.audio_manager import AudioManager
 import pygame
 class HitState(CharacterState):
   def __init__(self, state_machine):
@@ -9,14 +10,13 @@ class HitState(CharacterState):
   def enter(self):
     super().enter()
     #print("Enter hit")
+    AudioManager.get_instance().play_sfx(self.state_machine.character.hit_sfx_name)
     self.state_machine.character.health -= self.state_machine.character.dam_take
     self.start_knockback()
 
-
-
-
   def exit(self):
     super().exit()
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.hit_sfx_name)
     self.state_machine.character.reset_damable()
 
   def update(self):
