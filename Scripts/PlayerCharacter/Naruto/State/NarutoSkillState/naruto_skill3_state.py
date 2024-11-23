@@ -2,19 +2,17 @@ from Scripts.PlayerCharacter.Base.State.SkillState.skill_state import SkillState
 from Scripts.game_constants import GameConstants
 import pygame
 from Scripts.FlyObject.energy_ball import EnergyBall
+from Scripts.Audio.audio_manager import AudioManager
 class NarutoSkill3State(SkillState):
   def enter(self):
     super().enter()
+    AudioManager.get_instance().play_sfx(self.state_machine.character.skill_3_sfx_name)
     self.skill_collider_animations = GameConstants.NARUTO_SKILL3_COLLIDER_ANIMATIONS
     self.update_knock_back_force_target([5,20],150)
-
     self.is_fire_energy_ball = False
-
-  def enter(self):
-    super().enter()
-    self.update_knock_back_force_target([10,10],150)
-    self.is_fire_energy_ball = False
-
+  def exit(self):
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.skill_3_sfx_name)
+    super().exit()
 
   def update(self):
     super().update()

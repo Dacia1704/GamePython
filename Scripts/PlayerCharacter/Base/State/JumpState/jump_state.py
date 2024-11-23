@@ -1,16 +1,19 @@
 from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
 from Scripts.Input.game_input import GameInput
 from Scripts.game_constants import GameConstants
+from Scripts.Audio.audio_manager import AudioManager
 import pygame
 class JumpState(CharacterState):
   #base function
   def enter(self):
     super().enter()
     #print("Enter Jump")
+    AudioManager.get_instance().play_sfx(self.state_machine.character.jump_sfx_name)
     self.state_machine.character.need_reset_jumpkey = True
 
   def exit(self):
     super().exit()
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.jump_sfx_name)
     #print("Exit Jump")
 
   def update(self):

@@ -6,6 +6,7 @@ from Scripts.PlayerCharacter.Sasuke.sasuke_character import SasukeCharacter
 from Scripts.PlayerCharacter.RockLee.rocklee_character import RockLeeCharacter
 from Scripts.PlayerCharacter.Sakura.sakura_character import SakuraCharacter
 from Scripts.Scene.scenebase import ScreenBase
+from Scripts.Audio.audio_manager import AudioManager
 class GameScene(ScreenBase):
 	def __init__(self,screen):
 		super().__init__(screen)
@@ -24,6 +25,8 @@ class GameScene(ScreenBase):
 		self.player1.start()
 		self.player2.start()
 
+		self.battle_3_bgm = self.setup_bgm("battle_3",GameConstants.BATTLE_3_BGM[0]) 
+
 	def handle_events(self, events):
 		for event in events:
 				if event.type == pygame.QUIT:
@@ -41,3 +44,10 @@ class GameScene(ScreenBase):
 		#player
 		self.player1.update()
 		self.player2.update()
+	def start(self):
+		super().start()
+		AudioManager.get_instance().play_music(self.battle_3_bgm)
+
+	def exit(self):
+		super().exit()
+		AudioManager.get_instance().stop_music(self.battle_3_bgm)
