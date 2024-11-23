@@ -26,7 +26,6 @@ class NarutoCharacter(Character):
     self.skill2_spritesheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[0]).convert_alpha(),64,80,12,GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[5]]
     self.skill3_spritesheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[0]).convert_alpha(),80,48,14,GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[5]]
     self.energy_ball_sprite_sheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[0]).convert_alpha(),55,55,4,GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[5]]
-    print(self.energy_ball_sprite_sheet)
     super().start()
 
   def update(self):
