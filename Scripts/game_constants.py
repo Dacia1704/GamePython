@@ -21,6 +21,32 @@ class GameConstants:
   SUMMER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/summer_village.jpg"
   WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
 
+  #UI
+  RAW_BUTTON_IMAGE = ["Assets/UI/raw_button_w160_h85.png", 1]  #image, scale 
+
+  #BGM
+  MAIN_MENU_BGM = ["Assets/Music/main_menu_bgm.wav",True]
+  BATTLE_1_BGM = ["Assets/Music/battle_1_bgm.mp3",True]
+  BATTLE_2_BGM = ["Assets/Music/battle_2_bgm.mp3",True]
+  BATTLE_3_BGM = ["Assets/Music/battle_3_bgm.mp3",True]
+
+  #Font
+  ROBOTO_BLACK_1 = ["Assets/Font/Roboto/Roboto-Black.ttf",30]
+  ROBOTO_BLACK_2 = ["Assets/Font/Roboto/Roboto-Black.ttf",60]
+  ROBOTO_BLACK_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BlackItalic.ttf",30]
+  ROBOTO_BOLD_1 = ["Assets/Font/Roboto/Roboto-Bold.ttf",30]
+  ROBOTO_BOLD_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BoldItalic.ttf",30]
+  ROBOTO_ITALIC_1 = ["Assets/Font/Roboto/Roboto-Italic.ttf",30]
+  ROBOTO_LIGHT_1 = ["Assets/Font/Roboto/Roboto-Light.ttf",30]
+  ROBOTO_LIGHT_ITALIC_1 = ["Assets/Font/Roboto/Roboto-LightItalic.ttf",20]
+  ROBOTO_MEDIUM_1 = ["Assets/Font/Roboto/Roboto-Medium.ttf",30]
+  ROBOTO_MEDIUM_ITALIC_1 = ["Assets/Font/Roboto/Roboto-MediumItalic.ttf",30]
+  ROBOTO_REGULAR_1 = ["Assets/Font/Roboto/Roboto-Regular.ttf",30]
+  ROBOTO_THIN_1 = ["Assets/Font/Roboto/Roboto-Thin.ttf",30]
+  ROBOTO_THIN_ITALIC_1 = ["Assets/Font/Roboto/Roboto-ThinItalic.ttf",30]
+
+  PROTESTREVOLUTION_REGULAR_1 = ["Assets/Font/Protest_Revolution/ProtestRevolution-Regular.ttf",100]
+
   # naruto character image source and props
   NARUTO_WIDTH_RECT = 60
   NARUTO_HEIGHT_RECT = 110
@@ -202,6 +228,21 @@ class GameConstants:
     10: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
     11: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]]
   }
+
+    #SFX
+  #Naruto
+  NARUTO_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
+  NARUTO_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav",False]
+  NARUTO_ATTACK1_SFX = ["Assets/SFX/NarutoSFX/nomal_attack_1.wav",False]
+  NARUTO_ATTACK2_SFX = ["Assets/SFX/NarutoSFX/nomal_attack_2.wav",False]
+  NARUTO_ATTACK3_SFX = ["Assets/SFX/NarutoSFX/nomal_attack_3.wav",False]
+  NARUTO_SKILL1_SFX = ["Assets/SFX/NarutoSFX/skill_1.wav",False]
+  NARUTO_SKILL2_SFX = ["Assets/SFX/NarutoSFX/skill_2.wav",False]
+  NARUTO_SKILL3_SFX = ["Assets/SFX/NarutoSFX/skill_3.wav",False]
+  NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
+  NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
+  NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
+
 
 
   # keyboard player1
