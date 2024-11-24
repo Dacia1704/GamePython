@@ -10,8 +10,8 @@ class RockLeeNomalAttack3State(NomalAttackState):
     super().update()
     
     self.update_sprite_animation(self.state_machine.character.nomal_attack3_spritesheet[0],self.state_machine.character.nomal_attack3_spritesheet[2],False)
-  def nomal_attack(self):
-    super().nomal_attack()
+  def nomal_attack_enter(self):
+    super().nomal_attack_enter()
     if not self.state_machine.character.is_nomal_attacking:
       #execute attack
       self.state_machine.character.is_nomal_attacking = True

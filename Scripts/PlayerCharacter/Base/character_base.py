@@ -59,7 +59,9 @@ class Character (Attackable,Damable):
     self.is_using_skill = False
     self.is_dashing = False 
 
-    self.mana_consume = 0
+    self.mana_consume_skill_1 = 0 #For override
+    self.mana_consume_skill_2 = 0 #For override
+    self.mana_consume_skill_3 = 0 #For override
     #attack
     self.target = target
 
@@ -82,12 +84,18 @@ class Character (Attackable,Damable):
     self.skill_2_sfx_name = ""
     self.skill_3_sfx_name = ""
 
+    #heal mana by time
+    self.mana_heal = 1
+    self.mana_heal_cooldown = 500
+    self.mana_heal_time_counter = pygame.time.get_ticks()
+
 
 
   def update(self):
     self.update_player_input()
     self.update_flip()
     self.state_machine.update()
+    self.heal_mana_by_time()
 
   def start(self):
     self.state_machine.change_state(self.state_machine.idle_state)
@@ -139,8 +147,6 @@ class Character (Attackable,Damable):
     if attacking_rect.colliderect(target.damable_rect):
       target.is_hitting = True
 
-
-
   #damable
   def draw_get_dam_area_collider(self, pos_relate_centerxy, size):
     if not self.state_machine.character.flip:
@@ -158,5 +164,15 @@ class Character (Attackable,Damable):
   def setup_sfx(self,name,path):
     AudioManager.get_instance().load_sfx(name,path)
     return name # return name về để set name cho sfx trên self
+
+  #heal mana
+  def heal_mana_by_time(self):
+    if pygame.time.get_ticks() - self.mana_heal_time_counter > self.mana_heal_cooldown:
+      self.mana_heal_time_counter = pygame.time.get_ticks()
+      if self.mana+ self.mana_heal <= GameConstants.BASE_MANA:
+        self.mana = self.mana + self.mana_heal  
+      else :
+        self.mana = GameConstants.BASE_MANA
+
 
 

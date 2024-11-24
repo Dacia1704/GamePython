@@ -115,6 +115,9 @@ class CharacterState(State):
     dir = -1 if self.state_machine.character.rect.x > self.state_machine.character.target.rect.x else 1
     self.state_machine.character.target.update_knockback([direction[0]*dir,direction[1]],time)
 
+  #attack
+  def update_target_dam_take(self,dam_take):
+    self.state_machine.character.target.dam_take = dam_take
   
   #draw animation
   def draw(self,surface):
@@ -142,44 +145,53 @@ class CharacterState(State):
   def on_idle(self):
     if not self.state_machine.character.left_input  and not self.state_machine.character.right_input and not self.state_machine.character.up_input and not self.state_machine.character.down_input and self.state_machine.character.is_grounded:
       self.state_machine.change_state(self.state_machine.idle_state) 
+      return
   def on_jump(self):
     if self.state_machine.character.up_input and not self.state_machine.character.need_reset_jumpkey:
       self.state_machine.change_state(self.state_machine.jump_state) 
+      return
   def on_move(self):
     if (self.state_machine.character.left_input or self.state_machine.character.right_input) and self.state_machine.character.is_grounded :
       self.state_machine.change_state(self.state_machine.move_state) 
+      return
   def on_fall(self):
     if not self.state_machine.character.is_jumping and not self.state_machine.character.is_grounded :
       self.state_machine.change_state(self.state_machine.fall_state)
+      return
   def on_nomal_attack(self):
     random_attack =  random.randint(1, 3)
     #random_attack = 1   # test
     if self.state_machine.character.nomal_attack_input and self.state_machine.character.is_grounded:
       if random_attack ==1:
         self.state_machine.change_state(self.state_machine.nomal_attack1)   
+        return
       elif random_attack ==2:
         self.state_machine.change_state(self.state_machine.nomal_attack2)
+        return
       elif random_attack ==3:
         self.state_machine.change_state(self.state_machine.nomal_attack3)
+        return
 
   def on_hit(self):
     if self.state_machine.character.is_hitting: 
       self.state_machine.change_state(self.state_machine.hit_state)
+      return
   def on_dash(self):
     if self.state_machine.character.dash_input and self.state_machine.character.is_grounded:
         self.state_machine.change_state(self.state_machine.dash_state)
+        return
   def on_skill1(self):
     if self.state_machine.character.skill_1_input and self.state_machine.character.is_grounded:
-      if self.state_machine.character.mana >= self.state_machine.character.mana_consume:
-        self.state_machine.character.mana -= self.state_machine.character.mana_consume
+      if self.state_machine.character.mana >= self.state_machine.character.mana_consume_skill_1:
         self.state_machine.change_state(self.state_machine.skill1_state)
+        return
   def on_skill2(self):
     if self.state_machine.character.skill_2_input and self.state_machine.character.is_grounded:
-      if self.state_machine.character.mana >= self.state_machine.character.mana_consume:
-        self.state_machine.character.mana -= self.state_machine.character.mana_consume
+      if self.state_machine.character.mana >= self.state_machine.character.mana_consume_skill_2:
         self.state_machine.change_state(self.state_machine.skill2_state)
+        return
   def on_skill3(self):
     if self.state_machine.character.skill_3_input and self.state_machine.character.is_grounded:
-      if self.state_machine.character.mana >= self.state_machine.character.mana_consume:
-        self.state_machine.character.mana -= self.state_machine.character.mana_consume
+      if self.state_machine.character.mana >= self.state_machine.character.mana_consume_skill_2:
         self.state_machine.change_state(self.state_machine.skill3_state)
+        return

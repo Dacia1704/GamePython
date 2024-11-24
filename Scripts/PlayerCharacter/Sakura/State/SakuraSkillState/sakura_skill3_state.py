@@ -12,8 +12,8 @@ class SakuraSkill3State(SkillState):
     self.update_sprite_animation(self.state_machine.character.skill3_spritesheet[0],self.state_machine.character.skill3_spritesheet[2],False)
 
 
-  def skill_attack(self):
-    super().skill_attack()
+  def skill_attack_enter(self):
+    super().skill_attack_enter()
     if not self.state_machine.character.is_using_skill:
       self.state_machine.character.target.dam_take = 25
       self.state_machine.character.mana_consume = 30
