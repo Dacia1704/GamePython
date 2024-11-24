@@ -14,6 +14,7 @@ class SkillState(CharacterState):
   def enter(self):
     super().enter()
     #print("SKillAttack")
+    self.skill_attack_enter()
 
   def exit(self):
     super().exit()
@@ -31,6 +32,8 @@ class SkillState(CharacterState):
     self.skill_attack()
 
   def skill_attack(self):
+    pass
+  def skill_attack_enter(self):
     pass
 
   #draw

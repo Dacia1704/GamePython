@@ -115,6 +115,9 @@ class CharacterState(State):
     dir = -1 if self.state_machine.character.rect.x > self.state_machine.character.target.rect.x else 1
     self.state_machine.character.target.update_knockback([direction[0]*dir,direction[1]],time)
 
+  #attack
+  def update_target_dam_take(self,dam_take):
+    self.state_machine.character.target.dam_take = dam_take
   
   #draw animation
   def draw(self,surface):
@@ -172,6 +175,7 @@ class CharacterState(State):
     if self.state_machine.character.skill_1_input and self.state_machine.character.is_grounded:
       if self.state_machine.character.mana >= self.state_machine.character.mana_consume:
         self.state_machine.character.mana -= self.state_machine.character.mana_consume
+        print(self.state_machine.character.mana, self.state_machine.character.mana_consume)
         self.state_machine.change_state(self.state_machine.skill1_state)
   def on_skill2(self):
     if self.state_machine.character.skill_2_input and self.state_machine.character.is_grounded:

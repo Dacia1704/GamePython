@@ -14,6 +14,9 @@ class NomalAttackState(CharacterState):
   def enter(self):
     super().enter()
     #print("Enter Nomal Attack")
+    self.update_knock_back_force_target([GameConstants.NOMAL_ATTACK_PROPS[2][0],GameConstants.NOMAL_ATTACK_PROPS[2][1]],GameConstants.NOMAL_ATTACK_PROPS[3])
+    self.update_target_dam_take(GameConstants.NOMAL_ATTACK_PROPS[0])
+    self.nomal_attack_enter()
 
 
   def exit(self):
@@ -35,7 +38,9 @@ class NomalAttackState(CharacterState):
     self.nomal_attack()
 
   def nomal_attack(self):
-    self.state_machine.character.target.dam_take = 5
+    pass
+
+  def nomal_attack_enter(self):
     pass
 
   #draw

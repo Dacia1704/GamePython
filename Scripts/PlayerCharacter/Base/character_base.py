@@ -154,6 +154,8 @@ class Character (Attackable,Damable):
     self.knockback_direction = direction
     self.knockback_time = time
 
+  
+
   #sfx
   def setup_sfx(self,name,path):
     AudioManager.get_instance().load_sfx(name,path)

@@ -8,7 +8,8 @@ class NarutoSkill3State(SkillState):
     super().enter()
     AudioManager.get_instance().play_sfx(self.state_machine.character.skill_3_sfx_name)
     self.skill_collider_animations = GameConstants.NARUTO_SKILL3_COLLIDER_ANIMATIONS
-    self.update_knock_back_force_target([5,20],150)
+    self.update_knock_back_force_target([GameConstants.NARUTO_SKILL_3_PROPS[2][0],GameConstants.NARUTO_SKILL_3_PROPS[2][1]],GameConstants.NARUTO_SKILL_3_PROPS[3])
+    self.update_target_dam_take(GameConstants.NARUTO_SKILL_3_PROPS[0])
     self.is_fire_energy_ball = False
   def exit(self):
     AudioManager.get_instance().stop_sfx(self.state_machine.character.skill_3_sfx_name)
@@ -19,8 +20,8 @@ class NarutoSkill3State(SkillState):
     self.update_sprite_animation(self.state_machine.character.skill3_spritesheet[0],self.state_machine.character.skill3_spritesheet[2],False)
 
 
-  def skill_attack(self):
-    super().skill_attack()
+  def skill_attack_enter(self):
+    super().skill_attack_enter()
     if not self.state_machine.character.is_using_skill:
       #execute attack
       self.state_machine.character.is_using_skill = True
