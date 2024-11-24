@@ -95,7 +95,7 @@ class Character (Attackable,Damable):
     self.update_player_input()
     self.update_flip()
     self.state_machine.update()
-    self.heal_mana_by_time()
+    # self.heal_mana_by_time()
 
   def start(self):
     self.state_machine.change_state(self.state_machine.idle_state)
