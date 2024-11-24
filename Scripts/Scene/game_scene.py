@@ -37,16 +37,47 @@ class GameScene(ScreenBase):
 		self.WHITE = (255, 255, 255)
 		self.BLUE = (0, 0, 255)
 		self.BLACK = (0, 0, 0)
-	def draw_health_bar(self, health, x, y):
+		self.GREEN = (0,255,0)
+		self.ORANGE = (255,165,0)
+		self.GRAY = (211,211,211)
+	def draw_health_bar(self, health, x, y,player_id):   # player1: thì truyền góc trái trên, player2: truyền góc phải trên
 		ratio = health / 300
-		pygame.draw.rect(self.screen, self.WHITE, (x - 2, y - 2, 404, 34))
-		pygame.draw.rect(self.screen, self.RED, (x, y, 400, 30))
-		pygame.draw.rect(self.screen, self.YELLOW, (x, y, 400 * ratio, 30))
+		width = 500
+		height = 30
+		hp_color =None
+		if(ratio > 0.5):
+			hp_color = self.GREEN
+		elif(ratio >0.15):
+			hp_color = self.ORANGE
+		else:
+			hp_color = self.RED
 
-	def draw_mana_bar(self, mana, x, y):
+
+
+		if(player_id == 1):
+			pygame.draw.rect(self.screen, self.BLACK, (x - 2, y - 2, width+4, height+4))
+			pygame.draw.rect(self.screen, self.GRAY, (x, y, width, height))
+			pygame.draw.rect(self.screen, hp_color, (x, y, width * ratio, height))
+		else:
+			pygame.draw.rect(self.screen, self.BLACK, (x - 2 -width, y - 2, width+4, height+4))
+			pygame.draw.rect(self.screen, self.GRAY, (x -width, y, width, height))
+			pygame.draw.rect(self.screen, hp_color, (x - width * ratio, y, width * ratio, height))
+
+	def draw_mana_bar(self, mana, x, y,player_id):
 		ratio = mana / 100
-		pygame.draw.rect(self.screen, self.WHITE, (x - 2, y - 2, 204, 19))
-		pygame.draw.rect(self.screen, self.BLUE, (x, y, 200 * ratio, 15))
+		width = 300
+		height = 15
+		# pygame.draw.rect(self.screen, self.WHITE, (x - 2, y - 2, 204, 19))
+		# pygame.draw.rect(self.screen, self.BLUE, (x, y, 200 * ratio, 15))
+		if(player_id == 1):
+			pygame.draw.rect(self.screen, self.BLACK, (x - 2, y - 2, width+4, height+4))
+			pygame.draw.rect(self.screen, self.GRAY, (x, y, width, height))
+			pygame.draw.rect(self.screen, self.BLUE, (x, y, width * ratio, height))
+		else:
+			pygame.draw.rect(self.screen, self.BLACK, (x - 2 -width, y - 2, width+4, height+4))
+			pygame.draw.rect(self.screen, self.GRAY, (x -width, y, width, height))
+			pygame.draw.rect(self.screen, self.BLUE, (x - width * ratio, y, width * ratio, height))
+
 	def handle_events(self, events):
 		for event in events:
 				if event.type == pygame.QUIT:
@@ -59,10 +90,10 @@ class GameScene(ScreenBase):
 		self.screen.blit(self.back_round_battle[0], (0, 0))
 
 		# draw health and mana bars
-		self.draw_health_bar(self.player1.health, 20, 20)
-		self.draw_health_bar(self.player2.health, 850, 20)
-		self.draw_mana_bar(self.player1.mana, 20, 52)
-		self.draw_mana_bar(self.player2.mana, 850, 52)
+		self.draw_health_bar(self.player1.health, 20, 20,1)
+		self.draw_health_bar(self.player2.health, GameConstants.SCREEN_WIDTH-20, 20,2)
+		self.draw_mana_bar(self.player1.mana, 20, 52,1)
+		self.draw_mana_bar(self.player2.mana, GameConstants.SCREEN_WIDTH-20, 52,2)
 
 		#input update
 		GameInput.get_instance().update()
