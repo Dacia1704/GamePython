@@ -42,7 +42,10 @@ class NomalAttackState(CharacterState):
 
   def nomal_attack(self):
     if self.state_machine.character.target.is_hitting and not self.is_add_mana:
-      self.state_machine.character.mana +=10
+      if self.state_machine.character.mana+ 10 <= GameConstants.BASE_MANA:
+        self.state_machine.character.mana = self.state_machine.character.mana + 10  
+      else :
+        self.mana = GameConstants.BASE_MANA
       self.is_add_mana = True
     pass
 
