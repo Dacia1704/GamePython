@@ -59,7 +59,9 @@ class Character (Attackable,Damable):
     self.is_using_skill = False
     self.is_dashing = False 
 
-    self.mana_consume = 0
+    self.mana_consume_skill_1 = 0 #For override
+    self.mana_consume_skill_2 = 0 #For override
+    self.mana_consume_skill_3 = 0 #For override
     #attack
     self.target = target
 
