@@ -23,8 +23,8 @@ class GameScene(ScreenBase):
 
 
 		#player
-		self.player2 = NarutoCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
-		self.player1 = SakuraCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,self.player2)
+		self.player2 = RockLeeCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
+		self.player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,self.player2)
 		self.player2.target = self.player1
 		self.player1.start()
 		self.player2.start()
