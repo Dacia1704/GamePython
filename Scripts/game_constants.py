@@ -20,6 +20,7 @@ class GameConstants:
   RIVER_BG_IMAGE_SOURCE = "Assets/Background/river.jpg"
   SUMMER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/summer_village.jpg"
   WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
+
   # naruto character image source and props
   NARUTO_WIDTH_RECT = 60
   NARUTO_HEIGHT_RECT = 110
@@ -57,10 +58,14 @@ class GameConstants:
   NARUTO_SKILL2_COLLIDER_ANIMATIONS = []
   NARUTO_SKILL2_COLLIDER_DICTIONARY = {
   }
-
+  NARUTO_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/skill3_w80_h48.png",3,50,13,50,5]  
+  NARUTO_SKILL3_COLLIDER_ANIMATIONS = []
+  NARUTO_SKILL3_COLLIDER_DICTIONARY = {
+  }
+  NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/energy_ball_w55_h55.png",1.5,30,10,10,10] 
+  NARUTO_ENERGY_BALL_SIZE = [50,50]
+  NARUTO_ENERGY_BALL_SPEED = 40
   
-
-
   # sasuke character image source and props
   SASUKE_WIDTH_RECT = 60
   SASUKE_HEIGHT_RECT = 110
@@ -85,6 +90,119 @@ class GameConstants:
   }
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
   SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,40,10,25,5]  
+  
+  SASUKE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill1.png",3,60,13,50,5]  
+  SASUKE_SKILL1_COLLIDER_ANIMATIONS = []
+  SASUKE_SKILL1_COLLIDER_DICTIONARY = {
+  }
+  SASUKE_ENERGY_BALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/thunder.png",1.5,30,10,10,10] 
+  SASUKE_ENERGY_BALL_SIZE = [50,50]
+  SASUKE_ENERGY_BALL_SPEED = 40
+  
+  SASUKE_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill2.png", 3, 50, 25, 30, 3]
+  SASUKE_SKILL2_COLLIDER_ANIMATIONS = [10, 11, 12, 13, 14, 15]
+
+  SASUKE_SKILL2_COLLIDER_DICTIONARY = {
+      10: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      11: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      12: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      13: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      14: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      15: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]]
+  }
+  
+  SASUKE_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill3.png", 3, 80, 95, 110, 20]
+  SASUKE_SKILL3_COLLIDER_ANIMATIONS = [8, 9, 10, 11]
+
+  SASUKE_SKILL3_COLLIDER_DICTIONARY = {
+    8: [[-SASUKE_WIDTH_RECT / 2 - 180, -SASUKE_HEIGHT_RECT / 0.5 + 80], [1, 1]],
+    9: [[-SASUKE_WIDTH_RECT / 2 - 180, -SASUKE_HEIGHT_RECT /  0.5 + 80], [1, 1]],
+    10: [[-SASUKE_WIDTH_RECT / 2 - 180, -SASUKE_HEIGHT_RECT /  0.5+ 80], [1, 1]],
+    11: [[-SASUKE_WIDTH_RECT / 2 - 180, -SASUKE_HEIGHT_RECT /  0.5 + 80], [1, 1]]
+  }
+
+  
+  # rocklee character image source and props
+  ROCKLEE_WIDTH_RECT = 60
+  ROCKLEE_HEIGHT_RECT = 110
+  ROCKLEE_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/idle.png",3,70,7,7,5]# 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  ROCKLEE_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/move.png",3,50,15,15,5]
+  ROCKLEE_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/jump.png",3,50,5,5,5]
+  ROCKLEE_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/fall.png",3,50,5,5,5]
+  ROCKLEE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack1.png",3,100,4,25,2]  
+  ROCKLEE_ATTACK1_COLLIDER_ANIMATIONS = [3]
+  ROCKLEE_ATTACK1_COLLIDER_DICTIONARY = {
+    3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[60,35]]
+  }
+  ROCKLEE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack2.png",3,100,15,23,5]  
+  ROCKLEE_ATTACK2_COLLIDER_ANIMATIONS = [3]
+  ROCKLEE_ATTACK2_COLLIDER_DICTIONARY = {
+    3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[62,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+  }
+  ROCKLEE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack3.png",3,100,15,20,30]  
+  ROCKLEE_ATTACK3_COLLIDER_ANIMATIONS = [2]
+  ROCKLEE_ATTACK3_COLLIDER_DICTIONARY = {
+    2:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2- 5],[60,35]]
+  }
+
+  ROCKLEE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/hit.png",3,100,5,20,5]
+  ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5]  
+
+  # sakura character image source and props
+  SAKURA_WIDTH_RECT = 60
+  SAKURA_HEIGHT_RECT = 110
+  SAKURA_IDLE_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_idle_h49_w34.png", 3, 50, 7, 7,
+                                    6]  # 0:source, 1:scale, 2:animation cooldown,3:offsetx,4: offsetx flip, 5:offsety
+  SAKURA_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_move_h48_w50.png", 3, 50, 15, 15, 5]
+  SAKURA_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_jump_h48_w34.png", 3, 50, 8, 6, 5]
+  SAKURA_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_fall_h48_w40.png", 3, 50, 8, 6, 5]
+  SAKURA_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack1_h48_w62.png", 3, 100, 15, 27, 3]
+  SAKURA_ATTACK1_COLLIDER_ANIMATIONS = [3]
+  SAKURA_ATTACK1_COLLIDER_DICTIONARY = {
+    3: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 + 20], [60, 35]]
+  }
+  SAKURA_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack2_h49_w53.png", 3, 100, 15, 18, 9]
+  SAKURA_ATTACK2_COLLIDER_ANIMATIONS = [3]
+  SAKURA_ATTACK2_COLLIDER_DICTIONARY = {
+    3: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 + 20], [62, 35]]
+    # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+  }
+  SAKURA_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_Attack3_h50_w58.png", 3, 100, 10, 29, 8]
+  SAKURA_ATTACK3_COLLIDER_ANIMATIONS = [2]
+  SAKURA_ATTACK3_COLLIDER_DICTIONARY = {
+    2: [[SAKURA_WIDTH_RECT / 2, -SAKURA_HEIGHT_RECT / 2 - 5], [60, 35]]
+  }
+  SAKURA_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_hit_h40_w39.png", 3, 50, 5, 20, 5]
+  SAKURA_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_dash_h49_w34.png", 3, 40, 4, 10, 8]
+
+  SAKURA_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill1_new_h64_w226.png", 3, 50, 93, 113, 17]
+  SAKURA_SKILL1_COLLIDER_ANIMATIONS = []
+
+  SAKURA_SKILL1_COLLIDER_DICTIONARY = {
+  }
+
+  SAKURA_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill2_h44_w74.png", 3, 50, 25, 30, 3]
+  SAKURA_SKILL2_COLLIDER_ANIMATIONS = [10, 11, 12, 13, 14, 15]
+
+  SAKURA_SKILL2_COLLIDER_DICTIONARY = {
+      10: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      11: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      12: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      13: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      14: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]],
+      15: [[-SAKURA_WIDTH_RECT / 2 + 50, -SAKURA_HEIGHT_RECT / 2 + 20], [80, 80]]
+  }
+
+  SAKURA_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill3_h64_w226.png", 3, 50, 95, 110, 20]
+  SAKURA_SKILL3_COLLIDER_ANIMATIONS = [8, 9, 10, 11]
+
+  SAKURA_SKILL3_COLLIDER_DICTIONARY = {
+    8: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    9: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    10: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]],
+    11: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]]
+  }
+
 
   # keyboard player1
   LEFT1 = pygame.K_a

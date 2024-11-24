@@ -26,6 +26,7 @@ class IdleState(CharacterState):
     self.on_dash() 
     self.on_skill1()
     self.on_skill2()
+    self.on_skill3()
 
 
     #logic

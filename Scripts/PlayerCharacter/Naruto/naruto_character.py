@@ -8,6 +8,9 @@ class NarutoCharacter(Character):
     self.rect = pygame.Rect((x,y,GameConstants.NARUTO_WIDTH_RECT,GameConstants.NARUTO_HEIGHT_RECT))
     self.state_machine = NarutoStateMachine(self,screen_surface)
 
+    self.energy_ball_pool = []
+    self.energy_ball_sprite_sheet = None
+
   def start(self):
     self.idle_spritesheet = [self.handle_image(pygame.image.load(GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[0]).convert_alpha(),34,50,6,GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_IDLE_SPRITESHEET_SOURCE[5]]
     self.move_spritesheet = [self.handle_image(pygame.image.load(GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[0]).convert_alpha(),48,48,6,GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_MOVE_SPRITESHEET_SOURCE[5]]
@@ -21,5 +24,18 @@ class NarutoCharacter(Character):
     self.dash_spritesheet = []
     self.skill1_spritesheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[0]).convert_alpha(),48,64,8,GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_SKILL1_SPRITESHEET_SOURCE[5]]
     self.skill2_spritesheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[0]).convert_alpha(),64,80,12,GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_SKILL2_SPRITESHEET_SOURCE[5]]
+    self.skill3_spritesheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[0]).convert_alpha(),80,48,14,GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_SKILL3_SPRITESHEET_SOURCE[5]]
+    self.energy_ball_sprite_sheet =[self.handle_image(pygame.image.load(GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[0]).convert_alpha(),55,55,4,GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[1]),GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[1],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[2],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[3],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[4],GameConstants.NARUTO_ENERGY_BALL_SPRITESHEET_SOURCE[5]]
+    print(self.energy_ball_sprite_sheet)
     super().start()
 
+  def update(self):
+    super().update()
+    
+    #update trạng thái từng ball
+    for energy_ball in self.energy_ball_pool:
+      if energy_ball.is_hitting or energy_ball.is_out_screen:
+        self.energy_ball_pool.remove(energy_ball)
+      else: 
+        energy_ball.update()
+        
