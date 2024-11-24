@@ -22,6 +22,8 @@ class SakuraSkill2State(SkillState):
     def skill_attack(self):
         super().skill_attack()
         if not self.state_machine.character.is_using_skill:
+            self.state_machine.character.target.dam_take = 20
+            self.state_machine.character.mana_consume = 20
             # execute attack
             self.state_machine.character.is_using_skill = True
 

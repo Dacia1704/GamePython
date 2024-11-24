@@ -15,6 +15,7 @@ class NomalAttackState(CharacterState):
     super().enter()
     #print("Enter Nomal Attack")
 
+
   def exit(self):
     super().exit()
     #print("Exit Nomal Attack")
@@ -34,6 +35,7 @@ class NomalAttackState(CharacterState):
     self.nomal_attack()
 
   def nomal_attack(self):
+    self.state_machine.character.target.dam_take = 5
     pass
 
   #draw

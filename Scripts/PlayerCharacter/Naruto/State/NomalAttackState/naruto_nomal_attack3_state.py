@@ -1,14 +1,18 @@
 from Scripts.PlayerCharacter.Base.State.NomalAttackState.nomal_attack_state import NomalAttackState
 import pygame
 from Scripts.game_constants import GameConstants
+from Scripts.Audio.audio_manager import AudioManager
 class NarutoNomalAttack3State(NomalAttackState):
   def enter(self):
     super().enter()
+    AudioManager.get_instance().play_sfx(self.state_machine.character.nomal_attack_3_sfx_name)
     self.attack_collider_animations = GameConstants.NARUTO_ATTACK3_COLLIDER_ANIMATIONS
     self.update_knock_back_force_target([15,5],150)
+  def exit(self):
+    super().exit()
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.nomal_attack_3_sfx_name)
   def update(self):
     super().update()
-    
     self.update_sprite_animation(self.state_machine.character.nomal_attack3_spritesheet[0],self.state_machine.character.nomal_attack3_spritesheet[2],False)
   def nomal_attack(self):
     super().nomal_attack()

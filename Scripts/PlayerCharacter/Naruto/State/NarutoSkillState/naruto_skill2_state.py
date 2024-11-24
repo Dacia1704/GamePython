@@ -1,5 +1,6 @@
 from Scripts.PlayerCharacter.Base.State.SkillState.skill_state import SkillState
 from Scripts.game_constants import GameConstants
+from Scripts.Audio.audio_manager import AudioManager
 import pygame
 class NarutoSkill2State(SkillState):
   def __init__(self, state_machine):
@@ -7,10 +8,13 @@ class NarutoSkill2State(SkillState):
     self.isTeleport = False
   def enter(self):
     super().enter()
+    AudioManager.get_instance().play_sfx(self.state_machine.character.skill_2_sfx_name)
     self.skill_collider_animations = GameConstants.NARUTO_SKILL2_COLLIDER_ANIMATIONS
     self.update_knock_back_force_target([5,20],150)
     self.isTeleport = False
-
+  def exit(self):
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.skill_2_sfx_name)
+    super().exit()
   def update(self):
     super().update()
     self.update_sprite_animation(self.state_machine.character.skill2_spritesheet[0],self.state_machine.character.skill2_spritesheet[2],False)
