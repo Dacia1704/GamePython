@@ -16,6 +16,7 @@ class SakuraSkill1State(SkillState):
     super().skill_attack()
     if not self.state_machine.character.is_using_skill:
       self.state_machine.character.health = min(self.state_machine.character.health + 10, 300)
+      self.state_machine.character.mana_consume = 20
       #execute attack
       self.state_machine.character.is_using_skill = True
 

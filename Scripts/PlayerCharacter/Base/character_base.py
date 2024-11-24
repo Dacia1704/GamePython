@@ -12,6 +12,7 @@ class Character (Attackable,Damable):
     self.state_machine = StateMachine(self,screen_surface) #for override
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
+    self.mana = GameConstants.BASE_MANA
     self.player_id = player_id
     self.last_dash_time = 0  # Thời gian Dash lần cuối
     self.dash_cooldown = 500  # Thời gian delay giữa các lần Dash (ms)
@@ -58,6 +59,7 @@ class Character (Attackable,Damable):
     self.is_using_skill = False
     self.is_dashing = False 
 
+    self.mana_consume = 0
     #attack
     self.target = target
 
