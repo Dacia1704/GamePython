@@ -35,13 +35,15 @@ class MainMenu(ScreenBase):
 						elif self.setting_button_rect.collidepoint(event.pos):
 								self.button_pressed = "SETTING"
 
-				if event.type == pygame.MOUSEBUTTONUP and event.button == 1:  # Nhả chuột
-						if self.button_pressed == "PLAY":
-								self.next_scene = "GAME"
-								AudioManager.get_instance().stop_music("main_menu")
-						elif self.button_pressed == "QUIT":
-								return "QUIT"
-						self.button_pressed = None
+				if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
+					if self.button_pressed == "PLAY":
+						self.next_scene = "GAME"
+						AudioManager.get_instance().stop_music("main_menu")
+					elif self.button_pressed == "SETTING":
+						self.next_scene = "SETTING"
+					elif self.button_pressed == "QUIT":
+						return "QUIT"
+					self.button_pressed = None
 
 	def update(self):
 		self.screen.blit(self.back_ground, (0, 0))

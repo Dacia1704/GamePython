@@ -7,15 +7,14 @@ class NarutoNomalAttack3State(NomalAttackState):
     super().enter()
     AudioManager.get_instance().play_sfx(self.state_machine.character.nomal_attack_3_sfx_name)
     self.attack_collider_animations = GameConstants.NARUTO_ATTACK3_COLLIDER_ANIMATIONS
-    self.update_knock_back_force_target([15,5],150)
   def exit(self):
     super().exit()
     AudioManager.get_instance().stop_sfx(self.state_machine.character.nomal_attack_3_sfx_name)
   def update(self):
     super().update()
     self.update_sprite_animation(self.state_machine.character.nomal_attack3_spritesheet[0],self.state_machine.character.nomal_attack3_spritesheet[2],False)
-  def nomal_attack(self):
-    super().nomal_attack()
+  def nomal_attack_enter(self):
+    super().nomal_attack_enter()
     if not self.state_machine.character.is_nomal_attacking:
       #execute attack
       self.state_machine.character.is_nomal_attacking = True

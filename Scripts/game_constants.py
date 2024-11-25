@@ -229,6 +229,13 @@ class GameConstants:
     11: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]]
   }
 
+  #Damage and knockback force
+  NOMAL_ATTACK_PROPS = [5,0,[15,5],150] # dam,mana, [direction knockback] , time knock back
+  NARUTO_SKILL_1_PROPS = [20,20,[5,20],150]
+  NARUTO_SKILL_2_PROPS = [0,30,[0,0],0]
+  NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
+
+
     #SFX
   #Naruto
   NARUTO_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
