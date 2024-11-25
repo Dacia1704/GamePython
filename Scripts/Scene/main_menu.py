@@ -37,36 +37,44 @@ class MainMenu(ScreenBase):
 
 				if event.type == pygame.MOUSEBUTTONUP and event.button == 1:  # Nhả chuột
 						if self.button_pressed == "PLAY":
-								self.next_scene = "GAME"
+								self.next_scene = "CHARACTER_SELECTION"  # Chuyển đến scene chọn nhân vật
 								AudioManager.get_instance().stop_music("main_menu")
 						elif self.button_pressed == "QUIT":
 								return "QUIT"
 						self.button_pressed = None
 
 	def update(self):
+		
 		self.screen.blit(self.back_ground, (0, 0))
 
-		#Vẽ tên game
-		self.draw_text_in_center_rect("INFINITY FIGHTER",self.font_game_name,(255,255,255),self.screen.get_rect(),[0,-200])
+		# Vẽ tên game
+		self.draw_text_in_center_rect(
+			"INFINITY FIGHTER", self.font_game_name, (255, 255, 255), self.screen.get_rect(), [0, -200]
+		)
 
 		# Vẽ nút Play
-		self.screen.blit(self.button_image,self.play_button_rect)
+		self.screen.blit(self.button_image, self.play_button_rect)
 		if self.button_pressed == "PLAY":
-				self.draw_button_overlay(self.play_button_rect)
-		self.draw_text_in_center_rect("PLAY",self.font_black_30,(255,255,255),self.play_button_rect)
+			self.draw_button_overlay(self.play_button_rect)
+		self.draw_text_in_center_rect("PLAY", self.font_black_30, (255, 255, 255), self.play_button_rect)
 
 		# Vẽ nút Setting
-		self.screen.blit(self.button_image,self.setting_button_rect)
+		self.screen.blit(self.button_image, self.setting_button_rect)
 		if self.button_pressed == "SETTING":
-				self.draw_button_overlay(self.setting_button_rect)
-		self.draw_text_in_center_rect("SETTING",self.font_black_30,(255,255,255),self.setting_button_rect)
+			self.draw_button_overlay(self.setting_button_rect)
+		self.draw_text_in_center_rect("SETTING", self.font_black_30, (255, 255, 255), self.setting_button_rect)
 
 		# Vẽ nút Quit
-		self.screen.blit(self.button_image,self.quit_button_rect)
+		self.screen.blit(self.button_image, self.quit_button_rect)
 		if self.button_pressed == "QUIT":
-				self.draw_button_overlay(self.quit_button_rect)
-		self.draw_text_in_center_rect("QUIT",self.font_black_30,(255,255,255),self.quit_button_rect)
+			self.draw_button_overlay(self.quit_button_rect)
+		self.draw_text_in_center_rect("QUIT", self.font_black_30, (255, 255, 255), self.quit_button_rect)
 
+		# Kiểm tra chuyển cảnh
+		if self.next_scene == "CHARACTER_SELECTION":
+			return "CHARACTER_SELECTION"
+
+		
 	def start(self):
 		super().start()
 		AudioManager.get_instance().play_music(self.main_menu_bgm )
