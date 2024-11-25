@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06152b95-efbd-459d-95a9-f9c28482976d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/GamePython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GamePython.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Background/hokage_state.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Background/river.jpg" beforeDir="false" />
@@ -97,20 +95,21 @@
       <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_2_old.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_3.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UI/raw_button_w160_h85.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/HitState/hit_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/HitState/hit_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/NomalAttackState/nomal_attack_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/NomalAttackState/nomal_attack_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/character_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/character_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/character_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/character_base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill1_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill1_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill2_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill2_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill3_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill3_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Scene/game_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/game_scene.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/game_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/game_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/scene_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/scene_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,7 +127,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hp__mana&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;setting__game&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/NKhanh/Downloads/PTIT/Semester 5/Python/GamePython&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
