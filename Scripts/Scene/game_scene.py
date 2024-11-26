@@ -8,18 +8,11 @@ from Scripts.PlayerCharacter.Sakura.sakura_character import SakuraCharacter
 from Scripts.Scene.scenebase import ScreenBase
 from Scripts.Audio.audio_manager import AudioManager
 class GameScene(ScreenBase):
-	def __init__(self, screen, selected_characters):
+	def __init__(self,screen):
 		super().__init__(screen)
-		self.screen = screen
-		self.selected_characters = selected_characters
-		self.battle_finish = False  
-		self.characters = [
-			("Naruto", NarutoCharacter),
-			("Sasuke", SasukeCharacter),
-			("RockLee", RockLeeCharacter),
-			("Sakura", SakuraCharacter),
-		]
-		self.init_players()
+
+
+
 		#load bg images
 		self.back_round_battle = [
 				pygame.transform.scale( pygame.image.load(GameConstants.HOKAGE_STATE_BG_IMAGE_SOURCE).convert_alpha(),(GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT)),
@@ -29,30 +22,16 @@ class GameScene(ScreenBase):
 
 
 
-	def init_players(self):
-		# Lấy lớp nhân vật được chọn
-		player1_class = self.characters[self.selected_characters[1]][1]
-		player2_class = self.characters[self.selected_characters[2]][1]
-
-		# Khởi tạo nhân vật
-		self.player1 = player1_class(
-			self,1, 200, GameConstants.SCREEN_HEIGHT - GameConstants.GROUND_Y, self.screen, None
-		)
-		self.player2 = player2_class(
-			self,2, 600, GameConstants.SCREEN_HEIGHT - GameConstants.GROUND_Y, self.screen, None
-		)
-
-		# Gán mục tiêu
-		self.player1.target = self.player2
-		self.player2.target = self.player1  # Đảm bảo player2 có target
-
-		# Khởi động trạng thái của nhân vật
+		#player
+		self.battle_finish = False
+		self.player2 = NarutoCharacter(self,2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
+		self.player1 = SakuraCharacter(self,1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,self.player2)
+		self.player2.target = self.player1
 		self.player1.start()
 		self.player2.start()
 
-		# Thiết lập âm thanh
-		self.battle_3_bgm = self.setup_bgm("battle_3", GameConstants.BATTLE_3_BGM[0])
-		
+		self.battle_3_bgm = self.setup_bgm("battle_3",GameConstants.BATTLE_3_BGM[0])
+
 		# define colours
 		self.RED = (255, 0, 0)
 		self.YELLOW = (255, 255, 0)
