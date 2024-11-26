@@ -39,6 +39,8 @@ class MainMenu(ScreenBase):
 						if self.button_pressed == "PLAY":
 								self.next_scene = "CHARACTER_SELECTION"  # Chuyển đến scene chọn nhân vật
 								AudioManager.get_instance().stop_music("main_menu")
+						elif self.button_pressed == "SETTING":
+							self.next_scene = "SETTING"
 						elif self.button_pressed == "QUIT":
 								return "QUIT"
 						self.button_pressed = None
