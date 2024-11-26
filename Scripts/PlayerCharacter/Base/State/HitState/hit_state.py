@@ -12,7 +12,7 @@ class HitState(CharacterState):
     #print("Enter hit")
     AudioManager.get_instance().play_sfx(self.state_machine.character.hit_sfx_name)
     self.state_machine.character.health -= self.state_machine.character.dam_take
-    self.state_machine.character.target.mana = min(self.state_machine.character.target.mana + 5, 100)
+    # self.state_machine.character.target.mana = min(self.state_machine.character.target.mana + 5, 100)   bị dính cả skill cũng tăng
     self.start_knockback()
 
   def exit(self):

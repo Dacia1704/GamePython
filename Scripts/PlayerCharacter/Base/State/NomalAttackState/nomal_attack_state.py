@@ -9,11 +9,17 @@ class NomalAttackState(CharacterState):
 
     self.attack_collider_animations = []
 
+    self.is_add_mana = False
+
 
   #base function
   def enter(self):
     super().enter()
     #print("Enter Nomal Attack")
+    self.update_knock_back_force_target([GameConstants.NOMAL_ATTACK_PROPS[2][0],GameConstants.NOMAL_ATTACK_PROPS[2][1]],GameConstants.NOMAL_ATTACK_PROPS[3])
+    self.update_target_dam_take(GameConstants.NOMAL_ATTACK_PROPS[0])
+    self.nomal_attack_enter()
+    self.is_add_mana = False
 
 
   def exit(self):
@@ -35,7 +41,15 @@ class NomalAttackState(CharacterState):
     self.nomal_attack()
 
   def nomal_attack(self):
-    self.state_machine.character.target.dam_take = 5
+    if self.state_machine.character.target.is_hitting and not self.is_add_mana:
+      if self.state_machine.character.mana+ 10 <= GameConstants.BASE_MANA:
+        self.state_machine.character.mana = self.state_machine.character.mana + 10  
+      else :
+        self.mana = GameConstants.BASE_MANA
+      self.is_add_mana = True
+    pass
+
+  def nomal_attack_enter(self):
     pass
 
   #draw

@@ -7,12 +7,12 @@ from Scripts.FlyObject.energy_ball import EnergyBall
 from Scripts.PlayerCharacter.RockLee.rocklee_character import RockLeeCharacter
 from Scripts.PlayerCharacter.Sakura.sakura_character import SakuraCharacter
 from Scripts.Scene.scene_manager import SceneManager
+
 pygame.init()
 screen = pygame.display.set_mode((GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
 pygame.display.set_caption("Infinity Fighter")
 #clock
 clock = pygame.time.Clock()
-
 manager = SceneManager(screen)
 
 running = True

@@ -2,6 +2,7 @@ from Scripts.Scene.game_scene import GameScene
 from Scripts.Scene.main_menu import MainMenu
 from Scripts.Scene.CharacterSelection import CharacterSelectionScene
 from Scripts.Audio.audio_manager import AudioManager
+from Scripts.Scene.setting_scene import SettingGame
 import pygame
 class SceneManager:
 	def __init__(self,screen):
@@ -32,6 +33,9 @@ class SceneManager:
 		result = self.current_scene.handle_events(events)
 		if result == "QUIT":
 			return False
+		# Kiểm tra nếu cảnh hiện tại là SettingGame và người dùng chọn quay lại Main Menu
+		if isinstance(self.current_scene, SettingGame) and result == "MAIN_MENU":
+			self.change_scene("MAIN_MENU")  # Chuyển về Main Menu
 		if self.current_scene.next_scene:
 			self.next_scene_name = self.current_scene.next_scene
 			self.transition_time = pygame.time.get_ticks()  # Lưu thời gian bắt đầu
