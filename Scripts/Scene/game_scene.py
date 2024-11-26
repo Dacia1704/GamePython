@@ -80,6 +80,7 @@ class GameScene(ScreenBase):
 
 	def start(self):
 		super().start()
+		pygame.event.clear()
 		AudioManager.get_instance().play_music(self.battle_3_bgm)
 
 	def exit(self):
@@ -122,20 +123,21 @@ class GameScene(ScreenBase):
 		for event in events:
 				if event.type == pygame.QUIT:
 						return "QUIT"
-				if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:  # Kiểm tra nhấn chuột trái
+				if self.battle_finish:
+					if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:  # Kiểm tra nhấn chuột trái
+							if self.play_again_button_rect.collidepoint(event.pos):
+									self.button_pressed = "PLAY_AGAIN"
+							elif self.back_to_menu_button_rect.collidepoint(event.pos):
+									self.button_pressed = "BACK"
+
+					if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
 						if self.play_again_button_rect.collidepoint(event.pos):
 								self.button_pressed = "PLAY_AGAIN"
+								# self.next_scene= ""
 						elif self.back_to_menu_button_rect.collidepoint(event.pos):
 								self.button_pressed = "BACK"
-
-				if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
-					if self.play_again_button_rect.collidepoint(event.pos):
-							self.button_pressed = "PLAY_AGAIN"
-							# self.next_scene= ""
-					elif self.back_to_menu_button_rect.collidepoint(event.pos):
-							self.button_pressed = "BACK"
-							self.next_scene = "MAIN_MENU"
-					self.button_pressed = None
+								self.next_scene = "MAIN_MENU"
+						self.button_pressed = None
 
 	def draw_battle_end(self):
 		overlay = pygame.Surface((GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT), pygame.SRCALPHA)
