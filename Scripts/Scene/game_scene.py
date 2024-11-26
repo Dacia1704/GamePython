@@ -20,11 +20,11 @@ class GameScene(ScreenBase):
 				pygame.transform.scale( pygame.image.load(GameConstants.WINTER_VILLAGE_BG_IMAGE_SOURCE).convert_alpha(),(GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT)),
 		]
 
-
-
+  
 		#player
-		self.player2 = RockLeeCharacter(2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
-		self.player1 = NarutoCharacter(1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,self.player2)
+		self.battle_finish = False
+		self.player2 = RockLeeCharacter(self,2,1000,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,None)
+		self.player1 = NarutoCharacter(self,1,200,GameConstants.SCREEN_HEIGHT-GameConstants.GROUND_Y,screen,self.player2)
 		self.player2.target = self.player1
 		self.player1.start()
 		self.player2.start()
