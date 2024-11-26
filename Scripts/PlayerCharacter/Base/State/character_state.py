@@ -173,9 +173,14 @@ class CharacterState(State):
         return
 
   def on_hit(self):
-    if self.state_machine.character.is_hitting: 
+    if self.state_machine.character.is_hitting:
+      if self.state_machine.character.health <= self.state_machine.character.dam_take:
+        self.on_death()
+        return
       self.state_machine.change_state(self.state_machine.hit_state)
       return
+  def on_death(self):
+    self.state_machine.change_state(self.state_machine.death_state)
   def on_dash(self):
     if self.state_machine.character.dash_input and self.state_machine.character.is_grounded:
         self.state_machine.change_state(self.state_machine.dash_state)
