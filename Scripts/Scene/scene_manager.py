@@ -42,13 +42,12 @@ class SceneManager:
 			self.current_scene.next_scene = None
 		return True
 
-	
 	def change_scene(self, scene_name):
-				# Thêm điều kiện để tạo lại GAME scene nếu cần
-				if scene_name == "GAME" and isinstance(self.current_scene, CharacterSelectionScene):
-					selected_characters = self.current_scene.selected_characters
-					self.scenes["GAME"] = GameScene(self.screen, selected_characters=selected_characters)
-				# Chuyển đổi cảnh
-				self.current_scene.exit()
-				self.current_scene = self.scenes[scene_name]
-				self.current_scene.start()
+		# Thêm điều kiện để tạo lại GAME scene nếu cần
+		if scene_name == "GAME" and isinstance(self.current_scene, CharacterSelectionScene):
+			selected_characters = self.current_scene.selected_characters
+			self.scenes["GAME"] = GameScene(self.screen, selected_characters=selected_characters)
+		# Chuyển đổi cảnh
+		self.current_scene.exit()
+		self.current_scene = self.scenes[scene_name]
+		self.current_scene.start()
