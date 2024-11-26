@@ -33,6 +33,7 @@ class GameConstants:
   #Font
   ROBOTO_BLACK_1 = ["Assets/Font/Roboto/Roboto-Black.ttf",30]
   ROBOTO_BLACK_2 = ["Assets/Font/Roboto/Roboto-Black.ttf",60]
+  ROBOTO_BLACK_3 = ["Assets/Font/Roboto/Roboto-Black.ttf",20]
   ROBOTO_BLACK_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BlackItalic.ttf",30]
   ROBOTO_BOLD_1 = ["Assets/Font/Roboto/Roboto-Bold.ttf",30]
   ROBOTO_BOLD_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BoldItalic.ttf",30]
@@ -72,6 +73,7 @@ class GameConstants:
   }
 
   NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,100,5,20,5]  
+  NARUTO_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/death_w60_h38.png",3,100,5,20,-5]  
 
   NARUTO_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/skill1_w48_h64.png",3,50,7,25,25]  
   NARUTO_SKILL1_COLLIDER_ANIMATIONS = [2,3,4]
@@ -214,6 +216,12 @@ class GameConstants:
     11: [[-SAKURA_WIDTH_RECT / 2 - 180, -SAKURA_HEIGHT_RECT / 2 + 80], [440, 50]]
   }
 
+  #Damage and knockback force
+  NOMAL_ATTACK_PROPS = [5,0,[15,5],150] # dam,mana, [direction knockback] , time knock back
+  NARUTO_SKILL_1_PROPS = [20,20,[5,20],150]
+  NARUTO_SKILL_2_PROPS = [0,30,[0,0],0]
+  NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
+
 
   #SFX
   #Naruto
@@ -263,7 +271,7 @@ class GameConstants:
   MOVE_SPEED_MODIFIER = 1
   JUMP_FORCE_MODIFIER = 1
   ZERO_FORCE_MODIFIER = 0
-  BASE_HEALTH = 300
+  BASE_HEALTH = 10
   BASE_MANA = 100
   TIME_RESET_ATTACK_COMBO = 2
   DASH_DURATION = 350  

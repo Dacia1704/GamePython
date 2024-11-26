@@ -3,8 +3,8 @@ import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.PlayerCharacter.RockLee.State.rocklee_state_machine import RockLeeStateMachine
 class RockLeeCharacter(Character):
-  def __init__(self,player_id,x,y,screen_surface,target):
-    super().__init__(player_id,x,y,screen_surface,target)
+  def __init__(self,game_scene,player_id,x,y,screen_surface,target):
+    super().__init__(game_scene,player_id,x,y,screen_surface,target)
     self.rect = pygame.Rect((x,y,GameConstants.ROCKLEE_WIDTH_RECT,GameConstants.ROCKLEE_HEIGHT_RECT))
     self.state_machine = RockLeeStateMachine(self,screen_surface)
 
