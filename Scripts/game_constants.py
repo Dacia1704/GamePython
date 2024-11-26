@@ -122,6 +122,35 @@ class GameConstants:
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
   SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,40,10,25,5]  
   
+  SASUKE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill1.png",3,60,13,50,5]  
+  SASUKE_SKILL1_COLLIDER_ANIMATIONS = []
+  SASUKE_SKILL1_COLLIDER_DICTIONARY = {
+  }
+  SASUKE_ENERGY_BALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/thunder.png",1.5,30,10,10,10] 
+  SASUKE_ENERGY_BALL_SIZE = [50,50]
+  SASUKE_ENERGY_BALL_SPEED = 40
+  
+  SASUKE_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill2.png", 3, 50, 25, 30, 3]
+  SASUKE_SKILL2_COLLIDER_ANIMATIONS = [10, 11, 12, 13, 14, 15]
+
+  SASUKE_SKILL2_COLLIDER_DICTIONARY = {
+      10: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      11: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      12: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      13: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      14: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      15: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]]
+  }
+  
+  SASUKE_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill3.png", 3, 80, 95, 110, 20]
+  SASUKE_SKILL3_COLLIDER_ANIMATIONS = [8, 9, 10, 11]
+
+  SASUKE_SKILL3_COLLIDER_DICTIONARY = {
+    8: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT / 0.5 + 80], [200, 200]],
+    9: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5 + 80], [200, 200]],
+    10: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5+ 80], [200, 200]],
+    11: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5 + 80], [200, 200]]
+  }
   
   
   # rocklee character image source and props
