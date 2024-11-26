@@ -9,9 +9,9 @@ class MainMenu(ScreenBase):
 		self.font_game_name = pygame.font.Font(GameConstants.PROTESTREVOLUTION_REGULAR_1[0], GameConstants.PROTESTREVOLUTION_REGULAR_1[1])
 
 		button_image_raw = pygame.image.load(GameConstants.RAW_BUTTON_IMAGE[0]).convert_alpha()
-		button_width = button_image_raw.get_width()
-		button_height = button_image_raw.get_height()
-		self.button_image = pygame.transform.scale(button_image_raw,(button_width * GameConstants.RAW_BUTTON_IMAGE[1], button_height * GameConstants.RAW_BUTTON_IMAGE[1]))
+		button_width = button_image_raw.get_width()* GameConstants.RAW_BUTTON_IMAGE[1]
+		button_height = button_image_raw.get_height()* GameConstants.RAW_BUTTON_IMAGE[1]
+		self.button_image = pygame.transform.scale(button_image_raw,(button_width , button_height ))
 
 
 		self.play_button_rect = pygame.Rect(GameConstants.SCREEN_WIDTH/2 - button_width/2, GameConstants.SCREEN_HEIGHT/2 -button_height -10 , button_width, button_height)

@@ -7,6 +7,7 @@ from .NomalAttackState.nomal_attack_state import NomalAttackState
 from .HitState.hit_state import HitState
 from .DashState.dash_state import DashState
 from .SkillState.skill_state import SkillState
+from .DeathState.death_state import DeathState
 class StateMachine:
   def __init__(self,character,screen_surface):
     self.character = character
@@ -14,6 +15,7 @@ class StateMachine:
     self.move_state = MoveState(self)
     self.jump_state = JumpState(self)
     self.fall_state = FallState(self)
+    self.death_state = DeathState(self)
     self.nomal_attack1 = NomalAttackState(self)
     self.nomal_attack2 = NomalAttackState(self)
     self.nomal_attack3 = NomalAttackState(self)

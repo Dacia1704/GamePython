@@ -6,9 +6,10 @@ from Scripts.Attackable.attackable import Attackable
 from Scripts.Damable.damable import Damable
 from Scripts.Audio.audio_manager import AudioManager
 class Character (Attackable,Damable):
-  def __init__(self,player_id,x,y,screen_surface,target):
+  def __init__(self,game_scene,player_id,x,y,screen_surface,target):
     Attackable.__init__(self)
     Damable.__init__(self)
+    self.game_scene = game_scene
     self.state_machine = StateMachine(self,screen_surface) #for override
     self.rect = None   #for override
     self.health = GameConstants.BASE_HEALTH
@@ -41,6 +42,7 @@ class Character (Attackable,Damable):
     self.skill2_spritesheet = None # for override
     self.skill3_spritesheet = None # for override
     self.dash_spritesheet = None  # for override
+    self.death_spritesheet =None # for override
     self.is_grounded = True
 
     #logic
@@ -56,6 +58,7 @@ class Character (Attackable,Damable):
 
     self.is_falling = False
     self.is_hitting = False
+    self.is_running_death_animation = False
     self.is_using_skill = False
     self.is_dashing = False 
 
