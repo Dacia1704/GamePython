@@ -33,6 +33,7 @@ class RockLeeCharacter(Character):
     self.skill_1_sfx_name = self.setup_sfx("skill1",GameConstants.ROCKLEE_SKILL1_SFX[0])
     self.skill_2_sfx_name = self.setup_sfx("skill2",GameConstants.ROCKLEE_SKILL2_SFX[0])
     self.skill_3_sfx_name = self.setup_sfx("skill3",GameConstants.ROCKLEE_SKILL3_SFX[0])
+    self.dash_sfx_name = self.setup_sfx("rocklee_dash",GameConstants.ROCKLEE_DASH_SFX[0])
     
     self.death_spritesheet = [self.handle_image(pygame.image.load(GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[0]).convert_alpha(),51,35,3,GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[1]),GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[1],GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[2],GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[3],GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[4],GameConstants.ROCKLEE_DEATH_SPRITESHEET_SOURCE[5]]
     super().start()

@@ -310,6 +310,7 @@ class GameConstants:
   ROCKLEE_WIN_SFX = ["Assets/SFX/RockLeeSFX/win.wav",False]
   ROCKLEE_DEATH_SFX = ["Assets/SFX/RockLeeSFX/death.wav",False]
   ROCKLEE_HIT_SFX = ["Assets/SFX/RockLeeSFX/hit.wav",False]
+  ROCKLEE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
 
 
 
