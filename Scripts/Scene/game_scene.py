@@ -154,7 +154,7 @@ class GameScene(ScreenBase):
 					if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
 						if self.play_again_button_rect.collidepoint(event.pos):
 								self.button_pressed = "PLAY_AGAIN"
-								# self.next_scene= ""
+								self.next_scene= "CHARACTER_SELECTION"
 						elif self.back_to_menu_button_rect.collidepoint(event.pos):
 								self.button_pressed = "BACK"
 								self.next_scene = "MAIN_MENU"
