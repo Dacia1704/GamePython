@@ -1,7 +1,7 @@
 import pygame
 from Scripts.PlayerCharacter.Base.State.character_state import CharacterState
 from Scripts.game_constants import GameConstants
-from Scripts.Audio.audio_manager import AudioManager
+
 class DashState(CharacterState):
     def __init__(self, state_machine):
         super().__init__(state_machine)
@@ -11,7 +11,7 @@ class DashState(CharacterState):
         super().enter()
         current_time = pygame.time.get_ticks()
         character = self.state_machine.character
-        AudioManager.get_instance().play_sfx(self.state_machine.character.dash_sfx_name)
+
         # Kiểm tra cooldown Dash
         if current_time - character.last_dash_time < GameConstants.DASH_COOLDOWN:
             self.state_machine.change_state(self.state_machine.idle_state)
@@ -25,7 +25,6 @@ class DashState(CharacterState):
 
     def exit(self):
         super().exit()
-        AudioManager.get_instance().stop_sfx(self.state_machine.character.dash_sfx_name)
         character = self.state_machine.character
         character.vel_x = 0
         character.is_dashing = False
