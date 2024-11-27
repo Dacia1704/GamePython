@@ -107,21 +107,22 @@ class GameConstants:
   SASUKE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack1.png",3,100,10,25,5]   
   SASUKE_ATTACK1_COLLIDER_ANIMATIONS = [2]
   SASUKE_ATTACK1_COLLIDER_DICTIONARY = {
-    2:[[NARUTO_WIDTH_RECT*1.5,-NARUTO_HEIGHT_RECT/2 + 40],[60,35]]
+    2:[[SASUKE_WIDTH_RECT/2,-SASUKE_HEIGHT_RECT/2 + 40],[100,35]]
   }
   SASUKE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack2.png",3,120,5,23,5]  
   SASUKE_ATTACK2_COLLIDER_ANIMATIONS = [3]
   SASUKE_ATTACK2_COLLIDER_DICTIONARY = {
-    3:[[NARUTO_WIDTH_RECT*2,-NARUTO_HEIGHT_RECT/2 + 20],[100,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+    3:[[SASUKE_WIDTH_RECT*2,-SASUKE_HEIGHT_RECT/2 + 20],[100,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
   }
   SASUKE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack3.png",3,120,5,23,5]  
   SASUKE_ATTACK3_COLLIDER_ANIMATIONS = [3]
   SASUKE_ATTACK3_COLLIDER_DICTIONARY = {
-    3:[[NARUTO_WIDTH_RECT*1.75,-NARUTO_HEIGHT_RECT/2],[60,60]]
+    3:[[SASUKE_WIDTH_RECT*1.75,-SASUKE_HEIGHT_RECT/2],[60,60]]
   }
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
   SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,40,10,25,5]  
-  
+  SASUKE_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/death.png",3,100,5,20,-5]  
+
   SASUKE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill1.png",3,60,13,50,5]  
   SASUKE_SKILL1_COLLIDER_ANIMATIONS = []
   SASUKE_SKILL1_COLLIDER_DICTIONARY = {
@@ -242,6 +243,11 @@ class GameConstants:
   NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
 
 
+  SASUKE_SKILL_1_PROPS = [30,10,[5,20],150]
+  SASUKE_SKILL_2_PROPS = [30,20,[40,20],150]
+  SASUKE_SKILL_3_PROPS = [60,40,[5,20],350]
+
+
   #SFX
   #Naruto
   NARUTO_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
@@ -255,7 +261,19 @@ class GameConstants:
   NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
   NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
   NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
-
+  #
+  SASUKE_MOVE_SFX = ["Assets/SFX/SasukeSFX/move.wav",True] # source, loop
+  SASUKE_JUMP_SFX = ["Assets/SFX/SasukeSFX/jump.wav",False]
+  SASUKE_ATTACK1_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_1.wav",False]
+  SASUKE_ATTACK2_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_2.wav",False]
+  SASUKE_ATTACK3_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_3.wav",False]
+  SASUKE_SKILL1_SFX = ["Assets/SFX/SasukeSFX/skill_1.wav",False]
+  SASUKE_SKILL2_SFX = ["Assets/SFX/SasukeSFX/skill_2.wav",False]
+  SASUKE_SKILL3_SFX = ["Assets/SFX/SasukeSFX/skill_3.wav",False]
+  SASUKE_WIN_SFX = ["Assets/SFX/SasukeSFX/Win.wav",False]
+  SASUKE_DEATH_SFX = ["Assets/SFX/SasukeSFX/death.wav",False]
+  SASUKE_HIT_SFX = ["Assets/SFX/SasukeSFX/hit.wav",False]
+  SASUKE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
 
 
 

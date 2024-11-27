@@ -2,30 +2,30 @@ from Scripts.PlayerCharacter.Base.State.SkillState.skill_state import SkillState
 from Scripts.game_constants import GameConstants
 import pygame
 from Scripts.FlyObject.energy_ball import EnergyBall
+from Scripts.Audio.audio_manager import AudioManager
 class SasukeSkill1State(SkillState):
   def enter(self):
     super().enter()
+    AudioManager.get_instance().play_sfx(self.state_machine.character.skill_1_sfx_name)
     self.skill_collider_animations = GameConstants.SASUKE_SKILL1_COLLIDER_ANIMATIONS
-    self.update_knock_back_force_target([5,20],150)
-
+    self.update_knock_back_force_target([GameConstants.SASUKE_SKILL_1_PROPS[2][0],GameConstants.SASUKE_SKILL_1_PROPS[2][1]],GameConstants.SASUKE_SKILL_1_PROPS[3])
+    self.update_target_dam_take(GameConstants.SASUKE_SKILL_1_PROPS[0])
     self.is_fire_energy_ball = False
-
-  def enter(self):
-    super().enter()
-    self.update_knock_back_force_target([10,10],150)
-    self.is_fire_energy_ball = False
-
+  def exit(self):
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.skill_1_sfx_name)
+    super().exit()
 
   def update(self):
     super().update()
     self.update_sprite_animation(self.state_machine.character.skill1_spritesheet[0],self.state_machine.character.skill1_spritesheet[2],False)
 
 
-  def skill_attack(self):
-    super().skill_attack()
+  def skill_attack_enter(self):
+    super().skill_attack_enter()
     if not self.state_machine.character.is_using_skill:
       #execute attack
       self.state_machine.character.is_using_skill = True
+    self.state_machine.character.mana -= self.state_machine.character.mana_consume_skill_1
 
   # animation
   def draw(self, surface):
