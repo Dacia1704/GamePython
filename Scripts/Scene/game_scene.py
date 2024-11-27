@@ -108,7 +108,7 @@ class GameScene(ScreenBase):
 		super().exit()
 		AudioManager.get_instance().stop_music(self.battle_3_bgm)
 	def draw_health_bar(self, health, x, y,player_id):   # player1: thì truyền góc trái trên, player2: truyền góc phải trên
-		ratio = health / 300
+		ratio = health / GameConstants.BASE_HEALTH
 		width = 500
 		height = 30
 		hp_color =None
@@ -128,7 +128,7 @@ class GameScene(ScreenBase):
 			pygame.draw.rect(self.screen, hp_color, (x - width * ratio, y, width * ratio, height))
 
 	def draw_mana_bar(self, mana, x, y,player_id):
-		ratio = mana / 100
+		ratio = mana / GameConstants.BASE_MANA
 		width = 300
 		height = 15
 		if(player_id == 1):
@@ -154,7 +154,7 @@ class GameScene(ScreenBase):
 					if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
 						if self.play_again_button_rect.collidepoint(event.pos):
 								self.button_pressed = "PLAY_AGAIN"
-								# self.next_scene= ""
+								self.next_scene= "CHARACTER_SELECTION"
 						elif self.back_to_menu_button_rect.collidepoint(event.pos):
 								self.button_pressed = "BACK"
 								self.next_scene = "MAIN_MENU"
