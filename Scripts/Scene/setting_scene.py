@@ -2,7 +2,7 @@ import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.Scene.scenebase import ScreenBase
 from Scripts.Audio.audio_manager import AudioManager
-
+import json
 
 class SettingGame(ScreenBase):
     def __init__(self, screen):
@@ -29,6 +29,7 @@ class SettingGame(ScreenBase):
 
         self.bgm_value = 100  # Giá trị âm lượng BGM ban đầu (tính theo phần trăm)
         self.sfx_value = 100  # Giá trị âm lượng SFX ban đầu (tính theo phần trăm)
+        self.load_volume_settings()
 
         self.slider_color = (200, 200, 200)
         self.button_color = (255, 255, 255)
@@ -69,6 +70,7 @@ class SettingGame(ScreenBase):
                         self.bgm_value = self.get_slider_value(event.pos, self.bgm_slider_rect)
                     elif self.sfx_slider_rect.collidepoint(event.pos):
                         self.sfx_value = self.get_slider_value(event.pos, self.sfx_slider_rect)
+                    self.save_volume_settings()
 
         # Cập nhật âm lượng
         self.audio_manager.set_music_volume(self.bgm_value / 100)
@@ -113,3 +115,29 @@ class SettingGame(ScreenBase):
         super().exit()
         # Dừng nhạc nền khi rời khỏi màn hình cài đặt
         AudioManager.get_instance().stop_music(self.main_menu_bgm)
+
+    def save_volume_settings(self, filename="volume_settings.json"):
+        data = {
+            "bgm_volume": self.bgm_value,  # Chuyển từ 0-100 sang 0.0-1.0
+            "sfx_volume": self.sfx_value   # Chuyển từ 0-100 sang 0.0-1.0
+        }
+        try:
+            with open(filename, "w") as file:
+                json.dump(data, file, indent=4)
+            print(f"Lưu dữ liệu thành công vào {filename}")
+        except IOError as e:
+            print(f"Lỗi khi lưu dữ liệu: {e}")
+
+    def load_volume_settings(self, filename="volume_settings.json"):
+        try:
+            with open(filename, "r") as file:
+                data = json.load(file)
+                self.bgm_value =  data.get("bgm_volume", 100)
+                self.sfx_value =  data.get("sfx_volume", 100)
+            print(f"Tải dữ liệu thành công từ {filename} {self.bgm_value} {self.sfx_value}")
+        except FileNotFoundError:
+            print(f"Không tìm thấy tệp {filename}. Sử dụng giá trị mặc định.")
+        except json.JSONDecodeError as e:
+            print(f"Lỗi khi đọc tệp JSON: {e}")
+        except IOError as e:
+            print(f"Lỗi khi tải dữ liệu: {e}")
