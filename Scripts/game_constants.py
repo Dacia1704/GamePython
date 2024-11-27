@@ -163,24 +163,45 @@ class GameConstants:
   ROCKLEE_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/move.png",3,50,15,15,5]
   ROCKLEE_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/jump.png",3,50,5,5,5]
   ROCKLEE_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/fall.png",3,50,5,5,5]
-  ROCKLEE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack1.png",3,100,4,25,2]  
+  ROCKLEE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack1.png",3,70,4,25,2]  
   ROCKLEE_ATTACK1_COLLIDER_ANIMATIONS = [3]
   ROCKLEE_ATTACK1_COLLIDER_DICTIONARY = {
     3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[60,35]]
   }
-  ROCKLEE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack2.png",3,100,15,23,5]  
+  ROCKLEE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack2.png",3,70,15,23,5]  
   ROCKLEE_ATTACK2_COLLIDER_ANIMATIONS = [3]
   ROCKLEE_ATTACK2_COLLIDER_DICTIONARY = {
     3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[62,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
   }
-  ROCKLEE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack3.png",3,100,15,20,30]  
+  ROCKLEE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack3.png",3,70,15,20,30]  
   ROCKLEE_ATTACK3_COLLIDER_ANIMATIONS = [2]
   ROCKLEE_ATTACK3_COLLIDER_DICTIONARY = {
     2:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2- 5],[60,35]]
   }
 
   ROCKLEE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/hit.png",3,100,5,20,5]
-  ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5]  
+  ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5] 
+  ROCKLEE_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/death.png",3,100,5,20,-5]  
+   
+  ROCKLEE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill1.png",3,70,7,45,20]  
+  ROCKLEE_SKILL1_COLLIDER_ANIMATIONS = [3]
+  ROCKLEE_SKILL1_COLLIDER_DICTIONARY = {
+    3: [[-ROCKLEE_WIDTH_RECT / 2 + 107, -ROCKLEE_HEIGHT_RECT / 2 - 30], [40, 50]]
+  }
+  
+  ROCKLEE_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill2.png",3,100,40,37,10]  
+  ROCKLEE_SKILL2_COLLIDER_ANIMATIONS = [5,6,7]
+  ROCKLEE_SKILL2_COLLIDER_DICTIONARY = {
+    5: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]],
+    6: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]],
+    7: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]]
+  }
+  
+  ROCKLEE_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill3.png", 3, 90, 20, 55, 10]
+  ROCKLEE_SKILL3_COLLIDER_ANIMATIONS = [2]
+  ROCKLEE_SKILL3_COLLIDER_DICTIONARY = {
+    2: [[-ROCKLEE_WIDTH_RECT / 2 + 110, -ROCKLEE_HEIGHT_RECT / 2 + 20], [55, 50]]
+  }
 
   # sakura character image source and props
   SAKURA_WIDTH_RECT = 60
@@ -262,6 +283,7 @@ class GameConstants:
   NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
   NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
   NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
+  
   #
   SASUKE_MOVE_SFX = ["Assets/SFX/SasukeSFX/move.wav",True] # source, loop
   SASUKE_JUMP_SFX = ["Assets/SFX/SasukeSFX/jump.wav",False]
@@ -276,6 +298,18 @@ class GameConstants:
   SASUKE_HIT_SFX = ["Assets/SFX/SasukeSFX/hit.wav",False]
   SASUKE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
 
+  #RockLee
+  ROCKLEE_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
+  ROCKLEE_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav",False]
+  ROCKLEE_ATTACK1_SFX = ["Assets/SFX/RockLeeSFX/attack1.wav",False]
+  ROCKLEE_ATTACK2_SFX = ["Assets/SFX/RockLeeSFX/attack2.wav",False]
+  ROCKLEE_ATTACK3_SFX = ["Assets/SFX/RockLeeSFX/attack3.wav",False]
+  ROCKLEE_SKILL1_SFX = ["Assets/SFX/RockLeeSFX/skill1.wav",False]
+  ROCKLEE_SKILL2_SFX = ["Assets/SFX/RockLeeSFX/skill2.wav",False]
+  ROCKLEE_SKILL3_SFX = ["Assets/SFX/RockLeeSFX/skill3.wav",False]
+  ROCKLEE_WIN_SFX = ["Assets/SFX/RockLeeSFX/win.wav",False]
+  ROCKLEE_DEATH_SFX = ["Assets/SFX/RockLeeSFX/death.wav",False]
+  ROCKLEE_HIT_SFX = ["Assets/SFX/RockLeeSFX/hit.wav",False]
 
 
 
