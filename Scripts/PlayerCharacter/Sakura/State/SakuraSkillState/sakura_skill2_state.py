@@ -68,7 +68,7 @@ class SakuraSkill2State(SkillState):
 
         if self.current_sprite_index == 1 and not self.isTeleport:
             self.state_machine.character.rect = pygame.Rect((self.state_machine.character.target.rect.x,
-                                                             self.state_machine.character.target.rect.y,
+                                                             self.state_machine.character.rect.y,
                                                              self.state_machine.character.rect.width,
                                                              self.state_machine.character.rect.height))
             self.isTeleport = True
