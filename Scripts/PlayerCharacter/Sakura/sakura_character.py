@@ -33,6 +33,7 @@ class SakuraCharacter(Character):
     self.skill_1_sfx_name = self.setup_sfx("C2", GameConstants.SAKURA_SKILL1_SFX[0])
     self.skill_2_sfx_name = self.setup_sfx("R3", GameConstants.SAKURA_SKILL2_SFX[0])
     self.skill_3_sfx_name = self.setup_sfx("S1", GameConstants.SAKURA_SKILL3_SFX[0])
+    self.dash_sfx_name = self.setup_sfx("sasuke_dash", GameConstants.SAKURA_DASH_SFX[0])
 
     self.mana_consume_skill_1 = GameConstants.SAKURA_SKILL_1_PROPS[1]
     self.mana_consume_skill_2 = GameConstants.SAKURA_SKILL_2_PROPS[1]
