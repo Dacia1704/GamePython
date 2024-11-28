@@ -229,7 +229,7 @@ class GameConstants:
   }
   SAKURA_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_hit_h40_w39.png", 3, 50, 5, 20, 5]
   SAKURA_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_dash_h49_w34.png", 3, 40, 4, 10, 8]
-
+  SAKURA_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_death_h46_w53.png", 3, 100, 18, 15, 2]
   SAKURA_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill1_new_h64_w226.png", 3, 50, 93, 113, 17]
   SAKURA_SKILL1_COLLIDER_ANIMATIONS = []
 
@@ -263,6 +263,9 @@ class GameConstants:
   NARUTO_SKILL_1_PROPS = [20,20,[5,20],150]
   NARUTO_SKILL_2_PROPS = [0,30,[0,0],0]
   NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
+  SAKURA_SKILL_1_PROPS = [0, 20, [0, 0], 0]
+  SAKURA_SKILL_2_PROPS = [20, 35, [5, 20], 150]
+  SAKURA_SKILL_3_PROPS = [30, 40, [5, 20], 150]
 
 
   SASUKE_SKILL_1_PROPS = [30,10,[5,20],150]
@@ -298,6 +301,22 @@ class GameConstants:
   SASUKE_HIT_SFX = ["Assets/SFX/SasukeSFX/hit.wav",False]
   SASUKE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
 
+# <<<<<<< HEAD
+  #Sakura
+  SAKURA_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav", True]  # source, loop
+  SAKURA_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav", False]
+  SAKURA_ATTACK1_SFX = ["Assets/SFX/SakuraSFX/C1.wav", False]
+  SAKURA_ATTACK2_SFX = ["Assets/SFX/SakuraSFX/C4.wav", False]
+  SAKURA_ATTACK3_SFX = ["Assets/SFX/SakuraSFX/C3.wav", False]
+  SAKURA_SKILL1_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+  SAKURA_SKILL2_SFX = ["Assets/SFX/SakuraSFX/R3.wav", False]
+  SAKURA_SKILL3_SFX = ["Assets/SFX/SakuraSFX/S1.wav", False]
+  SAKURA_WIN_SFX = ["Assets/SFX/SakuraSFX/Win.wav", False]
+  SAKURA_DEATH_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+  SAKURA_HIT_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+
+
+# =======
   #RockLee
   ROCKLEE_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
   ROCKLEE_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav",False]
@@ -311,6 +330,7 @@ class GameConstants:
   ROCKLEE_DEATH_SFX = ["Assets/SFX/RockLeeSFX/death.wav",False]
   ROCKLEE_HIT_SFX = ["Assets/SFX/RockLeeSFX/hit.wav",False]
   ROCKLEE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
+# >>>>>>> cafb549cd18d2e3f8972f73310f603258b29cfd6
 
 
 
