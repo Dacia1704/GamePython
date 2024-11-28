@@ -208,6 +208,9 @@ class GameConstants:
   NARUTO_SKILL_1_PROPS = [20,20,[5,20],150]
   NARUTO_SKILL_2_PROPS = [0,30,[0,0],0]
   NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
+  SAKURA_SKILL_1_PROPS = [0, 20, [0, 0], 0]
+  SAKURA_SKILL_2_PROPS = [20, 35, [5, 20], 150]
+  SAKURA_SKILL_3_PROPS = [30, 40, [5, 20], 150]
 
 
   #SFX
@@ -223,6 +226,19 @@ class GameConstants:
   NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
   NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
   NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
+
+  #Sakura
+  SAKURA_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav", True]  # source, loop
+  SAKURA_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav", False]
+  SAKURA_ATTACK1_SFX = ["Assets/SFX/SakuraSFX/C1.wav", False]
+  SAKURA_ATTACK2_SFX = ["Assets/SFX/SakuraSFX/C4.wav", False]
+  SAKURA_ATTACK3_SFX = ["Assets/SFX/SakuraSFX/C3.wav", False]
+  SAKURA_SKILL1_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+  SAKURA_SKILL2_SFX = ["Assets/SFX/SakuraSFX/R3.wav", False]
+  SAKURA_SKILL3_SFX = ["Assets/SFX/SakuraSFX/S1.wav", False]
+  SAKURA_WIN_SFX = ["Assets/SFX/SakuraSFX/Win.wav", False]
+  SAKURA_DEATH_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+  SAKURA_HIT_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
 
 
 
