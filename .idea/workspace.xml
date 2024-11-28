@@ -5,104 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06152b95-efbd-459d-95a9-f9c28482976d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/DeathState/death_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/RockLeeSkillState/rocklee_skill1_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/RockLeeSkillState/rocklee_skill2_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/RockLeeSkillState/rocklee_skill3_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/SasukeSkillState/sasuke_skill1_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/SasukeSkillState/sasuke_skill2_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/SasukeSkillState/sasuke_skill3_state.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripts/Scene/CharacterSelection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/volume_settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Background/hokage_state.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Background/river.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Background/summer_village.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Background/winter_village.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/attack1_w56_h48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/attack2_w48_h48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/attack3_w48_h54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/energy_ball_w55_h55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/fall_w39_h55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/hit_w48_h47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/idle_w34_h50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/jump_w33_h53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/move_w48_h48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/naruto_sheet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/skill1_w48_h64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/skill2_w64_h80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Naruto/skill3_w80_h48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/attack1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/attack3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/dash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/fall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/jump.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/RockLee/move.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_Attack1_h48_w62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_Attack2_h49_w53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_Attack3_h50_w58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_dash_h49_w34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_fall_h48_w40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_hit_h40_w39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_idle_h49_w34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_jump_h48_w34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_move_h48_w50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_skill1_h51_w58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_skill1_new_h64_w226.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_skill2_h44_w74.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sakura/sakura_skill3_h64_w226.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/attack1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/attack3.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/attack3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/dash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/fall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/jump.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Characters/Sasuke/move.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Protest_Revolution/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Protest_Revolution/ProtestRevolution-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Font/Roboto/Roboto-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Music/battle_1_bgm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Music/battle_2_bgm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Music/battle_3_bgm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Music/main_menu_bgm.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/R1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/R2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/R3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/S5.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/T1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/T2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/T3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/Win.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/death.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/hit.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/jump.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/move.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/nomal_attack_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/nomal_attack_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/nomal_attack_3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_2.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_2_old.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SFX/NarutoSFX/skill_3.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/raw_button_w160_h85.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack1_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack1_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack2_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack2_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack3_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/NomalAttackState/sakura_nomal_attack3_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill1_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill1_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill2_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill2_state.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill3_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/State/SakuraSkillState/sakura_skill3_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Naruto/dash_w42_h47-sheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Naruto/dash_w42_h47-sheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Naruto/death_w60_h38.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Naruto/death_w60_h38.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/death.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/skill3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/tele.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/RockLee/tele.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack3.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/attack3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/death.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/death.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill3.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/skill3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/thunder.png" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Assets/Characters/Sasuke/thunder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/DashState/dash_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/DashState/dash_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/HitState/hit_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/HitState/hit_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/character_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/character_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/state_machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/State/state_machine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/character_base.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Base/character_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Naruto/naruto_character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Naruto/naruto_character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack1_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack1_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack2_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack2_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack3_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/NomalAttackState/rocklee_nomal_attack3_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/rocklee_state_machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/State/rocklee_state_machine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/rocklee_character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/RockLee/rocklee_character.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/sakura_character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sakura/sakura_character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack1_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack1_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack2_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack2_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack3_state.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/NomalAttackState/sasuke_nomal_attack3_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/sasuke_state_machine.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/State/sasuke_state_machine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/sasuke_character.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/PlayerCharacter/Sasuke/sasuke_character.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/game_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/game_scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/scene_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/scene_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/Scene/setting_scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Scene/setting_scene.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripts/game_constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/game_constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +83,7 @@
   &quot;keyToString&quot;: {
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;sfx__sakura__and__hp__mana&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging sfx__sakura__and__hp__mana&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/NKhanh/Downloads/PTIT/Semester 5/Python/GamePython&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }

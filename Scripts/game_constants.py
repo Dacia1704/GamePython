@@ -33,6 +33,7 @@ class GameConstants:
   #Font
   ROBOTO_BLACK_1 = ["Assets/Font/Roboto/Roboto-Black.ttf",30]
   ROBOTO_BLACK_2 = ["Assets/Font/Roboto/Roboto-Black.ttf",60]
+  ROBOTO_BLACK_3 = ["Assets/Font/Roboto/Roboto-Black.ttf",20]
   ROBOTO_BLACK_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BlackItalic.ttf",30]
   ROBOTO_BOLD_1 = ["Assets/Font/Roboto/Roboto-Bold.ttf",30]
   ROBOTO_BOLD_ITALIC_1 = ["Assets/Font/Roboto/Roboto-BoldItalic.ttf",30]
@@ -55,6 +56,7 @@ class GameConstants:
   NARUTO_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/move_w48_h48.png",3,50,15,15,5]
   NARUTO_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/jump_w33_h53.png",3,50,5,5,5]
   NARUTO_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/fall_w39_h55.png",3,50,5,5,5]
+  NARUTO_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/dash_w42_h47-sheet.png",3,50,5,5,5]
   NARUTO_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/attack1_w56_h48.png",3,100,10,25,2]  
   NARUTO_ATTACK1_COLLIDER_ANIMATIONS = [3]
   NARUTO_ATTACK1_COLLIDER_DICTIONARY = {
@@ -72,6 +74,7 @@ class GameConstants:
   }
 
   NARUTO_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/hit_w48_h47.png",3,100,5,20,5]  
+  NARUTO_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/death_w60_h38.png",3,100,5,20,-5]  
 
   NARUTO_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Naruto/skill1_w48_h64.png",3,50,7,25,25]  
   NARUTO_SKILL1_COLLIDER_ANIMATIONS = [2,3,4]
@@ -105,20 +108,51 @@ class GameConstants:
   SASUKE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack1.png",3,100,10,25,5]   
   SASUKE_ATTACK1_COLLIDER_ANIMATIONS = [2]
   SASUKE_ATTACK1_COLLIDER_DICTIONARY = {
-    2:[[NARUTO_WIDTH_RECT*1.5,-NARUTO_HEIGHT_RECT/2 + 40],[60,35]]
+    2:[[SASUKE_WIDTH_RECT/2,-SASUKE_HEIGHT_RECT/2 + 40],[100,35]]
   }
   SASUKE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack2.png",3,120,5,23,5]  
   SASUKE_ATTACK2_COLLIDER_ANIMATIONS = [3]
   SASUKE_ATTACK2_COLLIDER_DICTIONARY = {
-    3:[[NARUTO_WIDTH_RECT*2,-NARUTO_HEIGHT_RECT/2 + 20],[100,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
+    3:[[SASUKE_WIDTH_RECT*2,-SASUKE_HEIGHT_RECT/2 + 20],[100,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
   }
   SASUKE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/attack3.png",3,120,5,23,5]  
   SASUKE_ATTACK3_COLLIDER_ANIMATIONS = [3]
   SASUKE_ATTACK3_COLLIDER_DICTIONARY = {
-    3:[[NARUTO_WIDTH_RECT*1.75,-NARUTO_HEIGHT_RECT/2],[60,60]]
+    3:[[SASUKE_WIDTH_RECT*1.75,-SASUKE_HEIGHT_RECT/2],[60,60]]
   }
   SASUKE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/hit.png",3,150,5,20,5]  
   SASUKE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/dash.png",3,40,10,25,5]  
+  SASUKE_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/death.png",3,100,5,20,-5]  
+
+  SASUKE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill1.png",3,60,13,50,5]  
+  SASUKE_SKILL1_COLLIDER_ANIMATIONS = []
+  SASUKE_SKILL1_COLLIDER_DICTIONARY = {
+  }
+  SASUKE_ENERGY_BALL_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/thunder.png",1.5,30,10,10,10] 
+  SASUKE_ENERGY_BALL_SIZE = [50,50]
+  SASUKE_ENERGY_BALL_SPEED = 40
+  
+  SASUKE_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill2.png", 3, 50, 25, 30, 3]
+  SASUKE_SKILL2_COLLIDER_ANIMATIONS = [10, 11, 12, 13, 14, 15]
+
+  SASUKE_SKILL2_COLLIDER_DICTIONARY = {
+      10: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      11: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      12: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      13: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      14: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]],
+      15: [[-SASUKE_WIDTH_RECT / 2 + 50, -SASUKE_WIDTH_RECT / 2 + 20], [80, 80]]
+  }
+  
+  SASUKE_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/Sasuke/skill3.png", 3, 80, 95, 110, 20]
+  SASUKE_SKILL3_COLLIDER_ANIMATIONS = [8, 9, 10, 11]
+
+  SASUKE_SKILL3_COLLIDER_DICTIONARY = {
+    8: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT / 0.5 + 80], [200, 200]],
+    9: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5 + 80], [200, 200]],
+    10: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5+ 80], [200, 200]],
+    11: [[-SASUKE_WIDTH_RECT / 2 -80, -SASUKE_HEIGHT_RECT /  0.5 + 80], [200, 200]]
+  }
   
   
   
@@ -129,24 +163,45 @@ class GameConstants:
   ROCKLEE_MOVE_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/move.png",3,50,15,15,5]
   ROCKLEE_JUMP_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/jump.png",3,50,5,5,5]
   ROCKLEE_FALL_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/fall.png",3,50,5,5,5]
-  ROCKLEE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack1.png",3,100,4,25,2]  
+  ROCKLEE_ATTACK1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack1.png",3,70,4,25,2]  
   ROCKLEE_ATTACK1_COLLIDER_ANIMATIONS = [3]
   ROCKLEE_ATTACK1_COLLIDER_DICTIONARY = {
     3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[60,35]]
   }
-  ROCKLEE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack2.png",3,100,15,23,5]  
+  ROCKLEE_ATTACK2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack2.png",3,70,15,23,5]  
   ROCKLEE_ATTACK2_COLLIDER_ANIMATIONS = [3]
   ROCKLEE_ATTACK2_COLLIDER_DICTIONARY = {
     3:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2 + 20],[62,35]]   # animation_index: [[pos relate character center x, pos relate character center y],[width,height]]
   }
-  ROCKLEE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack3.png",3,100,15,20,30]  
+  ROCKLEE_ATTACK3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/attack3.png",3,70,15,20,30]  
   ROCKLEE_ATTACK3_COLLIDER_ANIMATIONS = [2]
   ROCKLEE_ATTACK3_COLLIDER_DICTIONARY = {
     2:[[ROCKLEE_WIDTH_RECT/2,-ROCKLEE_HEIGHT_RECT/2- 5],[60,35]]
   }
 
   ROCKLEE_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/hit.png",3,100,5,20,5]
-  ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5]  
+  ROCKLEE_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/dash.png",3,40,10,25,5] 
+  ROCKLEE_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/death.png",3,100,5,20,-5]  
+   
+  ROCKLEE_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill1.png",3,70,7,45,20]  
+  ROCKLEE_SKILL1_COLLIDER_ANIMATIONS = [3]
+  ROCKLEE_SKILL1_COLLIDER_DICTIONARY = {
+    3: [[-ROCKLEE_WIDTH_RECT / 2 + 107, -ROCKLEE_HEIGHT_RECT / 2 - 30], [40, 50]]
+  }
+  
+  ROCKLEE_SKILL2_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill2.png",3,100,40,37,10]  
+  ROCKLEE_SKILL2_COLLIDER_ANIMATIONS = [5,6,7]
+  ROCKLEE_SKILL2_COLLIDER_DICTIONARY = {
+    5: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]],
+    6: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]],
+    7: [[-ROCKLEE_WIDTH_RECT / 2 - 110, -ROCKLEE_HEIGHT_RECT / 2 + 80], [275, 50]]
+  }
+  
+  ROCKLEE_SKILL3_SPRITESHEET_SOURCE = ["Assets/Characters/RockLee/skill3.png", 3, 90, 20, 55, 10]
+  ROCKLEE_SKILL3_COLLIDER_ANIMATIONS = [2]
+  ROCKLEE_SKILL3_COLLIDER_DICTIONARY = {
+    2: [[-ROCKLEE_WIDTH_RECT / 2 + 110, -ROCKLEE_HEIGHT_RECT / 2 + 20], [55, 50]]
+  }
 
   # sakura character image source and props
   SAKURA_WIDTH_RECT = 60
@@ -174,7 +229,7 @@ class GameConstants:
   }
   SAKURA_HIT_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_hit_h40_w39.png", 3, 50, 5, 20, 5]
   SAKURA_DASH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_dash_h49_w34.png", 3, 40, 4, 10, 8]
-
+  SAKURA_DEATH_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_death_h46_w53.png", 3, 100, 18, 15, 2]
   SAKURA_SKILL1_SPRITESHEET_SOURCE = ["Assets/Characters/Sakura/sakura_skill1_new_h64_w226.png", 3, 50, 93, 113, 17]
   SAKURA_SKILL1_COLLIDER_ANIMATIONS = []
 
@@ -213,6 +268,11 @@ class GameConstants:
   SAKURA_SKILL_3_PROPS = [30, 40, [5, 20], 150]
 
 
+  SASUKE_SKILL_1_PROPS = [30,10,[5,20],150]
+  SASUKE_SKILL_2_PROPS = [30,20,[40,20],150]
+  SASUKE_SKILL_3_PROPS = [60,40,[5,20],350]
+
+
   #SFX
   #Naruto
   NARUTO_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
@@ -226,7 +286,22 @@ class GameConstants:
   NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
   NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
   NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
+  
+  #
+  SASUKE_MOVE_SFX = ["Assets/SFX/SasukeSFX/move.wav",True] # source, loop
+  SASUKE_JUMP_SFX = ["Assets/SFX/SasukeSFX/jump.wav",False]
+  SASUKE_ATTACK1_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_1.wav",False]
+  SASUKE_ATTACK2_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_2.wav",False]
+  SASUKE_ATTACK3_SFX = ["Assets/SFX/SasukeSFX/nomal_attack_3.wav",False]
+  SASUKE_SKILL1_SFX = ["Assets/SFX/SasukeSFX/skill_1.wav",False]
+  SASUKE_SKILL2_SFX = ["Assets/SFX/SasukeSFX/skill_2.wav",False]
+  SASUKE_SKILL3_SFX = ["Assets/SFX/SasukeSFX/skill_3.wav",False]
+  SASUKE_WIN_SFX = ["Assets/SFX/SasukeSFX/Win.wav",False]
+  SASUKE_DEATH_SFX = ["Assets/SFX/SasukeSFX/death.wav",False]
+  SASUKE_HIT_SFX = ["Assets/SFX/SasukeSFX/hit.wav",False]
+  SASUKE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
 
+# <<<<<<< HEAD
   #Sakura
   SAKURA_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav", True]  # source, loop
   SAKURA_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav", False]
@@ -241,6 +316,21 @@ class GameConstants:
   SAKURA_HIT_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
 
 
+# =======
+  #RockLee
+  ROCKLEE_MOVE_SFX = ["Assets/SFX/NarutoSFX/move.wav",True] # source, loop
+  ROCKLEE_JUMP_SFX = ["Assets/SFX/NarutoSFX/jump.wav",False]
+  ROCKLEE_ATTACK1_SFX = ["Assets/SFX/RockLeeSFX/attack1.wav",False]
+  ROCKLEE_ATTACK2_SFX = ["Assets/SFX/RockLeeSFX/attack2.wav",False]
+  ROCKLEE_ATTACK3_SFX = ["Assets/SFX/RockLeeSFX/attack3.wav",False]
+  ROCKLEE_SKILL1_SFX = ["Assets/SFX/RockLeeSFX/skill1.wav",False]
+  ROCKLEE_SKILL2_SFX = ["Assets/SFX/RockLeeSFX/skill2.wav",False]
+  ROCKLEE_SKILL3_SFX = ["Assets/SFX/RockLeeSFX/skill3.wav",False]
+  ROCKLEE_WIN_SFX = ["Assets/SFX/RockLeeSFX/win.wav",False]
+  ROCKLEE_DEATH_SFX = ["Assets/SFX/RockLeeSFX/death.wav",False]
+  ROCKLEE_HIT_SFX = ["Assets/SFX/RockLeeSFX/hit.wav",False]
+  ROCKLEE_DASH_SFX=["Assets/SFX/SasukeSFX/dash.wav",False]
+# >>>>>>> cafb549cd18d2e3f8972f73310f603258b29cfd6
 
 
 
@@ -274,7 +364,7 @@ class GameConstants:
   MOVE_SPEED_MODIFIER = 1
   JUMP_FORCE_MODIFIER = 1
   ZERO_FORCE_MODIFIER = 0
-  BASE_HEALTH = 300
+  BASE_HEALTH = 150
   BASE_MANA = 100
   TIME_RESET_ATTACK_COMBO = 2
   DASH_DURATION = 350  

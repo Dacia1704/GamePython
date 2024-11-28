@@ -3,8 +3,8 @@ import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.PlayerCharacter.Sakura.State.sakura_state_machine import SakuraStateMachine
 class SakuraCharacter(Character):
-  def __init__(self,player_id,x,y,screen_surface,target):
-    super().__init__(player_id,x,y,screen_surface,target)
+  def __init__(self,game_scene,player_id,x,y,screen_surface,target):
+    super().__init__(game_scene,player_id,x,y,screen_surface,target)
     self.rect = pygame.Rect((x,y,GameConstants.SAKURA_WIDTH_RECT,GameConstants.SAKURA_HEIGHT_RECT))
     self.state_machine = SakuraStateMachine(self,screen_surface)
 
@@ -21,6 +21,7 @@ class SakuraCharacter(Character):
     self.skill2_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[0]).convert_alpha(), 74, 44, 15,GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[1]),GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[1], GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[2],GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[3], GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[4],GameConstants.SAKURA_SKILL2_SPRITESHEET_SOURCE[5]]
     self.skill3_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[0]).convert_alpha(), 226, 64, 12, GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[1]),GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[1], GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[2],GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[3], GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[4],GameConstants.SAKURA_SKILL3_SPRITESHEET_SOURCE[5]]
     self.dash_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[0]).convert_alpha(), 34, 49, 4,GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[1]),GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[1], GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[2],GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[3], GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[4],GameConstants.SAKURA_DASH_SPRITESHEET_SOURCE[5]]
+    self.death_spritesheet = [self.handle_image(pygame.image.load(GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[0]).convert_alpha(), 53, 46, 3,GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[1]),GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[1], GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[2],GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[3], GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[4],GameConstants.SAKURA_DEATH_SPRITESHEET_SOURCE[5]]
 
     self.move_sfx_name = self.setup_sfx("move", GameConstants.SAKURA_MOVE_SFX[0])
     self.jump_sfx_name = self.setup_sfx("jump", GameConstants.SAKURA_JUMP_SFX[0])

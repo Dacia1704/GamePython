@@ -13,6 +13,10 @@ class CharacterState(State):
 
     self.is_show_last_frame = False
     self.is_last_frame_animation_cooldown_finished = False
+
+    self.nomal_attack_index =1
+    self.nomal_attack_previous_time = pygame.time.get_ticks()
+    self.nomal_attack_combo_time_reset = 700
     
   #update state function
   def enter(self):
@@ -28,6 +32,7 @@ class CharacterState(State):
 
     self.update_ground_check()
     self.draw(self.state_machine.screen_surface)
+    self.reset_combo_attack()
 
 
   # logic state funcion
@@ -139,7 +144,14 @@ class CharacterState(State):
         self.current_sprite_index = 0
       else:
         self.current_sprite_index = max-1
-    
+
+  #reset combo attack  
+  def reset_combo_attack(self):
+    if(self.nomal_attack_index!=1):
+      if(pygame.time.get_ticks() - self.nomal_attack_previous_time > self.nomal_attack_combo_time_reset):
+        self.nomal_attack_index = 1
+        print("reset")
+
 
   #check change state
   def on_idle(self):
@@ -159,23 +171,36 @@ class CharacterState(State):
       self.state_machine.change_state(self.state_machine.fall_state)
       return
   def on_nomal_attack(self):
-    random_attack =  random.randint(1, 3)
+    # random_attack =  random.randint(1, 3)
     #random_attack = 1   # test
+
+    random_attack = self.nomal_attack_index
     if self.state_machine.character.nomal_attack_input and self.state_machine.character.is_grounded:
       if random_attack ==1:
-        self.state_machine.change_state(self.state_machine.nomal_attack1)   
+        self.state_machine.change_state(self.state_machine.nomal_attack1)
+        self.nomal_attack_previous_time = pygame.time.get_ticks()   
+        self.nomal_attack_index =2
         return
       elif random_attack ==2:
         self.state_machine.change_state(self.state_machine.nomal_attack2)
+        self.nomal_attack_previous_time = pygame.time.get_ticks()  
+        self.nomal_attack_index =3
         return
       elif random_attack ==3:
         self.state_machine.change_state(self.state_machine.nomal_attack3)
+        self.nomal_attack_previous_time = pygame.time.get_ticks()  
+        self.nomal_attack_index =1
         return
 
   def on_hit(self):
-    if self.state_machine.character.is_hitting: 
+    if self.state_machine.character.is_hitting:
+      if self.state_machine.character.health <= self.state_machine.character.dam_take:
+        self.on_death()
+        return
       self.state_machine.change_state(self.state_machine.hit_state)
       return
+  def on_death(self):
+    self.state_machine.change_state(self.state_machine.death_state)
   def on_dash(self):
     if self.state_machine.character.dash_input and self.state_machine.character.is_grounded:
         self.state_machine.change_state(self.state_machine.dash_state)
@@ -195,3 +220,4 @@ class CharacterState(State):
       if self.state_machine.character.mana >= self.state_machine.character.mana_consume_skill_2:
         self.state_machine.change_state(self.state_machine.skill3_state)
         return
+
