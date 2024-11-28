@@ -314,6 +314,7 @@ class GameConstants:
   SAKURA_WIN_SFX = ["Assets/SFX/SakuraSFX/Win.wav", False]
   SAKURA_DEATH_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
   SAKURA_HIT_SFX = ["Assets/SFX/SakuraSFX/C2.wav", False]
+  SAKURA_DASH_SFX = ["Assets/SFX/SasukeSFX/dash.wav", False]
 
 
 # =======
