@@ -259,7 +259,7 @@ class GameConstants:
   }
 
   #Damage and knockback force
-  NOMAL_ATTACK_PROPS = [5,0,[15,5],150] # dam,mana, [direction knockback] , time knock back
+  NOMAL_ATTACK_PROPS = [5,0,[5,5],150] # dam,mana, [direction knockback] , time knock back
   NARUTO_SKILL_1_PROPS = [20,20,[5,20],150]
   NARUTO_SKILL_2_PROPS = [0,30,[0,0],0]
   NARUTO_SKILL_3_PROPS = [30,40,[5,20],150]
@@ -369,8 +369,9 @@ class GameConstants:
   BASE_MANA = 100
   TIME_RESET_ATTACK_COMBO = 2
   DASH_DURATION = 350  
-  DASH_SPEED = 20     
-  DASH_COOLDOWN = 750 
+  DASH_SPEED = 25     
+  DASH_COOLDOWN = 1000
+  
 
 
   

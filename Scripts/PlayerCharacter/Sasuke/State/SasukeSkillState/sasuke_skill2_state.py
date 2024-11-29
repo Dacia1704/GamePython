@@ -13,7 +13,7 @@ class SasukeSkill2State(SkillState):
         super().enter()
         self.skill_collider_animations = GameConstants.SASUKE_SKILL2_COLLIDER_ANIMATIONS
         AudioManager.get_instance().play_sfx(self.state_machine.character.skill_2_sfx_name)
-        self.update_knock_back_force_target([5, 20], 150)
+        self.update_knock_back_force_target([5, 0], 100)
         self.update_target_dam_take(GameConstants.SASUKE_SKILL_2_PROPS[0])
         self.isTeleport = False
         self.state_machine.character.mana -= self.state_machine.character.mana_consume_skill_2
@@ -81,10 +81,11 @@ class SasukeSkill2State(SkillState):
                 new_x = target_rect.right + teleport_offset
                 self.state_machine.character.flip = True  # Sasuke quay mặt sang trái
 
-            # Cập nhật vị trí Sasuke
+            # Giữ y cố định ở mặt đất, trừ chiều cao nhân vật để Sasuke không bị lệch lên
+            new_y = GameConstants.GROUND_Y + character_rect.height  # Dùng GROUND_Y và trừ chiều cao của nhân vật
+
+            # Cập nhật vị trí Sasuke (x, y)
             self.state_machine.character.rect = pygame.Rect(
-                (new_x, target_rect.y, character_rect.width, character_rect.height)
+                (new_x, new_y, character_rect.width, character_rect.height)
             )
             self.isTeleport = True
-
-
