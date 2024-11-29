@@ -20,6 +20,7 @@ class GameConstants:
   RIVER_BG_IMAGE_SOURCE = "Assets/Background/river.jpg"
   SUMMER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/summer_village.jpg"
   WINTER_VILLAGE_BG_IMAGE_SOURCE = "Assets/Background/winter_village.jpg"
+  I_LOVE_PTIT_BG_IMAGE_SOURCE = "Assets/Background/i_love_ptit.png"
 
   #UI
   RAW_BUTTON_IMAGE = ["Assets/UI/raw_button_w160_h85.png", 1]  #image, scale 

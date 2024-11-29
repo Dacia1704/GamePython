@@ -19,6 +19,7 @@ class MainMenu(ScreenBase):
 		self.setting_button_rect = pygame.Rect(GameConstants.SCREEN_WIDTH/2 - button_width/2, GameConstants.SCREEN_HEIGHT/2 , button_width, button_height)
 		self.quit_button_rect = pygame.Rect(GameConstants.SCREEN_WIDTH/2 - button_width/2, GameConstants.SCREEN_HEIGHT/2 +button_height +10 , button_width, button_height)
 		self.back_ground = pygame.transform.scale( pygame.image.load(GameConstants.RIVER_BG_IMAGE_SOURCE).convert_alpha(),(GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
+		self.i_love_ptit_back_ground = pygame.transform.scale( pygame.image.load(GameConstants.I_LOVE_PTIT_BG_IMAGE_SOURCE).convert_alpha(),(GameConstants.SCREEN_WIDTH, GameConstants.SCREEN_HEIGHT))
 
 		self.button_pressed = None
 
@@ -29,6 +30,9 @@ class MainMenu(ScreenBase):
 		self.load_volume_settings()
 		AudioManager.get_instance().set_music_volume(self.bgm_volumn/100)
 		AudioManager.get_instance().set_sfx_volume(self.sfx_volumn/100)
+
+		self.start_time = pygame.time.get_ticks()
+		self.time_show_i_love_ptit = 3000
 
 
 
@@ -55,35 +59,37 @@ class MainMenu(ScreenBase):
 						self.button_pressed = None
 
 	def update(self):
-		
-		self.screen.blit(self.back_ground, (0, 0))
+		if pygame.time.get_ticks() - self.start_time < self.time_show_i_love_ptit:
+			self.screen.blit(self.i_love_ptit_back_ground, (0, 0))
+		else:
+			self.screen.blit(self.back_ground, (0, 0))
 
-		# Vẽ tên game
-		self.draw_text_in_center_rect(
-			"INFINITY FIGHTER", self.font_game_name, (255, 255, 255), self.screen.get_rect(), [0, -200]
-		)
+			# Vẽ tên game
+			self.draw_text_in_center_rect(
+				"INFINITY FIGHTER", self.font_game_name, (255, 255, 255), self.screen.get_rect(), [0, -200]
+			)
 
-		# Vẽ nút Play
-		self.screen.blit(self.button_image, self.play_button_rect)
-		if self.button_pressed == "PLAY":
-			self.draw_button_overlay(self.play_button_rect)
-		self.draw_text_in_center_rect("PLAY", self.font_black_30, (255, 255, 255), self.play_button_rect)
+			# Vẽ nút Play
+			self.screen.blit(self.button_image, self.play_button_rect)
+			if self.button_pressed == "PLAY":
+				self.draw_button_overlay(self.play_button_rect)
+			self.draw_text_in_center_rect("PLAY", self.font_black_30, (255, 255, 255), self.play_button_rect)
 
-		# Vẽ nút Setting
-		self.screen.blit(self.button_image, self.setting_button_rect)
-		if self.button_pressed == "SETTING":
-			self.draw_button_overlay(self.setting_button_rect)
-		self.draw_text_in_center_rect("SETTING", self.font_black_30, (255, 255, 255), self.setting_button_rect)
+			# Vẽ nút Setting
+			self.screen.blit(self.button_image, self.setting_button_rect)
+			if self.button_pressed == "SETTING":
+				self.draw_button_overlay(self.setting_button_rect)
+			self.draw_text_in_center_rect("SETTING", self.font_black_30, (255, 255, 255), self.setting_button_rect)
 
-		# Vẽ nút Quit
-		self.screen.blit(self.button_image, self.quit_button_rect)
-		if self.button_pressed == "QUIT":
-			self.draw_button_overlay(self.quit_button_rect)
-		self.draw_text_in_center_rect("QUIT", self.font_black_30, (255, 255, 255), self.quit_button_rect)
+			# Vẽ nút Quit
+			self.screen.blit(self.button_image, self.quit_button_rect)
+			if self.button_pressed == "QUIT":
+				self.draw_button_overlay(self.quit_button_rect)
+			self.draw_text_in_center_rect("QUIT", self.font_black_30, (255, 255, 255), self.quit_button_rect)
 
-		# Kiểm tra chuyển cảnh
-		if self.next_scene == "CHARACTER_SELECTION":
-			return "CHARACTER_SELECTION"
+			# Kiểm tra chuyển cảnh
+			if self.next_scene == "CHARACTER_SELECTION":
+				return "CHARACTER_SELECTION"
 
 		
 	def start(self):
