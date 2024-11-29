@@ -29,7 +29,7 @@ class SakuraSkill1State(SkillState):
 
       #execute attack
       self.state_machine.character.is_using_skill = True
-    self.state_machine.character.health = min(self.state_machine.character.health + 10, 300)
+    self.state_machine.character.health = min(self.state_machine.character.health + 1/30 * GameConstants.BASE_HEALTH, GameConstants.BASE_HEALTH)
     self.state_machine.character.mana -= self.state_machine.character.mana_consume_skill_1
   # animation
   def draw(self, surface):
