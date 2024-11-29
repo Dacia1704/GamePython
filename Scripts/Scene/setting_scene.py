@@ -27,8 +27,8 @@ class SettingGame(ScreenBase):
         self.sfx_slider_rect = pygame.Rect(GameConstants.SCREEN_WIDTH / 2 - 150, GameConstants.SCREEN_HEIGHT / 2 + 50,
                                            300, 10)
 
-        self.bgm_value = 100  # Giá trị âm lượng BGM ban đầu (tính theo phần trăm)
-        self.sfx_value = 100  # Giá trị âm lượng SFX ban đầu (tính theo phần trăm)
+        self.bgm_volumn = 100  # Giá trị âm lượng BGM ban đầu (tính theo phần trăm)
+        self.sfx_volumn = 100  # Giá trị âm lượng SFX ban đầu (tính theo phần trăm)
         self.load_volume_settings()
 
         self.slider_color = (200, 200, 200)
@@ -58,23 +58,23 @@ class SettingGame(ScreenBase):
 
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:  # Nhấn chuột trái
                 if self.bgm_slider_rect.collidepoint(event.pos):
-                    self.bgm_value = self.get_slider_value(event.pos, self.bgm_slider_rect)
+                    self.bgm_volumn = self.get_slider_value(event.pos, self.bgm_slider_rect)
                 elif self.sfx_slider_rect.collidepoint(event.pos):
-                    self.sfx_value = self.get_slider_value(event.pos, self.sfx_slider_rect)
+                    self.sfx_volumn = self.get_slider_value(event.pos, self.sfx_slider_rect)
                 elif self.back_button_rect.collidepoint(event.pos):
                     return "MAIN_MENU"  # Trở về màn hình chính
 
             if event.type == pygame.MOUSEMOTION:
                 if event.buttons[0] == 1:  # Kéo thanh trượt
                     if self.bgm_slider_rect.collidepoint(event.pos):
-                        self.bgm_value = self.get_slider_value(event.pos, self.bgm_slider_rect)
+                        self.bgm_volumn = self.get_slider_value(event.pos, self.bgm_slider_rect)
                     elif self.sfx_slider_rect.collidepoint(event.pos):
-                        self.sfx_value = self.get_slider_value(event.pos, self.sfx_slider_rect)
+                        self.sfx_volumn = self.get_slider_value(event.pos, self.sfx_slider_rect)
                     self.save_volume_settings()
 
         # Cập nhật âm lượng
-        self.audio_manager.set_music_volume(self.bgm_value / 100)
-        self.audio_manager.set_sfx_volume(self.sfx_value / 100)
+        self.audio_manager.set_music_volume(self.bgm_volumn / 100)
+        self.audio_manager.set_sfx_volume(self.sfx_volumn / 100)
 
     def update(self):
         self.screen.blit(self.back_ground, (0, 0))
@@ -85,17 +85,17 @@ class SettingGame(ScreenBase):
         # Vẽ thanh trượt BGM
         pygame.draw.rect(self.screen, self.slider_color, self.bgm_slider_rect)
         pygame.draw.circle(self.screen, (255, 255, 255),
-                           (self.bgm_slider_rect.x + self.bgm_value * 3, self.bgm_slider_rect.centery), 10)
+                           (self.bgm_slider_rect.x + self.bgm_volumn * 3, self.bgm_slider_rect.centery), 10)
 
         # Vẽ thanh trượt SFX
         pygame.draw.rect(self.screen, self.slider_color, self.sfx_slider_rect)
         pygame.draw.circle(self.screen, (255, 255, 255),
-                           (self.sfx_slider_rect.x + self.sfx_value * 3, self.sfx_slider_rect.centery), 10)
+                           (self.sfx_slider_rect.x + self.sfx_volumn * 3, self.sfx_slider_rect.centery), 10)
 
         # Hiển thị giá trị âm lượng
-        self.draw_text_in_center_rect(f"BGM Volume: {self.bgm_value}%", self.font_black_30, (255, 255, 255),
+        self.draw_text_in_center_rect(f"BGM Volume: {self.bgm_volumn}%", self.font_black_30, (255, 255, 255),
                                       self.bgm_slider_rect, [0, -30])
-        self.draw_text_in_center_rect(f"SFX Volume: {self.sfx_value}%", self.font_black_30, (255, 255, 255),
+        self.draw_text_in_center_rect(f"SFX Volume: {self.sfx_volumn}%", self.font_black_30, (255, 255, 255),
                                       self.sfx_slider_rect, [0, -30])
         # Vẽ nút "Back"
         self.screen.blit(self.button_image, self.back_button_rect)
@@ -104,7 +104,7 @@ class SettingGame(ScreenBase):
         # Tính giá trị thanh trượt dựa trên vị trí chuột
         if slider_rect.collidepoint(mouse_pos):
             return min(max(0, (mouse_pos[0] - slider_rect.x) // 3), 100)
-        return self.bgm_value  # Trả về giá trị mặc định nếu không nằm trong thanh trượt
+        return self.bgm_volumn  # Trả về giá trị mặc định nếu không nằm trong thanh trượt
 
     def start(self):
         super().start()
@@ -118,8 +118,8 @@ class SettingGame(ScreenBase):
 
     def save_volume_settings(self, filename="volume_settings.json"):
         data = {
-            "bgm_volume": self.bgm_value,  # Chuyển từ 0-100 sang 0.0-1.0
-            "sfx_volume": self.sfx_value   # Chuyển từ 0-100 sang 0.0-1.0
+            "bgm_volume": self.bgm_volumn,  # Chuyển từ 0-100 sang 0.0-1.0
+            "sfx_volume": self.sfx_volumn   # Chuyển từ 0-100 sang 0.0-1.0
         }
         try:
             with open(filename, "w") as file:
@@ -132,9 +132,9 @@ class SettingGame(ScreenBase):
         try:
             with open(filename, "r") as file:
                 data = json.load(file)
-                self.bgm_value =  data.get("bgm_volume", 100)
-                self.sfx_value =  data.get("sfx_volume", 100)
-            print(f"Tải dữ liệu thành công từ {filename} {self.bgm_value} {self.sfx_value}")
+                self.bgm_volumn =  data.get("bgm_volume", 100)
+                self.sfx_volumn =  data.get("sfx_volume", 100)
+            print(f"Tải dữ liệu thành công từ {filename} {self.bgm_volumn} {self.sfx_volumn}")
         except FileNotFoundError:
             print(f"Không tìm thấy tệp {filename}. Sử dụng giá trị mặc định.")
         except json.JSONDecodeError as e:
