@@ -286,6 +286,7 @@ class GameConstants:
   NARUTO_WIN_SFX = ["Assets/SFX/NarutoSFX/Win.wav",False]
   NARUTO_DEATH_SFX = ["Assets/SFX/NarutoSFX/death.wav",False]
   NARUTO_HIT_SFX = ["Assets/SFX/NarutoSFX/hit.wav",False]
+  NARUTO_DASH_SFX = ["Assets/SFX/NarutoSFX/dash.wav",False]
   
   #
   SASUKE_MOVE_SFX = ["Assets/SFX/SasukeSFX/move.wav",True] # source, loop
