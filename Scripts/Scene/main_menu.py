@@ -2,6 +2,7 @@ import pygame
 from Scripts.game_constants import GameConstants
 from Scripts.Scene.scenebase import ScreenBase
 from Scripts.Audio.audio_manager import AudioManager
+import json
 class MainMenu(ScreenBase):
 	def __init__(self,screen):
 		super().__init__(screen)
@@ -22,6 +23,14 @@ class MainMenu(ScreenBase):
 		self.button_pressed = None
 
 		self.main_menu_bgm = self.setup_bgm("main_menu",GameConstants.MAIN_MENU_BGM[0])
+
+		self.bgm_volumn = 100
+		self.vfx_volumn = 100
+		self.load_volume_settings()
+		AudioManager.get_instance().set_music_volume(self.bgm_volumn/100)
+		AudioManager.get_instance().set_sfx_volume(self.sfx_volumn/100)
+
+
 
 	def handle_events(self, events):
 		for event in events:
@@ -85,3 +94,16 @@ class MainMenu(ScreenBase):
 		super().exit()
 		AudioManager.get_instance().stop_music(self.main_menu_bgm )
 		
+	def load_volume_settings(self, filename="volume_settings.json"):
+		try:
+			with open(filename, "r") as file:
+				data = json.load(file)
+				self.bgm_volumn =  data.get("bgm_volume", 100)
+				self.sfx_volumn =  data.get("sfx_volume", 100)
+			print(f"Tải dữ liệu thành công từ {filename} {self.bgm_volumn} {self.sfx_volumn}")
+		except FileNotFoundError:
+			print(f"Không tìm thấy tệp {filename}. Sử dụng giá trị mặc định.")
+		except json.JSONDecodeError as e:
+			print(f"Lỗi khi đọc tệp JSON: {e}")
+		except IOError as e:
+			print(f"Lỗi khi tải dữ liệu: {e}")
