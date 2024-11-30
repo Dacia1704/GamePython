@@ -145,7 +145,7 @@ class Character (Attackable,Damable):
       attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx + pos_relate_centerxy[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
     else:
       attacking_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
-    pygame.draw.rect(self.state_machine.screen_surface, (0,255,0),attacking_rect)
+    # pygame.draw.rect(self.state_machine.screen_surface, (0,255,0),attacking_rect)
 
     if attacking_rect.colliderect(target.damable_rect):
       target.is_hitting = True
@@ -156,7 +156,7 @@ class Character (Attackable,Damable):
       self.damable_rect = pygame.Rect(self.state_machine.character.rect.centerx + pos_relate_centerxy[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
     else:
       self.damable_rect = pygame.Rect(self.state_machine.character.rect.centerx - pos_relate_centerxy[0] - size[0], self.state_machine.character.rect.centery + pos_relate_centerxy[1], size[0], size[1])
-    pygame.draw.rect(self.state_machine.screen_surface, (255,255,255),self.damable_rect)
+    # pygame.draw.rect(self.state_machine.screen_surface, (255,255,255),self.damable_rect)
 
   #knockback
   def update_knockback(self,direction,time):

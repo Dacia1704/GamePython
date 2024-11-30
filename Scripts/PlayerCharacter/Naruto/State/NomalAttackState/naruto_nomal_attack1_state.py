@@ -11,9 +11,11 @@ class NarutoNomalAttack1State(NomalAttackState):
 
   def update(self):
     super().update()
-    AudioManager.get_instance().stop_sfx(self.state_machine.character.nomal_attack_1_sfx_name)
     self.update_sprite_animation(self.state_machine.character.nomal_attack2_spritesheet[0],self.state_machine.character.nomal_attack1_spritesheet[2],False)
 
+  def exit(self):
+    super().exit()
+    AudioManager.get_instance().stop_sfx(self.state_machine.character.nomal_attack_1_sfx_name)
 
   def nomal_attack_enter(self):
     super().nomal_attack_enter()
